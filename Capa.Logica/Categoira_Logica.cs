@@ -16,7 +16,7 @@ namespace Capa.Logica
                 throw new ApplicationException("El nombre es requerido");
             }
             Datos.Categoria_Datos datos = new Datos.Categoria_Datos();
-            if (datos.SeleccionarCategoriaPorID(cat.Id) == null)
+            if (datos.SeleccionarPorID(cat.Id) == null)
                 datos.Insertar(cat);
             else
                 datos.Actualizar(cat);
@@ -25,12 +25,12 @@ namespace Capa.Logica
         public List<Categoria> SeleccionarTodos()
         {
             Datos.Categoria_Datos datos = new Datos.Categoria_Datos();
-            return datos.SeleccionarCategorias();
+            return datos.SeleccionarTodos();
         }
         public Categoria SeleccionarCategoriaPorId(int Id)
         {
             Datos.Categoria_Datos datos = new Datos.Categoria_Datos();
-            return datos.SeleccionarCategoriaPorID(Id);
+            return datos.SeleccionarPorID(Id);
         }
 
         public void Eliminar(int Id)

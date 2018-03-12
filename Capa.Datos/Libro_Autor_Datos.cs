@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-    public class Libro_Autor_Datos
+    public class Libro_Autor_Datos 
     {
         /// <summary>
         /// Insertamos un Autor en la Tabla

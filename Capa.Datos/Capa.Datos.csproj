@@ -46,6 +46,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="Editorial_Datos.cs" />
     <Compile Include="Estudiante_Datos.cs" />
+    <Compile Include="I_CRUD.cs" />
     <Compile Include="Libro_Autor_Datos.cs" />
     <Compile Include="Libro_Datos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-    public class Libro_Datos
+    public class Libro_Datos : I_CRUD<Libros>
     {
         /// <summary>
         /// Insertamos un Autor en la Tabla
@@ -142,7 +142,7 @@ namespace Capa.Datos
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public Libros SeleccionarLibroPorID(int Id)
+        public Libros SeleccionarPorID(int Id)
         {
             Libros lib = null;
 
@@ -199,7 +199,7 @@ namespace Capa.Datos
         /// que se encuentran en la BD
         /// </summary>
         /// <returns></returns>
-        public List<Libros> SeleccionarLibros()
+        public List<Libros> SeleccionarTodos()
         {
             List<Libros> lista = new List<Libros>();
 

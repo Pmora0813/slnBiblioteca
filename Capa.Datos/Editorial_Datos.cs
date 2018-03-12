@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-    public class Editorial_Datos
+    public class Editorial_Datos : I_CRUD<Editorial>
     {
             /// <summary>
             /// Insertamos un Autor en la Tabla
@@ -135,7 +135,7 @@ namespace Capa.Datos
             /// </summary>
             /// <param name="Id"></param>
             /// <returns></returns>
-            public Editorial SeleccionarEditorialPorID(int Id)
+            public Editorial SeleccionarPorID(int Id)
             {
             Editorial edit = null;
 
@@ -188,7 +188,7 @@ namespace Capa.Datos
             /// que se encuentran en la BD
             /// </summary>
             /// <returns></returns>
-            public List<Editorial> SeleccionarEditoriales()
+            public List<Editorial> SeleccionarTodos()
             {
                 List<Editorial> lista = new List<Editorial>();
 

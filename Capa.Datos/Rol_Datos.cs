@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-  public  class Rol_Datos
+  public  class Rol_Datos 
     {
         public List<Roll> SeleccionarRoles()
         {

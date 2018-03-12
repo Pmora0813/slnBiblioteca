@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-    public class Usuario_Datos
+    public class Usuario_Datos : I_CRUD<Usuario>
     {
        /// <summary>
        /// Insertamos el registro de
@@ -138,7 +138,7 @@ namespace Capa.Datos
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public Usuario SeleccionarUsuarioPorID(int Id)
+        public Usuario SeleccionarPorID(int Id)
         {
             Usuario usua = null;
 
@@ -192,7 +192,7 @@ namespace Capa.Datos
         /// que se encuentran en la BD
         /// </summary>
         /// <returns></returns>
-        public List<Usuario> SeleccionarUsuarios()
+        public List<Usuario> SeleccionarTodos()
         {
             List<Usuario> lista = new List<Usuario>();
 

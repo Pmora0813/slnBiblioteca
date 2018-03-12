@@ -12,7 +12,7 @@ namespace Capa.Datos
  /// Implementado los metodos de la Interfaz 
  /// I_Crud
  /// </summary>
-    public class Categoria_Datos
+    public class Categoria_Datos : I_CRUD<Categoria>
     {
         /// <summary>
         /// Insertamos un Autor en la Tabla
@@ -139,7 +139,7 @@ namespace Capa.Datos
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public Categoria SeleccionarCategoriaPorID(int Id)
+        public Categoria SeleccionarPorID(int Id)
         {
             Categoria cat = null;
 
@@ -192,7 +192,7 @@ namespace Capa.Datos
         /// que se encuentran en la BD
         /// </summary>
         /// <returns></returns>
-        public List<Categoria> SeleccionarCategorias()
+        public List<Categoria> SeleccionarTodos()
         {
             List<Categoria> lista = new List<Categoria>();
 

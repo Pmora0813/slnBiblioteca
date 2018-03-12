@@ -13,7 +13,7 @@ namespace Capa.Datos
     /// Implementado los metodos de la Interfaz 
     /// I_Crud
     /// </summary>
-    public class Autor_Datos
+    public class Autor_Datos : I_CRUD<Autor>
     {
         /// <summary>
         /// Insertamos un Autor en la Tabla
@@ -140,7 +140,7 @@ namespace Capa.Datos
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public Autor SeleccionarAutorPorID(int Id)
+        public Autor SeleccionarPorID(int Id)
         {
             Autor aut = null;
 
@@ -193,7 +193,7 @@ namespace Capa.Datos
         /// que se encuentran en la BD
         /// </summary>
         /// <returns></returns>
-        public List<Autor> SeleccionarAutores()
+        public List<Autor> SeleccionarTodos()
         {
             List<Autor> lista = new List<Autor>();
 
@@ -240,5 +240,7 @@ namespace Capa.Datos
 
 
         }
+
+        
     }
 }

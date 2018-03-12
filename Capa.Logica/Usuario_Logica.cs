@@ -17,7 +17,7 @@ namespace Capa.Logica
             throw new ApplicationException("El nombre es requerido");
         }
         Datos.Usuario_Datos datos = new Datos.Usuario_Datos();
-        if (datos.SeleccionarUsuarioPorID(usuario.id) == null)
+        if (datos.SeleccionarPorID(usuario.id) == null)
             datos.Insertar(usuario);
         else
             datos.Actualizar(usuario);
@@ -26,12 +26,12 @@ namespace Capa.Logica
     public List<Usuario> SeleccionarTodos()
     {
         Datos.Usuario_Datos datos = new Datos.Usuario_Datos();
-        return datos.SeleccionarUsuarios();
+        return datos.SeleccionarTodos();
     }
     public Usuario SeleccionarCategoriaPorId(int Id)
     {
         Datos.Usuario_Datos datos = new Datos.Usuario_Datos();
-        return datos.SeleccionarUsuarioPorID(Id);
+        return datos.SeleccionarPorID(Id);
     }
 
     public void Eliminar(int Id)
