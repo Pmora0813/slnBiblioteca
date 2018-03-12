@@ -42,5 +42,17 @@ namespace Capa.UI
             Mantenimientos.frmMant_Categorias ofrm = new Mantenimientos.frmMant_Categorias();
             ofrm.Show();
         }
+
+        private void btnEstudiantes_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmMant_Estudiante ofrm = new Mantenimientos.frmMant_Estudiante();
+            ofrm.Show();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmMant_Usuario ofrm = new Mantenimientos.frmMant_Usuario();
+            ofrm.Show();
+        }
     }
 }

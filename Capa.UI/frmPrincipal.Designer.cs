@@ -32,6 +32,8 @@
             this.btnMant_Editorial = new System.Windows.Forms.Button();
             this.btnMant_Libros = new System.Windows.Forms.Button();
             this.btnMant_Categorias = new System.Windows.Forms.Button();
+            this.btnEstudiantes = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMant_Autor
@@ -78,11 +80,35 @@
             this.btnMant_Categorias.UseVisualStyleBackColor = true;
             this.btnMant_Categorias.Click += new System.EventHandler(this.btnMant_Categorias_Click);
             // 
+            // btnEstudiantes
+            // 
+            this.btnEstudiantes.Location = new System.Drawing.Point(239, 15);
+            this.btnEstudiantes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEstudiantes.Name = "btnEstudiantes";
+            this.btnEstudiantes.Size = new System.Drawing.Size(215, 41);
+            this.btnEstudiantes.TabIndex = 4;
+            this.btnEstudiantes.Text = "Estudiantes";
+            this.btnEstudiantes.UseVisualStyleBackColor = true;
+            this.btnEstudiantes.Click += new System.EventHandler(this.btnEstudiantes_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Location = new System.Drawing.Point(239, 64);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(215, 41);
+            this.btnUsuarios.TabIndex = 5;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 210);
+            this.ClientSize = new System.Drawing.Size(469, 210);
+            this.Controls.Add(this.btnUsuarios);
+            this.Controls.Add(this.btnEstudiantes);
             this.Controls.Add(this.btnMant_Categorias);
             this.Controls.Add(this.btnMant_Libros);
             this.Controls.Add(this.btnMant_Editorial);
@@ -105,5 +131,7 @@
         private System.Windows.Forms.Button btnMant_Editorial;
         private System.Windows.Forms.Button btnMant_Libros;
         private System.Windows.Forms.Button btnMant_Categorias;
+        private System.Windows.Forms.Button btnEstudiantes;
+        private System.Windows.Forms.Button btnUsuarios;
     }
 }

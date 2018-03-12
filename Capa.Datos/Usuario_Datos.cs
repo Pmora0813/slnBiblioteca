@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-    public class Libro_Datos
+    public class Usuario_Datos
     {
-        /// <summary>
-        /// Insertamos un Autor en la Tabla
-        /// de la BD
-        /// </summary>
-        /// <param name="libro"></param>
-        public void Insertar(Libros libro)
+       /// <summary>
+       /// Insertamos el registro de
+       /// un Usuario en la tabla de 
+       /// la BD
+       /// </summary>
+       /// <param name="usuario"></param>
+        public void Insertar(Usuario usuario)
         {
             //Paso 1: conexion BD
             SqlConnection conexion = new SqlConnection(Conexion.Cadena);
@@ -26,18 +27,15 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion SP
-                string sql = "SP_Libros_Insert";
+                string sql = "SP_Usuario _Insert";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
                 //Paso 4: Enviar los parametros
-                comando.Parameters.AddWithValue("@Id", libro.Id);
-                comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
-                comando.Parameters.AddWithValue("@disponibles", libro.Cant_Disponibles);
-                comando.Parameters.AddWithValue("@QR", libro.Qr);
-                comando.Parameters.AddWithValue("@id_Editorial",libro.IdEditorial);
-
+                comando.Parameters.AddWithValue("@Id", usuario.id);
+                comando.Parameters.AddWithValue("@contrasenna", usuario.Contrasenna);
+                comando.Parameters.AddWithValue("@id_Rol", usuario.Roll);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -55,11 +53,11 @@ namespace Capa.Datos
             }
         }
         /// <summary>
-        /// Actualizamos un registro en la tabla Autor
+        /// Actualizamos un registro en la tabla Usuario
         /// en la BD
         /// </summary>
-        /// <param name="libro"></param>
-        public void Actualizar(Libros libro)
+        /// <param name="usuario"></param>
+        public void Actualizar(Usuario usuario)
         {
             //Paso 1: conexion BD
             SqlConnection conexion = new SqlConnection(Conexion.Cadena);
@@ -69,17 +67,15 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion
-                string sql = "SP_Libros_Update";
+                string sql = "SP_Usuario_Update";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
                 //Paso 4: Enviar los parametros
-                comando.Parameters.AddWithValue("@Id", libro.Id);
-                comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
-                comando.Parameters.AddWithValue("@disponibles", libro.Cant_Disponibles);
-                comando.Parameters.AddWithValue("@QR", libro.Qr);
-                comando.Parameters.AddWithValue("@id_Editorial", libro.IdEditorial);
+                comando.Parameters.AddWithValue("@Id", usuario.id);
+                comando.Parameters.AddWithValue("@contrasenna", usuario.Contrasenna);
+                comando.Parameters.AddWithValue("@id_Roll", usuario.Roll);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -112,7 +108,7 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion
-                string sql = "SP_Libros_DeleteRow";
+                string sql = "SP_Usuario_DeleteRow";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
@@ -138,13 +134,13 @@ namespace Capa.Datos
         }
 
         /// <summary>
-        /// Optenemos un Autor
+        /// Optenemos un Usuario
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public Libros SeleccionarLibroPorID(int Id)
+        public Usuario SeleccionarUsuarioPorID(int Id)
         {
-            Libros lib = null;
+            Usuario usua = null;
 
             //Paso 1: conexion BD
             SqlConnection conexion = new SqlConnection(Conexion.Cadena);
@@ -154,7 +150,7 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion
-                string sql = "SP_Libros_SelectRow";
+                string sql = "SP_Usuario_SelectRow";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
@@ -169,14 +165,11 @@ namespace Capa.Datos
                 while (reader.Read())
                 {
 
-                    lib = new Libros
+                    usua = new Usuario
                     {
-                        Id = Convert.ToInt32(reader["Id"]),
-                        Titulo = reader["titulo"].ToString(),
-                        Cant_Disponibles = Convert.ToInt32(reader["disponibles"]),
-                        Qr = reader["QR"].ToString(),
-                        IdEditorial = Convert.ToInt32(reader["id_Editorial"])
-                  
+                        id = Convert.ToInt32(reader["Id"]),
+                        Contrasenna = reader["contrasenna"].ToString(),
+                        Roll = Convert.ToInt32(reader["id_Rol"])
                     };
 
 
@@ -191,17 +184,17 @@ namespace Capa.Datos
                 conexion.Close();
             }
 
-            return lib;
+            return usua;
 
         }
         /// <summary>
-        /// Optenemos una lista con todos los Autores
+        /// Optenemos una lista con todos los Usuarios
         /// que se encuentran en la BD
         /// </summary>
         /// <returns></returns>
-        public List<Libros> SeleccionarLibros()
+        public List<Usuario> SeleccionarUsuarios()
         {
-            List<Libros> lista = new List<Libros>();
+            List<Usuario> lista = new List<Usuario>();
 
             //Paso 1: conexion BD
             SqlConnection conexion = new SqlConnection(Conexion.Cadena);
@@ -211,7 +204,7 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion
-                string sql = "SP_Libros_SelectAll";
+                string sql = "SP_Usuario_SelectAll";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
@@ -223,16 +216,14 @@ namespace Capa.Datos
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    Libros lib = new Libros
+                    Usuario usua = new Usuario
                     {
-                        Id = Convert.ToInt32(reader["Id"]),
-                        Titulo = reader["titulo"].ToString(),
-                        Cant_Disponibles = Convert.ToInt32(reader["disponibles"]),
-                        Qr = reader["QR"].ToString(),
-                        IdEditorial = Convert.ToInt32(reader["id_Editorial"])
+                        id = Convert.ToInt32(reader["Id"]),
+                        Contrasenna = reader["contrasenna"].ToString(),
+                        Roll = Convert.ToInt32(reader["id_Rll"])
                     };
 
-                    lista.Add(lib);
+                    lista.Add(usua);
 
                 }
             }

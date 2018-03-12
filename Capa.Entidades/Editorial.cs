@@ -17,5 +17,7 @@ namespace Capa.Entidades
         /// </summary>
         public int Id { get; set; }
         public string Nombre { get; set; }
+       
+        
     }
 }

@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-    public class Libro_Datos
+    public class Estudiante_Datos
     {
         /// <summary>
         /// Insertamos un Autor en la Tabla
         /// de la BD
         /// </summary>
-        /// <param name="libro"></param>
-        public void Insertar(Libros libro)
+        /// <param name="estudiante"></param>
+        public void Insertar(Estudiante estudiante)
         {
             //Paso 1: conexion BD
             SqlConnection conexion = new SqlConnection(Conexion.Cadena);
@@ -26,17 +26,23 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion SP
-                string sql = "SP_Libros_Insert";
+                string sql = "SP_Estudiante_Insert";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
                 //Paso 4: Enviar los parametros
-                comando.Parameters.AddWithValue("@Id", libro.Id);
-                comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
-                comando.Parameters.AddWithValue("@disponibles", libro.Cant_Disponibles);
-                comando.Parameters.AddWithValue("@QR", libro.Qr);
-                comando.Parameters.AddWithValue("@id_Editorial",libro.IdEditorial);
+                comando.Parameters.AddWithValue("@id_Cedula", estudiante.IdCedula);
+                comando.Parameters.AddWithValue("@contrasenna", estudiante.Contrasenna);
+                comando.Parameters.AddWithValue("@nombre", estudiante.Nombre);
+                comando.Parameters.AddWithValue("@seccion", estudiante.Seccion);
+                comando.Parameters.AddWithValue("@genero", estudiante.Genero);
+                comando.Parameters.AddWithValue("@fecha_Nacimiento", estudiante.F_Nacimiento);
+                comando.Parameters.AddWithValue("@email", estudiante.Email);
+                comando.Parameters.AddWithValue("@telefono", estudiante.Telefono);
+                comando.Parameters.AddWithValue("@activo", estudiante.Activo);
+                comando.Parameters.AddWithValue("@QR", estudiante.QR);
+                comando.Parameters.AddWithValue("@ID_ROL", estudiante.IdRol);
 
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
@@ -58,8 +64,8 @@ namespace Capa.Datos
         /// Actualizamos un registro en la tabla Autor
         /// en la BD
         /// </summary>
-        /// <param name="libro"></param>
-        public void Actualizar(Libros libro)
+        /// <param name="estudiante"></param>
+        public void Actualizar(Estudiante estudiante)
         {
             //Paso 1: conexion BD
             SqlConnection conexion = new SqlConnection(Conexion.Cadena);
@@ -69,17 +75,23 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion
-                string sql = "SP_Libros_Update";
+                string sql = "SP_Estudiante_Update";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
                 //Paso 4: Enviar los parametros
-                comando.Parameters.AddWithValue("@Id", libro.Id);
-                comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
-                comando.Parameters.AddWithValue("@disponibles", libro.Cant_Disponibles);
-                comando.Parameters.AddWithValue("@QR", libro.Qr);
-                comando.Parameters.AddWithValue("@id_Editorial", libro.IdEditorial);
+                comando.Parameters.AddWithValue("@id_Cedula", estudiante.IdCedula);
+                comando.Parameters.AddWithValue("@contrasenna", estudiante.Contrasenna);
+                comando.Parameters.AddWithValue("@nombre", estudiante.Nombre);
+                comando.Parameters.AddWithValue("@seccion", estudiante.Seccion);
+                comando.Parameters.AddWithValue("@genero", estudiante.Genero);
+                comando.Parameters.AddWithValue("@fecha_Nacimiento", estudiante.F_Nacimiento);
+                comando.Parameters.AddWithValue("@email", estudiante.Email);
+                comando.Parameters.AddWithValue("@telefono", estudiante.Telefono);
+                comando.Parameters.AddWithValue("@activo", estudiante.Activo);
+                comando.Parameters.AddWithValue("@QR", estudiante.QR);
+                comando.Parameters.AddWithValue("@ID_ROL", estudiante.IdRol);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -112,13 +124,13 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion
-                string sql = "SP_Libros_DeleteRow";
+                string sql = "SP_Estudiante_DeleteRow";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
                 //Paso 4: Enviar los parametros
-                comando.Parameters.AddWithValue("@Id", Id);
+                comando.Parameters.AddWithValue("@Id_Cedula", Id);
                 //comando.Parameters.AddWithValue("@Nombre", cat.Nombre);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
@@ -142,9 +154,9 @@ namespace Capa.Datos
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public Libros SeleccionarLibroPorID(int Id)
+        public Estudiante SeleccionarEstudianteaPorID(int Id)
         {
-            Libros lib = null;
+            Estudiante estudiante = null;
 
             //Paso 1: conexion BD
             SqlConnection conexion = new SqlConnection(Conexion.Cadena);
@@ -154,12 +166,12 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion
-                string sql = "SP_Libros_SelectRow";
+                string sql = "SP_Estudiante_SelectRow";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
-                comando.Parameters.AddWithValue("@Id", Id);
+                comando.Parameters.AddWithValue("@Id_Cedula", Id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -169,14 +181,19 @@ namespace Capa.Datos
                 while (reader.Read())
                 {
 
-                    lib = new Libros
+                    estudiante = new Estudiante
                     {
-                        Id = Convert.ToInt32(reader["Id"]),
-                        Titulo = reader["titulo"].ToString(),
-                        Cant_Disponibles = Convert.ToInt32(reader["disponibles"]),
-                        Qr = reader["QR"].ToString(),
-                        IdEditorial = Convert.ToInt32(reader["id_Editorial"])
-                  
+                        IdCedula = Convert.ToInt32(reader["Id_Cedula"]),
+                        Contrasenna = reader["contrasenna"].ToString(),
+                        Nombre = reader["nombre"].ToString(),
+                        Seccion = reader["seccion"].ToString(),
+                        Genero = Convert.ToChar(reader["genero"]),
+                        F_Nacimiento = Convert.ToDateTime(reader["fecha_Nacimiento"]),
+                        Email = reader["email"].ToString(),
+                        Telefono = Convert.ToInt32(reader["telefono"]),
+                        Activo = Convert.ToBoolean(reader["activo"]),
+                        QR = reader["QR"].ToString(),
+                        IdRol = Convert.ToInt32(reader["ID_ROL"])
                     };
 
 
@@ -191,7 +208,7 @@ namespace Capa.Datos
                 conexion.Close();
             }
 
-            return lib;
+            return estudiante;
 
         }
         /// <summary>
@@ -199,9 +216,9 @@ namespace Capa.Datos
         /// que se encuentran en la BD
         /// </summary>
         /// <returns></returns>
-        public List<Libros> SeleccionarLibros()
+        public List<Estudiante> SeleccionarEstudiantes()
         {
-            List<Libros> lista = new List<Libros>();
+            List<Estudiante> lista = new List<Estudiante>();
 
             //Paso 1: conexion BD
             SqlConnection conexion = new SqlConnection(Conexion.Cadena);
@@ -211,7 +228,7 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion
-                string sql = "SP_Libros_SelectAll";
+                string sql = "SP_Estudiante_SelectAll";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
@@ -223,16 +240,22 @@ namespace Capa.Datos
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    Libros lib = new Libros
+                    Estudiante estudiante = new Estudiante
                     {
-                        Id = Convert.ToInt32(reader["Id"]),
-                        Titulo = reader["titulo"].ToString(),
-                        Cant_Disponibles = Convert.ToInt32(reader["disponibles"]),
-                        Qr = reader["QR"].ToString(),
-                        IdEditorial = Convert.ToInt32(reader["id_Editorial"])
+                        IdCedula = Convert.ToInt32(reader["Id_Cedula"]),
+                        Contrasenna = reader["contrasenna"].ToString(),
+                        Nombre = reader["nombre"].ToString(),
+                        Seccion = reader["seccion"].ToString(),
+                        Genero = Convert.ToChar(reader["genero"]),
+                        F_Nacimiento = Convert.ToDateTime(reader["fecha_Nacimiento"]),
+                        Email = reader["email"].ToString(),
+                        Telefono = Convert.ToInt32(reader["telefono"]),
+                        Activo = Convert.ToBoolean(reader["activo"]),
+                        QR = reader["QR"].ToString(),
+                        IdRol = Convert.ToInt32(reader["ID_ROL"])
                     };
 
-                    lista.Add(lib);
+                    lista.Add(estudiante);
 
                 }
             }
@@ -249,5 +272,6 @@ namespace Capa.Datos
 
 
         }
+
     }
 }
