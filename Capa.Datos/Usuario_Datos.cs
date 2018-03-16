@@ -10,12 +10,12 @@ namespace Capa.Datos
 {
     public class Usuario_Datos : I_CRUD<Usuario>
     {
-       /// <summary>
-       /// Insertamos el registro de
-       /// un Usuario en la tabla de 
-       /// la BD
-       /// </summary>
-       /// <param name="usuario"></param>
+        /// <summary>
+        /// Insertamos el registro de
+        /// un Usuario en la tabla de 
+        /// la BD
+        /// </summary>
+        /// <param name="usuario"></param>
         public void Insertar(Usuario usuario)
         {
             //Paso 1: conexion BD
@@ -27,7 +27,7 @@ namespace Capa.Datos
                 //Abrir la conexion
                 conexion.Open();
                 //Paso 2: Instruccion SP
-                string sql = "SP_Usuario _Insert";
+                string sql = "SP_Usuario_Insert";
 
                 //Paso 3: Comando para ejecutar el paso 2
                 SqlCommand comando = new SqlCommand(sql, conexion);
@@ -35,7 +35,7 @@ namespace Capa.Datos
                 //Paso 4: Enviar los parametros
                 comando.Parameters.AddWithValue("@Id", usuario.id);
                 comando.Parameters.AddWithValue("@contrasenna", usuario.Contrasenna);
-                comando.Parameters.AddWithValue("@id_Rol", usuario.Roll);
+                comando.Parameters.AddWithValue("@ID_ROL", usuario.Rol.id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -75,7 +75,7 @@ namespace Capa.Datos
                 //Paso 4: Enviar los parametros
                 comando.Parameters.AddWithValue("@Id", usuario.id);
                 comando.Parameters.AddWithValue("@contrasenna", usuario.Contrasenna);
-                comando.Parameters.AddWithValue("@id_Roll", usuario.Roll);
+                comando.Parameters.AddWithValue("@id_Roll", usuario.Rol.id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -169,7 +169,9 @@ namespace Capa.Datos
                     {
                         id = Convert.ToInt32(reader["Id"]),
                         Contrasenna = reader["contrasenna"].ToString(),
-                        Roll = Convert.ToInt32(reader["id_Rol"])
+                        //Roll = Convert.ToInt32(reader["id_Rol"]),
+                        Rol = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Rol"]))
+
                     };
 
 
@@ -220,7 +222,7 @@ namespace Capa.Datos
                     {
                         id = Convert.ToInt32(reader["Id"]),
                         Contrasenna = reader["contrasenna"].ToString(),
-                        Roll = Convert.ToInt32(reader["id_Rll"])
+                        Rol = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
                     };
 
                     lista.Add(usua);

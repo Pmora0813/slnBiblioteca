@@ -50,11 +50,7 @@ namespace Capa.UI.Mantenimientos
                     F_Nacimiento = Convert.ToDateTime(dtpF_Nacimiento.Value),
                     Telefono = Convert.ToInt32(mskTelefono.Text),
                     Activo = chkActivo.Checked,
-                    IdRol = 3,
-
-
-
-
+                    IdRol = 3
                 };
                 estudiante.Contrasenna = estudiante.IdCedula.ToString().Substring(0, 4) + estudiante.Nombre.Substring(0, 4);
 

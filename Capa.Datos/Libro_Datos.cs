@@ -34,9 +34,8 @@ namespace Capa.Datos
                 //Paso 4: Enviar los parametros
                 comando.Parameters.AddWithValue("@Id", libro.Id);
                 comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
-                comando.Parameters.AddWithValue("@disponibles", libro.Cant_Disponibles);
                 comando.Parameters.AddWithValue("@QR", libro.Qr);
-                comando.Parameters.AddWithValue("@id_Editorial",libro.IdEditorial);
+                comando.Parameters.AddWithValue("@id_Editorial",libro.Editorial.Id);
 
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
@@ -77,9 +76,8 @@ namespace Capa.Datos
                 //Paso 4: Enviar los parametros
                 comando.Parameters.AddWithValue("@Id", libro.Id);
                 comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
-                comando.Parameters.AddWithValue("@disponibles", libro.Cant_Disponibles);
                 comando.Parameters.AddWithValue("@QR", libro.Qr);
-                comando.Parameters.AddWithValue("@id_Editorial", libro.IdEditorial);
+                comando.Parameters.AddWithValue("@id_Editorial", libro.Editorial.Id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -173,9 +171,8 @@ namespace Capa.Datos
                     {
                         Id = Convert.ToInt32(reader["Id"]),
                         Titulo = reader["titulo"].ToString(),
-                        Cant_Disponibles = Convert.ToInt32(reader["disponibles"]),
                         Qr = reader["QR"].ToString(),
-                        IdEditorial = Convert.ToInt32(reader["id_Editorial"])
+                        Editorial = new Editorial_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Editorial"]))
                   
                     };
 
@@ -227,9 +224,8 @@ namespace Capa.Datos
                     {
                         Id = Convert.ToInt32(reader["Id"]),
                         Titulo = reader["titulo"].ToString(),
-                        Cant_Disponibles = Convert.ToInt32(reader["disponibles"]),
                         Qr = reader["QR"].ToString(),
-                        IdEditorial = Convert.ToInt32(reader["id_Editorial"])
+                        Editorial = new Editorial_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Editorial"]))
                     };
 
                     lista.Add(lib);

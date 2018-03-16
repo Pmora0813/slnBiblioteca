@@ -36,7 +36,7 @@ namespace Capa.Datos
                 {
                     Roll roll = new Roll
                     {
-                        id = Convert.ToInt32(reader["Id"]),
+                        id = Convert.ToInt32(reader["id"]),
                         descripcion = reader["descripcion"].ToString()
                     };
 
@@ -55,6 +55,55 @@ namespace Capa.Datos
 
             return lista;
 
+
+        }
+
+        public Roll SeleccionarPorID(int Id)
+        {
+            Roll rol = null;
+
+            //Paso 1: conexion BD
+            SqlConnection conexion = new SqlConnection(Conexion.Cadena);
+
+            try
+            {
+                //Abrir la conexion
+                conexion.Open();
+                //Paso 2: Instruccion
+                string sql = "SP_Roles_SelectRow";
+
+                //Paso 3: Comando para ejecutar el paso 2
+                SqlCommand comando = new SqlCommand(sql, conexion);
+
+                comando.Parameters.AddWithValue("@Id", Id);
+
+                //Paso 4.1: Usar el Procedimineto Almacenado
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //Paso 5: Ejecutar el Comando que permite obtener registros de la tabla
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    rol = new Roll
+                    {
+                        id = Convert.ToInt32(reader["Id"]),
+                        descripcion = reader["descripcion"].ToString()
+                    };
+
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return rol;
 
         }
     }

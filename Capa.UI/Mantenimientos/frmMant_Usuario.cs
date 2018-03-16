@@ -26,6 +26,7 @@ namespace Capa.UI.Mantenimientos
         {
             try
             {
+                llenarComboRoles();
                 Refrescar();
             }
             catch (Exception ex)
@@ -33,6 +34,13 @@ namespace Capa.UI.Mantenimientos
 
                 MessageBox.Show("Error: " + ex.Message, escuela, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void llenarComboRoles()
+        {
+            cmbRoles.DataSource = new Rol_Logica().SeleccionarTodos();
+            cmbRoles.DisplayMember = "descripcion";
+            cmbRoles.ValueMember = "id";
         }
 
         private void Refrescar()
@@ -44,13 +52,13 @@ namespace Capa.UI.Mantenimientos
         {
             try
             {
-                Roll rol = (Roll)cmbRoles.SelectedItem;
+         
                 Usuario usua = new Usuario()
                 {
                     id = int.Parse(mskUsuaro.Text),
                     Contrasenna = mskContrasenna.Text,
-                    Roll = Convert.ToInt32(rol.id)
-                };
+                    Rol = (Roll)cmbRoles.SelectedItem
+            };
                 Logica.guardar(usua);
                 Refrescar();
                 MessageBox.Show("Usuario guardado con Exito", escuela, MessageBoxButtons.OK, MessageBoxIcon.Information);

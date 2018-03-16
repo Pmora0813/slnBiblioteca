@@ -27,7 +27,7 @@ namespace Capa.Logica
             Datos.Autor_Datos datos = new Datos.Autor_Datos();
             return datos.SeleccionarTodos();
         }
-        public Autor SeleccionarCategoriaPorId(int Id)
+        public Autor SeleccionarAutorPorId(int Id)
         {
             Datos.Autor_Datos datos = new Datos.Autor_Datos();
             return datos.SeleccionarPorID(Id);

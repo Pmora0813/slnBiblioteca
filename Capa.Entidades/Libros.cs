@@ -10,10 +10,9 @@ namespace Capa.Entidades
     {
         public int Id { get; set; }
         public string Titulo { get; set; }
-        public int Cant_Disponibles { get; set; }
         public string Qr { get; set; }
-        public int IdEditorial { get; set; }
-        public List<Autor> Autor { get; set; }
+        public Editorial Editorial { get; set; }
+        public List<Autor> Lista { get; set; }
         
     }
 }

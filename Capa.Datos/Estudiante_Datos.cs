@@ -1,7 +1,12 @@
 ﻿using Capa.Entidades;
+using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Render;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -254,6 +259,7 @@ namespace Capa.Datos
                         QR = reader["QR"].ToString(),
                         IdRol = Convert.ToInt32(reader["ID_ROL"])
                     };
+                    
 
                     lista.Add(estudiante);
 

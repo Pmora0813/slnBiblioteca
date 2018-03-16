@@ -40,8 +40,8 @@
             this.txtEmai = new System.Windows.Forms.TextBox();
             this.txtSeccion = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnMasculino = new System.Windows.Forms.RadioButton();
             this.rbtnFemenino = new System.Windows.Forms.RadioButton();
+            this.rbtnMasculino = new System.Windows.Forms.RadioButton();
             this.dtpF_Nacimiento = new System.Windows.Forms.DateTimePicker();
             this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
             this.chkActivo = new System.Windows.Forms.CheckBox();
@@ -54,6 +54,7 @@
             this.contrasenna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.F_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdRoll = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEstudiantes)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(23, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 20);
+            this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cedula";
             // 
@@ -72,7 +73,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(23, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
             // 
@@ -81,7 +82,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(23, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Sección";
             // 
@@ -90,7 +91,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(23, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.Size = new System.Drawing.Size(42, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Email";
             // 
@@ -99,7 +100,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(309, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 20);
+            this.label5.Size = new System.Drawing.Size(141, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Fecha de Nacimiento";
             // 
@@ -108,7 +109,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(309, 64);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 20);
+            this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Teléfono";
             // 
@@ -117,7 +118,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(309, 106);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 20);
+            this.label7.Size = new System.Drawing.Size(52, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Codigo";
             // 
@@ -126,7 +127,7 @@
             this.mskCedula.Location = new System.Drawing.Point(101, 17);
             this.mskCedula.Mask = "0-0000-0000";
             this.mskCedula.Name = "mskCedula";
-            this.mskCedula.Size = new System.Drawing.Size(103, 27);
+            this.mskCedula.Size = new System.Drawing.Size(103, 23);
             this.mskCedula.TabIndex = 10;
             this.mskCedula.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -134,21 +135,21 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(101, 57);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(179, 27);
+            this.txtNombre.Size = new System.Drawing.Size(179, 23);
             this.txtNombre.TabIndex = 11;
             // 
             // txtEmai
             // 
             this.txtEmai.Location = new System.Drawing.Point(101, 99);
             this.txtEmai.Name = "txtEmai";
-            this.txtEmai.Size = new System.Drawing.Size(179, 27);
+            this.txtEmai.Size = new System.Drawing.Size(179, 23);
             this.txtEmai.TabIndex = 12;
             // 
             // txtSeccion
             // 
             this.txtSeccion.Location = new System.Drawing.Point(101, 143);
             this.txtSeccion.Name = "txtSeccion";
-            this.txtSeccion.Size = new System.Drawing.Size(103, 27);
+            this.txtSeccion.Size = new System.Drawing.Size(103, 23);
             this.txtSeccion.TabIndex = 13;
             // 
             // groupBox1
@@ -162,34 +163,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Genero";
             // 
-            // rbtnMasculino
-            // 
-            this.rbtnMasculino.AutoSize = true;
-            this.rbtnMasculino.Location = new System.Drawing.Point(6, 26);
-            this.rbtnMasculino.Name = "rbtnMasculino";
-            this.rbtnMasculino.Size = new System.Drawing.Size(106, 24);
-            this.rbtnMasculino.TabIndex = 0;
-            this.rbtnMasculino.TabStop = true;
-            this.rbtnMasculino.Text = "Masculino";
-            this.rbtnMasculino.UseVisualStyleBackColor = true;
-            // 
             // rbtnFemenino
             // 
             this.rbtnFemenino.AutoSize = true;
             this.rbtnFemenino.Location = new System.Drawing.Point(135, 26);
             this.rbtnFemenino.Name = "rbtnFemenino";
-            this.rbtnFemenino.Size = new System.Drawing.Size(103, 24);
+            this.rbtnFemenino.Size = new System.Drawing.Size(88, 21);
             this.rbtnFemenino.TabIndex = 1;
             this.rbtnFemenino.TabStop = true;
             this.rbtnFemenino.Text = "Femenino";
             this.rbtnFemenino.UseVisualStyleBackColor = true;
+            // 
+            // rbtnMasculino
+            // 
+            this.rbtnMasculino.AutoSize = true;
+            this.rbtnMasculino.Location = new System.Drawing.Point(6, 26);
+            this.rbtnMasculino.Name = "rbtnMasculino";
+            this.rbtnMasculino.Size = new System.Drawing.Size(89, 21);
+            this.rbtnMasculino.TabIndex = 0;
+            this.rbtnMasculino.TabStop = true;
+            this.rbtnMasculino.Text = "Masculino";
+            this.rbtnMasculino.UseVisualStyleBackColor = true;
             // 
             // dtpF_Nacimiento
             // 
             this.dtpF_Nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpF_Nacimiento.Location = new System.Drawing.Point(482, 17);
             this.dtpF_Nacimiento.Name = "dtpF_Nacimiento";
-            this.dtpF_Nacimiento.Size = new System.Drawing.Size(132, 27);
+            this.dtpF_Nacimiento.Size = new System.Drawing.Size(132, 23);
             this.dtpF_Nacimiento.TabIndex = 15;
             // 
             // mskTelefono
@@ -197,7 +198,7 @@
             this.mskTelefono.Location = new System.Drawing.Point(388, 64);
             this.mskTelefono.Mask = "0000-00-00";
             this.mskTelefono.Name = "mskTelefono";
-            this.mskTelefono.Size = new System.Drawing.Size(97, 27);
+            this.mskTelefono.Size = new System.Drawing.Size(97, 23);
             this.mskTelefono.TabIndex = 16;
             this.mskTelefono.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -206,7 +207,7 @@
             this.chkActivo.AutoSize = true;
             this.chkActivo.Location = new System.Drawing.Point(511, 67);
             this.chkActivo.Name = "chkActivo";
-            this.chkActivo.Size = new System.Drawing.Size(77, 24);
+            this.chkActivo.Size = new System.Drawing.Size(65, 21);
             this.chkActivo.TabIndex = 17;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseVisualStyleBackColor = true;
@@ -227,7 +228,8 @@
             this.Nombre,
             this.contrasenna,
             this.F_Nacimiento,
-            this.IdRoll});
+            this.IdRoll,
+            this.QR});
             this.dtgEstudiantes.Location = new System.Drawing.Point(27, 290);
             this.dtgEstudiantes.MultiSelect = false;
             this.dtgEstudiantes.Name = "dtgEstudiantes";
@@ -293,9 +295,18 @@
             this.IdRoll.Name = "IdRoll";
             this.IdRoll.ReadOnly = true;
             // 
+            // QR
+            // 
+            this.QR.DataPropertyName = "QR";
+            this.QR.HeaderText = "Codigo QR";
+            this.QR.Name = "QR";
+            this.QR.ReadOnly = true;
+            this.QR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // frmMant_Estudiante
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 475);
             this.Controls.Add(this.btnEliminar);
@@ -318,7 +329,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMant_Estudiante";
@@ -361,5 +372,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn contrasenna;
         private System.Windows.Forms.DataGridViewTextBoxColumn F_Nacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdRoll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QR;
     }
 }

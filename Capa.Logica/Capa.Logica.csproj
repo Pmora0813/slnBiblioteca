@@ -45,6 +45,7 @@
     <Compile Include="Editorial_Logica.cs" />
     <Compile Include="Estudiante_Logica.cs" />
     <Compile Include="Libro_Autor_Logica.cs" />
+    <Compile Include="Libro_Logica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol_Logica.cs" />
     <Compile Include="Usuario_Logica.cs" />

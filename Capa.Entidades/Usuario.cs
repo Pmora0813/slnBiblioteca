@@ -10,7 +10,7 @@ namespace Capa.Entidades
     {
         public int id { get; set; }
         public string Contrasenna { get; set; }
-        public int Roll { get; set; }
+        public Roll Rol { get; set; }
     }
 }
 

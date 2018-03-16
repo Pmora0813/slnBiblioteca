@@ -44,6 +44,15 @@ namespace Capa.UI.Mantenimientos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Libros libro = new Libros()
+            {
+                Id = Convert.ToInt32(txtCodigo.Text),
+                Titulo = txtNombre.Text,
+                Editorial = (Editorial)cbmEditoriales.SelectedItem,
+                Lista =  (Autor) cbmAutores.SelectedItem,
+
+            };
+
             QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
             QrCode qrCode = new QrCode();
             qrEncoder.TryEncode(txtCodigo.Text, out qrCode);
@@ -66,9 +75,7 @@ namespace Capa.UI.Mantenimientos
         {
             Libro_Autor_Logica Logica = new Libro_Autor_Logica();
 
-            Autor aut = (Autor)cbmAutores.SelectedItem;
-
-            Logica.guardar(Convert.ToInt32(txtCodigo.Text), aut.Id);
+            Logica.guardar(Convert.ToInt32(txtCodigo.Text), ((Autor)cbmAutores.SelectedItem).Id);
 
         }
     }
