@@ -63,29 +63,7 @@ namespace Capa.UI.Mantenimientos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (npdID.Value <= 0)
-            {
-                MessageBox.Show("No hay Autores para Eliminar", escuela, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-
-            }
-            try
-            {
-                DialogResult resultado = MessageBox.Show("Esta Seguro?", escuela, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
-                if (resultado == DialogResult.Yes)
-                {
-                    Logica.Eliminar(Convert.ToInt32(npdID.Text));
-                    MessageBox.Show("Autor eliminado con Exito", escuela, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                Refrescar();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, escuela, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                     
         }
 
         private void dtgAutores_SelectionChanged(object sender, EventArgs e)

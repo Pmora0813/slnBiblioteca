@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Capa.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -7,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-    public class Libro_Autor_Datos 
+    public class Libro_Autor_Datos
     {
         /// <summary>
         /// Insertamos un Autor en la Tabla
         /// de la BD
         /// </summary>
-        /// <param name="idLibro"></param>
-        /// <param name="idAut"></param>
-        public void Insertar(int idLibro, int idAut)
+        /// <param name="libro"></param>
+        /// <param name="autor"></param>
+        public void Insertar(Libros libro, Autor autor)
         {
             //Paso 1: conexion BD
             SqlConnection conexion = new SqlConnection(Conexion.Cadena);
@@ -32,8 +33,8 @@ namespace Capa.Datos
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
                 //Paso 4: Enviar los parametros
-                comando.Parameters.AddWithValue("@ID_LIBRO", idLibro);
-                comando.Parameters.AddWithValue("@ID_AUTOR", idAut);
+                comando.Parameters.AddWithValue("@ID_LIBRO", libro.Id);
+                comando.Parameters.AddWithValue("@ID_AUTOR", autor.Id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -55,7 +56,7 @@ namespace Capa.Datos
         /// en la BD por el id 
         /// </summary>
         /// <param name="id"></param>
-        public void Eliminar(int IdLibro,int idAutor)
+        public void Eliminar(Libros libro, Autor autor)
         {
 
             //Paso 1: conexion BD
@@ -72,8 +73,8 @@ namespace Capa.Datos
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
                 //Paso 4: Enviar los parametros
-                comando.Parameters.AddWithValue("@ID_LIBRO", IdLibro);
-                comando.Parameters.AddWithValue("@ID_AUTOR", idAutor);
+                comando.Parameters.AddWithValue("@ID_LIBRO", libro.Id);
+                comando.Parameters.AddWithValue("@ID_AUTOR", autor.Id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -89,6 +90,56 @@ namespace Capa.Datos
             {
                 conexion.Close();
             }
+        }
+
+
+        public List<Autor> SeleccionarAutorPorLibro(int idPorv)
+        {
+            List<Autor> lista = new List<Autor>();
+
+            //Paso 1: conexion BD
+            SqlConnection conexion = new SqlConnection(Conexion.Cadena);
+
+            try
+            {
+                //Abrir la conexion
+                conexion.Open();
+                //Paso 2: Instruccion
+                string sql = "SP_Autor_Por_LibroID";
+
+                //Paso 3: Comando para ejecutar el paso 2
+                SqlCommand comando = new SqlCommand(sql, conexion);
+
+                //Paso 4.1: Usar el Procedimineto Almacenado
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id", idPorv);
+
+                //Paso 5: Ejecutar el Comando que permite obtener registros de la tabla
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    Autor autor = new Autor
+                    {
+                        Id = Convert.ToInt32(reader["Id"]),
+                        Nombre = reader["Nombre"].ToString()
+                    };
+
+                    lista.Add(autor);
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return lista;
+
+
         }
     }
 }

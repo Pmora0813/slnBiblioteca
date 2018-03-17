@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Capa.Logica
 {
-    public class Libro_Logica : I_CRUD<Libros>
+    public class Libro_Logica 
     {
         public void Actualizar(Libros obj)
         {

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-    public class Estudiante_Datos :I_CRUD<Estudiante>
+    public class Estudiante_Datos : I_CRUD<Estudiante>
     {
         /// <summary>
         /// Insertamos un Autor en la Tabla
@@ -47,7 +47,7 @@ namespace Capa.Datos
                 comando.Parameters.AddWithValue("@telefono", estudiante.Telefono);
                 comando.Parameters.AddWithValue("@activo", estudiante.Activo);
                 comando.Parameters.AddWithValue("@QR", estudiante.QR);
-                comando.Parameters.AddWithValue("@ID_ROL", estudiante.IdRol);
+                comando.Parameters.AddWithValue("@ID_ROL", estudiante.Roll.id);
 
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
@@ -96,7 +96,7 @@ namespace Capa.Datos
                 comando.Parameters.AddWithValue("@telefono", estudiante.Telefono);
                 comando.Parameters.AddWithValue("@activo", estudiante.Activo);
                 comando.Parameters.AddWithValue("@QR", estudiante.QR);
-                comando.Parameters.AddWithValue("@ID_ROL", estudiante.IdRol);
+                comando.Parameters.AddWithValue("@ID_ROL", estudiante.Roll.id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -198,7 +198,7 @@ namespace Capa.Datos
                         Telefono = Convert.ToInt32(reader["telefono"]),
                         Activo = Convert.ToBoolean(reader["activo"]),
                         QR = reader["QR"].ToString(),
-                        IdRol = Convert.ToInt32(reader["ID_ROL"])
+                        Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
                     };
 
 
@@ -257,9 +257,9 @@ namespace Capa.Datos
                         Telefono = Convert.ToInt32(reader["telefono"]),
                         Activo = Convert.ToBoolean(reader["activo"]),
                         QR = reader["QR"].ToString(),
-                        IdRol = Convert.ToInt32(reader["ID_ROL"])
+                        Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
                     };
-                    
+
 
                     lista.Add(estudiante);
 

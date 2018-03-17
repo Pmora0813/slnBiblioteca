@@ -20,10 +20,12 @@ namespace Capa.UI.Mantenimientos
     {
         private string escuela = "Escuela Platanares";
         Estudiante_Logica Logica = null;
+
         public frmMant_Estudiante()
         {
             InitializeComponent();
             Logica = new Estudiante_Logica();
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -50,7 +52,7 @@ namespace Capa.UI.Mantenimientos
                     F_Nacimiento = Convert.ToDateTime(dtpF_Nacimiento.Value),
                     Telefono = Convert.ToInt32(mskTelefono.Text),
                     Activo = chkActivo.Checked,
-                    IdRol = 3
+                    Roll = new Rol_Logica().SeleccionarRollPorId(Convert.ToInt32("3"))
                 };
                 estudiante.Contrasenna = estudiante.IdCedula.ToString().Substring(0, 4) + estudiante.Nombre.Substring(0, 4);
 
@@ -90,9 +92,11 @@ namespace Capa.UI.Mantenimientos
 
         private void frmMant_Estudiante_Load(object sender, EventArgs e)
         {
+
             try
             {
                 Refrescar();
+
             }
             catch (Exception ex)
             {
@@ -104,6 +108,8 @@ namespace Capa.UI.Mantenimientos
         private void Refrescar()
         {
             dtgEstudiantes.DataSource = Logica.SeleccionarTodos();
+            
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

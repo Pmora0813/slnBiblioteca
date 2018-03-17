@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Capa.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Capa.Logica
 {
     public class Libro_Autor_Logica
     {
-        public void guardar(int idLibro, int idAut)
+        public void guardar(Libros idLibro, Autor idAut)
         {
             if (String.IsNullOrWhiteSpace(idLibro.ToString()))
             {
@@ -20,15 +21,21 @@ namespace Capa.Logica
                 throw new ApplicationException("El Codigo del Autor es requerido");
             }
             Datos.Libro_Autor_Datos datos = new Datos.Libro_Autor_Datos();
-           
-                datos.Insertar(idLibro,idAut);
-            
+
+            datos.Insertar(idLibro, idAut);
+
         }
 
-        public void Eliminar(int idLibro, int idAut)
+        public void Eliminar(Libros idLibro, Autor idAut)
         {
             Datos.Libro_Autor_Datos datos = new Datos.Libro_Autor_Datos();
             datos.Eliminar(idLibro,idAut);
+        }
+
+        public List<Autor> SeleccionarTodos(int id)
+        {
+            Datos.Libro_Autor_Datos datos = new Datos.Libro_Autor_Datos();
+            return datos.SeleccionarAutorPorLibro(id);
         }
     }
 }

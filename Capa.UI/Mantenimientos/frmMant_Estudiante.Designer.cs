@@ -51,9 +51,12 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.IdCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contrasenna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Teléfono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Roll = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.F_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdRoll = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEstudiantes)).BeginInit();
@@ -222,13 +225,18 @@
             // 
             // dtgEstudiantes
             // 
+            this.dtgEstudiantes.AllowUserToDeleteRows = false;
+            this.dtgEstudiantes.AllowUserToResizeColumns = false;
             this.dtgEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCedula,
             this.Nombre,
-            this.contrasenna,
+            this.Genero,
+            this.Teléfono,
+            this.Roll,
             this.F_Nacimiento,
-            this.IdRoll,
+            this.Activo,
+            this.Column1,
             this.QR});
             this.dtgEstudiantes.Location = new System.Drawing.Point(27, 290);
             this.dtgEstudiantes.MultiSelect = false;
@@ -263,7 +271,7 @@
             // IdCedula
             // 
             this.IdCedula.DataPropertyName = "IdCedula";
-            this.IdCedula.HeaderText = "Cedula";
+            this.IdCedula.HeaderText = "Cédula";
             this.IdCedula.Name = "IdCedula";
             this.IdCedula.ReadOnly = true;
             // 
@@ -274,12 +282,26 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
-            // contrasenna
+            // Genero
             // 
-            this.contrasenna.DataPropertyName = "contrasenna";
-            this.contrasenna.HeaderText = "Contraseña";
-            this.contrasenna.Name = "contrasenna";
-            this.contrasenna.ReadOnly = true;
+            this.Genero.DataPropertyName = "genero";
+            this.Genero.HeaderText = "Género";
+            this.Genero.Name = "Genero";
+            this.Genero.ReadOnly = true;
+            // 
+            // Teléfono
+            // 
+            this.Teléfono.DataPropertyName = "Telefono";
+            this.Teléfono.HeaderText = "Teléfono";
+            this.Teléfono.Name = "Teléfono";
+            this.Teléfono.ReadOnly = true;
+            // 
+            // Roll
+            // 
+            this.Roll.DataPropertyName = "Roll";
+            this.Roll.HeaderText = "Tipo";
+            this.Roll.Name = "Roll";
+            this.Roll.ReadOnly = true;
             // 
             // F_Nacimiento
             // 
@@ -288,12 +310,22 @@
             this.F_Nacimiento.Name = "F_Nacimiento";
             this.F_Nacimiento.ReadOnly = true;
             // 
-            // IdRoll
+            // Activo
             // 
-            this.IdRoll.DataPropertyName = "idRol";
-            this.IdRoll.HeaderText = "Tipo";
-            this.IdRoll.Name = "IdRoll";
-            this.IdRoll.ReadOnly = true;
+            this.Activo.DataPropertyName = "Activo";
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "contrasenna";
+            this.Column1.HeaderText = "Contraseña";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
             // QR
             // 
@@ -303,6 +335,7 @@
             this.QR.ReadOnly = true;
             this.QR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.QR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QR.Visible = false;
             // 
             // frmMant_Estudiante
             // 
@@ -364,14 +397,17 @@
         private System.Windows.Forms.MaskedTextBox mskTelefono;
         private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dtgEstudiantes;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridView dtgEstudiantes;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contrasenna;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Teléfono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Roll;
         private System.Windows.Forms.DataGridViewTextBoxColumn F_Nacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdRoll;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn QR;
     }
 }

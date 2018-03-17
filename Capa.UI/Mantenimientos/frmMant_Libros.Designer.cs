@@ -30,48 +30,54 @@
         {
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.QR = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cbmEditoriales = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgLibros = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbmAutores = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAutores = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtCodigo = new System.Windows.Forms.MaskedTextBox();
+            this.btnMostrar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgLibros)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(13, 182);
+            this.btnNuevo.Location = new System.Drawing.Point(16, 218);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(146, 41);
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.button1_Click);
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(228, 182);
+            this.btnEliminar.Location = new System.Drawing.Point(231, 218);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(146, 41);
             this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // panel1
+            // QR
             // 
-            this.panel1.Location = new System.Drawing.Point(233, 7);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(145, 124);
-            this.panel1.TabIndex = 3;
+            this.QR.Location = new System.Drawing.Point(233, 7);
+            this.QR.Margin = new System.Windows.Forms.Padding(4);
+            this.QR.Name = "QR";
+            this.QR.Size = new System.Drawing.Size(145, 124);
+            this.QR.TabIndex = 3;
             // 
             // label1
             // 
@@ -103,14 +109,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Ediorial";
             // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(85, 15);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(109, 23);
-            this.txtCodigo.TabIndex = 9;
-            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(85, 55);
@@ -127,14 +125,52 @@
             this.cbmEditoriales.Size = new System.Drawing.Size(133, 25);
             this.cbmEditoriales.TabIndex = 12;
             // 
-            // dataGridView1
+            // dtgLibros
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 230);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(361, 215);
-            this.dataGridView1.TabIndex = 13;
+            this.dtgLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Column1,
+            this.Nombre,
+            this.id_Editorial});
+            this.dtgLibros.Location = new System.Drawing.Point(16, 266);
+            this.dtgLibros.MultiSelect = false;
+            this.dtgLibros.Name = "dtgLibros";
+            this.dtgLibros.ReadOnly = true;
+            this.dtgLibros.RowTemplate.Height = 24;
+            this.dtgLibros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgLibros.Size = new System.Drawing.Size(361, 215);
+            this.dtgLibros.TabIndex = 13;
+            this.dtgLibros.SelectionChanged += new System.EventHandler(this.dtgLibros_SelectionChanged);
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "id";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "QR";
+            this.Column1.HeaderText = "Codigo QR";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "titulo";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // id_Editorial
+            // 
+            this.id_Editorial.DataPropertyName = "Editorial";
+            this.id_Editorial.HeaderText = "Editorial";
+            this.id_Editorial.Name = "id_Editorial";
+            this.id_Editorial.ReadOnly = true;
             // 
             // cbmAutores
             // 
@@ -165,22 +201,42 @@
             this.btnAutores.UseVisualStyleBackColor = true;
             this.btnAutores.Click += new System.EventHandler(this.btnAutores_Click);
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(85, 15);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(74, 23);
+            this.txtCodigo.TabIndex = 17;
+            this.txtCodigo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // btnMostrar
+            // 
+            this.btnMostrar.Location = new System.Drawing.Point(233, 181);
+            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(117, 25);
+            this.btnMostrar.TabIndex = 18;
+            this.btnMostrar.Text = "Mostrar";
+            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
             // frmMant_Libros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 467);
+            this.ClientSize = new System.Drawing.Size(390, 495);
+            this.Controls.Add(this.btnMostrar);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnAutores);
             this.Controls.Add(this.cbmAutores);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgLibros);
             this.Controls.Add(this.cbmEditoriales);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.QR);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,7 +245,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Libros";
             this.Load += new System.EventHandler(this.frmMant_Libros_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgLibros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,16 +255,21 @@
 
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel QR;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cbmEditoriales;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgLibros;
         private System.Windows.Forms.ComboBox cbmAutores;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAutores;
+        private System.Windows.Forms.MaskedTextBox txtCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Editorial;
+        private System.Windows.Forms.Button btnMostrar;
     }
 }

@@ -19,6 +19,6 @@ namespace Capa.Entidades
         public int Telefono { get; set; }
         public bool Activo { get; set; }
         public string QR { get; set; }
-        public int IdRol { get; set; }
+        public Roll Roll { get; set; }
     }
 }

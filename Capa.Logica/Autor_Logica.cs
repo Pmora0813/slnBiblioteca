@@ -27,6 +27,7 @@ namespace Capa.Logica
             Datos.Autor_Datos datos = new Datos.Autor_Datos();
             return datos.SeleccionarTodos();
         }
+
         public Autor SeleccionarAutorPorId(int Id)
         {
             Datos.Autor_Datos datos = new Datos.Autor_Datos();
@@ -37,6 +38,23 @@ namespace Capa.Logica
         {
             Datos.Autor_Datos datos = new Datos.Autor_Datos();
             datos.Eliminar(Id);
+        }
+
+        /// <summary>
+        /// Metodos de la tabla de Libro Autores
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public List<Autor> SeleccionarAutorPorLibro(int Id)
+        {
+            Datos.Libro_Autor_Datos datos = new Datos.Libro_Autor_Datos();
+            return datos.SeleccionarAutorPorLibro(Id);
+        }
+
+        public void AgregarProveedor(Libros libro, Autor autor)
+        {
+            Datos.Libro_Autor_Datos datos = new Datos.Libro_Autor_Datos();
+            datos.Insertar(libro, autor);
         }
     }
 }

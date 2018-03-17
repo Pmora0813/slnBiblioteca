@@ -14,5 +14,11 @@ namespace Capa.Logica
             Datos.Rol_Datos datos = new Datos.Rol_Datos();
             return datos.SeleccionarRoles();
         }
+
+        public Roll SeleccionarRollPorId(int Id)
+        {
+            Datos.Rol_Datos datos = new Datos.Rol_Datos();
+            return datos.SeleccionarPorID(Id);
+        }
     }
 }

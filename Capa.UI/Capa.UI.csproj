@@ -56,6 +56,12 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmAutor_Libros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmAutor_Libros.Designer.cs">
+      <DependentUpon>frmAutor_Libros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmMant_Autor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmAutor_Libros.resx">
+      <DependentUpon>frmAutor_Libros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmMant_Autor.resx">
       <DependentUpon>frmMant_Autor.cs</DependentUpon>

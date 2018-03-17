@@ -38,8 +38,6 @@
             this.Categoria = new System.Windows.Forms.Label();
             this.cmbRoles = new System.Windows.Forms.ComboBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contrasenna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -49,8 +47,6 @@
             this.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Nombre,
-            this.Contrasenna,
             this.id_Rol});
             this.dtgUsuarios.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtgUsuarios.Location = new System.Drawing.Point(13, 213);
@@ -148,23 +144,9 @@
             this.id.ReadOnly = true;
             this.id.Width = 70;
             // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Contrasenna
-            // 
-            this.Contrasenna.DataPropertyName = "Contrasenna";
-            this.Contrasenna.HeaderText = "Contraseña";
-            this.Contrasenna.Name = "Contrasenna";
-            this.Contrasenna.ReadOnly = true;
-            // 
             // id_Rol
             // 
-            this.id_Rol.DataPropertyName = "id_Rol";
+            this.id_Rol.DataPropertyName = "Rol";
             this.id_Rol.HeaderText = "Tipo";
             this.id_Rol.Name = "id_Rol";
             this.id_Rol.ReadOnly = true;
@@ -209,8 +191,6 @@
         private System.Windows.Forms.Label Categoria;
         private System.Windows.Forms.ComboBox cmbRoles;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contrasenna;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Rol;
     }
 }
