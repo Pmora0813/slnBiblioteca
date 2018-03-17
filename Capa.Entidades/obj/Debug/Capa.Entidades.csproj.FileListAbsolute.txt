@@ -1,0 +1,5 @@
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Entidades\bin\Debug\Capa.Entidades.dll
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Entidades\bin\Debug\Capa.Entidades.pdb
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Entidades\obj\Debug\Capa.Entidades.dll
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Entidades\obj\Debug\Capa.Entidades.pdb
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Entidades\obj\Debug\Capa.Entidades.csprojResolveAssemblyReference.cache
