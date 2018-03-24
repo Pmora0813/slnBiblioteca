@@ -63,27 +63,7 @@ namespace Capa.UI.Mantenimientos
             cbmEditoriales.DisplayMember = "Nombre";
         }
 
-
-        private void btnAutores_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Libros lib = Logica.SeleccionarPorID(Convert.ToInt32(txtCodigo.Text));
-                Autor aut = (Autor)cbmAutores.SelectedItem;
-
-                Libro_Autor_Logica Logica2 = new Libro_Autor_Logica();
-
-                
-
-                Logica2.guardar(lib, aut);
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
+        
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {

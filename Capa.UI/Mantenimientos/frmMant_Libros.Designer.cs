@@ -43,15 +43,13 @@
             this.id_Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbmAutores = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnAutores = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.MaskedTextBox();
-            this.btnMostrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLibros)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(16, 218);
+            this.btnNuevo.Location = new System.Drawing.Point(16, 180);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(146, 41);
@@ -62,7 +60,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(231, 218);
+            this.btnEliminar.Location = new System.Drawing.Point(231, 180);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(146, 41);
@@ -133,7 +131,7 @@
             this.Column1,
             this.Nombre,
             this.id_Editorial});
-            this.dtgLibros.Location = new System.Drawing.Point(16, 266);
+            this.dtgLibros.Location = new System.Drawing.Point(16, 228);
             this.dtgLibros.MultiSelect = false;
             this.dtgLibros.Name = "dtgLibros";
             this.dtgLibros.ReadOnly = true;
@@ -190,17 +188,6 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Autor";
             // 
-            // btnAutores
-            // 
-            this.btnAutores.Location = new System.Drawing.Point(233, 137);
-            this.btnAutores.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAutores.Name = "btnAutores";
-            this.btnAutores.Size = new System.Drawing.Size(117, 25);
-            this.btnAutores.TabIndex = 16;
-            this.btnAutores.Text = "Agregar";
-            this.btnAutores.UseVisualStyleBackColor = true;
-            this.btnAutores.Click += new System.EventHandler(this.btnAutores_Click);
-            // 
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(85, 15);
@@ -209,25 +196,12 @@
             this.txtCodigo.TabIndex = 17;
             this.txtCodigo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // btnMostrar
-            // 
-            this.btnMostrar.Location = new System.Drawing.Point(233, 181);
-            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(117, 25);
-            this.btnMostrar.TabIndex = 18;
-            this.btnMostrar.Text = "Mostrar";
-            this.btnMostrar.UseVisualStyleBackColor = true;
-            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
-            // 
             // frmMant_Libros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 495);
-            this.Controls.Add(this.btnMostrar);
+            this.ClientSize = new System.Drawing.Size(390, 456);
             this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.btnAutores);
             this.Controls.Add(this.cbmAutores);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtgLibros);
@@ -264,12 +238,10 @@
         private System.Windows.Forms.DataGridView dtgLibros;
         private System.Windows.Forms.ComboBox cbmAutores;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnAutores;
         private System.Windows.Forms.MaskedTextBox txtCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Editorial;
-        private System.Windows.Forms.Button btnMostrar;
     }
 }

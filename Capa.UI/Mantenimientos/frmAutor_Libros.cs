@@ -14,25 +14,101 @@ namespace Capa.UI.Mantenimientos
 {
     public partial class frmLibros_Autores : Form
     {
-        Libro_Logica Logica = null;
+        Libro_Logica Libro_Logica = null;
+        Libro_Autor_Logica Logica_Lib_Aut = null;
         public frmLibros_Autores()
         {
             InitializeComponent();
-            Logica = new Libro_Logica();
+            Libro_Logica = new Libro_Logica();
+            Logica_Lib_Aut = new Libro_Autor_Logica();
         }
 
         private void frmLibros_Autores_Load(object sender, EventArgs e)
         {
-            cmbLibros.DataSource = Logica.SeleccionarTodos();
-            cmbLibros.DisplayMember = "titulo";
-            cmbLibros.ValueMember = "id";
+            Refrescar();
+
+
         }
 
-        private void btnMostra_Click(object sender, EventArgs e)
+        private void Refrescar()
         {
-            Libro_Autor_Logica Logica = new Libro_Autor_Logica();
+            try
+            {
+                lstLibros.DisplayMember = "titulo";
+                lstLibros.DataSource = Libro_Logica.SeleccionarTodos();
+            }
+            catch (Exception)
+            {
 
-          dtgLibros_Autores.DataSource = Logica.SeleccionarTodos(((Libros)cmbLibros.SelectedItem).Id);
+                throw;
+            }
+        }
+
+
+        private void lstLibros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstLibros.SelectedItem != null)
+            {
+                lstLibros.DisplayMember = "Nombre";
+                Libros libro = (Libros)lstLibros.SelectedItem;
+
+                lstAutores.DataSource = Logica_Lib_Aut.SeleccionarTodos(libro.Id);
+
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Libros lib = (Libros)lstLibros.SelectedItem;
+                Mantenimientos.frmBuscarAutores ofrm = new frmBuscarAutores();
+                ofrm.ShowDialog();
+
+                Autor aut = ofrm.Autor;
+
+                if (lib != null && aut != null)
+                {
+
+                    Logica_Lib_Aut.guardar(lib, aut);
+
+                    Refrescar();
+                    MessageBox.Show("Se Agrego un Autor al Libro seleccionado");
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Libros lib = (Libros)lstLibros.SelectedItem;
+                Autor aut = (Autor)lstAutores.SelectedItem;
+
+                if (lib != null && aut != null)
+                {
+                    
+                    Logica_Lib_Aut.Eliminar(lib, aut);
+
+                    Refrescar();
+                    MessageBox.Show("Se elimino un Autor del Libro seleccionado");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

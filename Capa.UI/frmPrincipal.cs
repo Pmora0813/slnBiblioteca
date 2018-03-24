@@ -54,5 +54,19 @@ namespace Capa.UI
             Mantenimientos.frmMant_Usuario ofrm = new Mantenimientos.frmMant_Usuario();
             ofrm.Show();
         }
+
+        private void btnAutores_Libro_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frmLibros_Autores ofrm = new Mantenimientos.frmLibros_Autores();
+            ofrm.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            frmLogin ofmr = new frmLogin();
+            ofmr.ShowDialog();
+
+        }
     }
 }

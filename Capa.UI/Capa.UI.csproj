@@ -37,6 +37,7 @@
       <HintPath>..\packages\Gma.QrCodeNet.0.4.1.2\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +68,12 @@
     </Compile>
     <Compile Include="Mantenimientos\frmAutor_Libros.Designer.cs">
       <DependentUpon>frmAutor_Libros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmBuscarAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmBuscarAutores.Designer.cs">
+      <DependentUpon>frmBuscarAutores.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\frmMant_Autor.cs">
       <SubType>Form</SubType>
@@ -100,11 +113,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios_Finales\frmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios_Finales\frmRegistro.Designer.cs">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmAutor_Libros.resx">
       <DependentUpon>frmAutor_Libros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmBuscarAutores.resx">
+      <DependentUpon>frmBuscarAutores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmMant_Autor.resx">
       <DependentUpon>frmMant_Autor.cs</DependentUpon>
@@ -133,6 +158,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Usuarios_Finales\frmRegistro.resx">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,6 +184,9 @@
       <Project>{a84280b4-e93a-408a-bbdb-8b3547881819}</Project>
       <Name>Capa.Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

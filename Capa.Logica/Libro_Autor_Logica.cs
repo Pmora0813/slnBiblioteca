@@ -26,10 +26,10 @@ namespace Capa.Logica
 
         }
 
-        public void Eliminar(Libros idLibro, Autor idAut)
+        public void Eliminar(Libros libro, Autor autor)
         {
             Datos.Libro_Autor_Datos datos = new Datos.Libro_Autor_Datos();
-            datos.Eliminar(idLibro,idAut);
+            datos.Eliminar(libro,autor);
         }
 
         public List<Autor> SeleccionarTodos(int id)

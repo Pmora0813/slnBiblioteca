@@ -95,6 +95,7 @@ namespace Capa.Datos
 
         public List<Autor> SeleccionarAutorPorLibro(int idPorv)
         {
+            Autor autor = null;
             List<Autor> lista = new List<Autor>();
 
             //Paso 1: conexion BD
@@ -118,10 +119,10 @@ namespace Capa.Datos
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    Autor autor = new Autor
+                    autor = new Autor
                     {
                         Id = Convert.ToInt32(reader["Id"]),
-                        Nombre = reader["Nombre"].ToString()
+                        Nombre = reader["descripcion"].ToString()
                     };
 
                     lista.Add(autor);

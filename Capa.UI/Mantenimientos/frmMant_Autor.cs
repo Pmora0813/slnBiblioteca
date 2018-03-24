@@ -63,7 +63,17 @@ namespace Capa.UI.Mantenimientos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-                     
+            try
+            {
+                Logica.Eliminar(Convert.ToInt32(npdID.Text));
+
+                MessageBox.Show("Autor Eliminado con Exito", escuela, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, escuela, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dtgAutores_SelectionChanged(object sender, EventArgs e)

@@ -221,7 +221,7 @@ namespace Capa.Datos
                     Usuario usua = new Usuario
                     {
                         id = Convert.ToInt32(reader["Id"]),
-                        //Contrasenna = reader["contrasenna"].ToString(),
+                        Contrasenna = reader["contrasenna"].ToString(),
                         Rol = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Rol"]))
                     };
 
