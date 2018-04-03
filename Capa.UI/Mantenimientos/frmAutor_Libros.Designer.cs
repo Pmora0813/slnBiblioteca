@@ -117,7 +117,7 @@
             this.MinimizeBox = false;
             this.Name = "frmLibros_Autores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Libros por Autores";
+            this.Text = "Agregar Autores";
             this.Load += new System.EventHandler(this.frmLibros_Autores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

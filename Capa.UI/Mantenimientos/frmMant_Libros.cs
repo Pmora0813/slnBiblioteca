@@ -21,7 +21,7 @@ namespace Capa.UI.Mantenimientos
 
         private string escuela = "Escuela Platanares";
         Libro_Logica Logica = null;
-        
+
         public frmMant_Libros()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace Capa.UI.Mantenimientos
 
         private void frmMant_Libros_Load(object sender, EventArgs e)
         {
-           
+
             try
             {
                 Refrescar();
@@ -63,7 +63,7 @@ namespace Capa.UI.Mantenimientos
             cbmEditoriales.DisplayMember = "Nombre";
         }
 
-        
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -73,6 +73,7 @@ namespace Capa.UI.Mantenimientos
                 {
                     Id = Convert.ToInt32(txtCodigo.Text),
                     Titulo = txtNombre.Text,
+                    anno = Convert.ToInt32(mskAnno.Text),
                     Editorial = (Editorial)cbmEditoriales.SelectedItem
 
                 };
@@ -89,6 +90,7 @@ namespace Capa.UI.Mantenimientos
                 var imageTemporal = new Bitmap(ms);
                 var imagen = new Bitmap(imageTemporal, new Size(new Point(145, 125)));
                 QR.BackgroundImage = imagen;
+
                 libro.Qr = imagen.ToString();
 
                 // Guardar en el disco duro la imagen (Carpeta del proyecto)
@@ -143,6 +145,7 @@ namespace Capa.UI.Mantenimientos
                 Libros libro = (Libros)dtgLibros.SelectedRows[0].DataBoundItem;
                 txtCodigo.Text = libro.Id.ToString();
                 txtNombre.Text = libro.Titulo;
+                mskAnno.Text = libro.anno.ToString();
             }
         }
 

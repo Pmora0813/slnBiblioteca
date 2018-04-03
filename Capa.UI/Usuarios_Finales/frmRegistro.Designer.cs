@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
             this.dtpF_Nacimiento = new System.Windows.Forms.DateTimePicker();
@@ -48,36 +47,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnEliminar
+            // btnRegistrar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(379, 228);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(109, 55);
-            this.btnEliminar.TabIndex = 39;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(243, 228);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(109, 55);
-            this.btnGuardar.TabIndex = 38;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnRegistrar.Location = new System.Drawing.Point(243, 210);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(90, 34);
+            this.btnRegistrar.TabIndex = 38;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // chkActivo
             // 
             this.chkActivo.AutoSize = true;
             this.chkActivo.Location = new System.Drawing.Point(160, 106);
-            this.chkActivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkActivo.Margin = new System.Windows.Forms.Padding(4);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(64, 20);
             this.chkActivo.TabIndex = 36;
@@ -87,7 +76,7 @@
             // mskTelefono
             // 
             this.mskTelefono.Location = new System.Drawing.Point(72, 134);
-            this.mskTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mskTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.mskTelefono.Mask = "0000-00-00";
             this.mskTelefono.Name = "mskTelefono";
             this.mskTelefono.Size = new System.Drawing.Size(80, 22);
@@ -98,7 +87,7 @@
             // 
             this.dtpF_Nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpF_Nacimiento.Location = new System.Drawing.Point(16, 180);
-            this.dtpF_Nacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpF_Nacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dtpF_Nacimiento.Name = "dtpF_Nacimiento";
             this.dtpF_Nacimiento.Size = new System.Drawing.Size(107, 22);
             this.dtpF_Nacimiento.TabIndex = 34;
@@ -108,9 +97,9 @@
             this.groupBox1.Controls.Add(this.rbtnFemenino);
             this.groupBox1.Controls.Add(this.rbtnMasculino);
             this.groupBox1.Location = new System.Drawing.Point(16, 210);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(201, 73);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
@@ -120,7 +109,7 @@
             // 
             this.rbtnFemenino.AutoSize = true;
             this.rbtnFemenino.Location = new System.Drawing.Point(106, 32);
-            this.rbtnFemenino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnFemenino.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnFemenino.Name = "rbtnFemenino";
             this.rbtnFemenino.Size = new System.Drawing.Size(86, 20);
             this.rbtnFemenino.TabIndex = 1;
@@ -132,7 +121,7 @@
             // 
             this.rbtnMasculino.AutoSize = true;
             this.rbtnMasculino.Location = new System.Drawing.Point(8, 32);
-            this.rbtnMasculino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnMasculino.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnMasculino.Name = "rbtnMasculino";
             this.rbtnMasculino.Size = new System.Drawing.Size(87, 20);
             this.rbtnMasculino.TabIndex = 0;
@@ -143,7 +132,7 @@
             // txtSeccion
             // 
             this.txtSeccion.Location = new System.Drawing.Point(72, 104);
-            this.txtSeccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSeccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeccion.Name = "txtSeccion";
             this.txtSeccion.Size = new System.Drawing.Size(80, 22);
             this.txtSeccion.TabIndex = 32;
@@ -151,7 +140,7 @@
             // txtEmai
             // 
             this.txtEmai.Location = new System.Drawing.Point(72, 75);
-            this.txtEmai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmai.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmai.Name = "txtEmai";
             this.txtEmai.Size = new System.Drawing.Size(148, 22);
             this.txtEmai.TabIndex = 31;
@@ -159,7 +148,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(72, 43);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(148, 22);
             this.txtNombre.TabIndex = 30;
@@ -167,7 +156,7 @@
             // mskCedula
             // 
             this.mskCedula.Location = new System.Drawing.Point(75, 13);
-            this.mskCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mskCedula.Margin = new System.Windows.Forms.Padding(4);
             this.mskCedula.Mask = "0-0000-0000";
             this.mskCedula.Name = "mskCedula";
             this.mskCedula.Size = new System.Drawing.Size(77, 22);
@@ -177,7 +166,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(289, 13);
+            this.label7.Location = new System.Drawing.Point(240, 9);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 16);
@@ -246,20 +235,31 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(292, 41);
+            this.panel1.Location = new System.Drawing.Point(243, 37);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(145, 124);
             this.panel1.TabIndex = 40;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(243, 249);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 34);
+            this.btnCancelar.TabIndex = 41;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 296);
+            this.ClientSize = new System.Drawing.Size(395, 295);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.mskTelefono);
             this.Controls.Add(this.dtpF_Nacimiento);
@@ -276,8 +276,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRegistro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Estudiantes";
             this.Load += new System.EventHandler(this.frmRegistro_Load);
             this.groupBox1.ResumeLayout(false);
@@ -288,9 +291,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.MaskedTextBox mskTelefono;
         private System.Windows.Forms.DateTimePicker dtpF_Nacimiento;
@@ -309,5 +310,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

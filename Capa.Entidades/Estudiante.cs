@@ -13,7 +13,7 @@ namespace Capa.Entidades
         public string Contrasenna { get; set; }
         public string Nombre { get; set; }
         public string Seccion { get; set; }
-        public char Genero { get; set; }
+        public string Genero { get; set; }
         public DateTime F_Nacimiento { get; set; }
         public string Email { get; set; }
         public int Telefono { get; set; }

@@ -57,11 +57,11 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrincipal.cs">
+    <Compile Include="Usuarios_Finales\frmAd_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.Designer.cs">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <Compile Include="Usuarios_Finales\frmAd_Principal.Designer.cs">
+      <DependentUpon>frmAd_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\frmAutor_Libros.cs">
       <SubType>Form</SubType>
@@ -113,6 +113,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios_Finales\frmBuscar_Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios_Finales\frmBuscar_Estudiante.Designer.cs">
+      <DependentUpon>frmBuscar_Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios_Finales\frmBuscar_Libro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios_Finales\frmBuscar_Libro.Designer.cs">
+      <DependentUpon>frmBuscar_Libro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios_Finales\frmPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios_Finales\frmPrestamo.Designer.cs">
+      <DependentUpon>frmPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios_Finales\frmP_Menu_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios_Finales\frmP_Menu_Admin.Designer.cs">
+      <DependentUpon>frmP_Menu_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios_Finales\frmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,8 +146,8 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios_Finales\frmAd_Principal.resx">
+      <DependentUpon>frmAd_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmAutor_Libros.resx">
       <DependentUpon>frmAutor_Libros.cs</DependentUpon>
@@ -158,6 +182,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Usuarios_Finales\frmBuscar_Estudiante.resx">
+      <DependentUpon>frmBuscar_Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios_Finales\frmBuscar_Libro.resx">
+      <DependentUpon>frmBuscar_Libro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios_Finales\frmPrestamo.resx">
+      <DependentUpon>frmPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios_Finales\frmP_Menu_Admin.resx">
+      <DependentUpon>frmP_Menu_Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios_Finales\frmRegistro.resx">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </EmbeddedResource>

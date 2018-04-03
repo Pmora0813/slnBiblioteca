@@ -35,12 +35,11 @@
             this.btnEstudiantes = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnAutores_Libro = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMant_Autor
             // 
-            this.btnMant_Autor.Location = new System.Drawing.Point(12, 12);
+            this.btnMant_Autor.Location = new System.Drawing.Point(179, 52);
             this.btnMant_Autor.Name = "btnMant_Autor";
             this.btnMant_Autor.Size = new System.Drawing.Size(161, 33);
             this.btnMant_Autor.TabIndex = 0;
@@ -80,7 +79,7 @@
             // 
             // btnEstudiantes
             // 
-            this.btnEstudiantes.Location = new System.Drawing.Point(179, 12);
+            this.btnEstudiantes.Location = new System.Drawing.Point(179, 131);
             this.btnEstudiantes.Name = "btnEstudiantes";
             this.btnEstudiantes.Size = new System.Drawing.Size(161, 33);
             this.btnEstudiantes.TabIndex = 4;
@@ -90,7 +89,7 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(179, 52);
+            this.btnUsuarios.Location = new System.Drawing.Point(179, 171);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(161, 33);
             this.btnUsuarios.TabIndex = 5;
@@ -108,22 +107,11 @@
             this.btnAutores_Libro.UseVisualStyleBackColor = true;
             this.btnAutores_Libro.Click += new System.EventHandler(this.btnAutores_Libro_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(238, 174);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 233);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAutores_Libro);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnEstudiantes);
@@ -151,6 +139,5 @@
         private System.Windows.Forms.Button btnEstudiantes;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnAutores_Libro;
-        private System.Windows.Forms.Button button1;
     }
 }

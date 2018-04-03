@@ -34,6 +34,7 @@
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.mskUsuario = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +64,7 @@
             this.mskContrasenna.Name = "mskContrasenna";
             this.mskContrasenna.PasswordChar = '*';
             this.mskContrasenna.Size = new System.Drawing.Size(121, 22);
-            this.mskContrasenna.TabIndex = 3;
+            this.mskContrasenna.TabIndex = 2;
             // 
             // btnEntrar
             // 
@@ -71,7 +72,7 @@
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(97, 26);
-            this.btnEntrar.TabIndex = 4;
+            this.btnEntrar.TabIndex = 3;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -82,7 +83,7 @@
             this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(97, 26);
-            this.btnRegistrarse.TabIndex = 5;
+            this.btnRegistrarse.TabIndex = 4;
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = true;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
@@ -90,16 +91,29 @@
             // mskUsuario
             // 
             this.mskUsuario.Location = new System.Drawing.Point(105, 38);
-            this.mskUsuario.Mask = "9999999999999";
+            this.mskUsuario.Mask = "9-9999-9999";
             this.mskUsuario.Name = "mskUsuario";
             this.mskUsuario.Size = new System.Drawing.Size(120, 22);
-            this.mskUsuario.TabIndex = 6;
+            this.mskUsuario.TabIndex = 1;
+            this.mskUsuario.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(52, 147);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 26);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Entrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 152);
+            this.ClientSize = new System.Drawing.Size(294, 199);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.mskUsuario);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.btnEntrar);
@@ -127,5 +141,6 @@
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.MaskedTextBox mskUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Capa.Entidades;
+using Capa.Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace Capa.UI
 {
     public partial class frmLogin : Form
     {
-
+        public Usuario Usuario { get; set; }
         public frmLogin()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace Capa.UI
 
         private int validarUsuario()
         {
+
             int Roll = 0;
             List<Usuario> lista_Usuarios = new List<Usuario>();
             lista_Usuarios = new Logica.Usuario_Logica().SeleccionarTodos();
@@ -37,7 +39,9 @@ namespace Capa.UI
                 if (item.id.Equals(Convert.ToInt32(mskUsuario.Text.Trim())) && item.Contrasenna.Equals(mskContrasenna.Text.Trim()))
                 {
                     Roll = Convert.ToInt32(item.Rol.id);
+                    this.Usuario = item;
                 }
+
             }
 
             List<Estudiante> lista_Estudiantes = new Logica.Estudiante_Logica().SeleccionarTodos();
@@ -54,14 +58,29 @@ namespace Capa.UI
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            if (mskUsuario.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Ingrese el Usuario", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (mskContrasenna.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Ingrese el Contraseña", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             switch (validarUsuario())
             {
                 case 1:
+
+                    Limpiar();
                     MessageBox.Show("Inicio de Seccion modo Administrador", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmPrincipal ofrm = new frmPrincipal();
-                    ofrm.ShowDialog();                    
+                    Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
+                    ofrm.Usuario = this.Usuario;
+                    ofrm.ShowDialog();
                     break;
                 case 2:
+                    Limpiar();
 
                     MessageBox.Show("Inicio de Seccion modo Profesor", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
@@ -69,18 +88,35 @@ namespace Capa.UI
                     MessageBox.Show("Inicio de Seccion modo Estudiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
-                    mskUsuario.Text = " ";
-                    mskContrasenna.Text = " ";
+                    Limpiar();
                     MessageBox.Show("Usuario Incorecto", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
         }
 
+        private void Limpiar()
+        {
+            mskUsuario.Text = " ";
+            mskContrasenna.Text = " ";
+        }
+
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            Usuarios_Finales.frmRegistro ofrm = new Usuarios_Finales.frmRegistro();
-            ofrm.Show();
+            //frmLogin ofrm2 = new frmLogin();
+            //Usuarios_Finales.frmRegistro ofrm = new Usuarios_Finales.frmRegistro();
+            //ofrm2.MinimizeBox = true;
+            //ofrm.ShowDialog();
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
+            //ofrm.Usuario = this.Usuario;
+            //ofrm.Show();
+
         }
     }
 }

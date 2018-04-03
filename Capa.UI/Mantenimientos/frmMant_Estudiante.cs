@@ -32,28 +32,30 @@ namespace Capa.UI.Mantenimientos
         {
             try
             {
-                char genero = ' ';
 
-                if (rbtnMasculino.Checked)
-                {
-                    genero = 'M';
-                }
-                else
-                {
-                    genero = 'F';
-                }
                 Estudiante estudiante = new Estudiante()
                 {
                     IdCedula = Convert.ToInt32(mskCedula.Text),
                     Nombre = txtNombre.Text,
                     Email = txtEmai.Text,
                     Seccion = txtSeccion.Text,
-                    Genero = genero,
                     F_Nacimiento = Convert.ToDateTime(dtpF_Nacimiento.Value),
                     Telefono = Convert.ToInt32(mskTelefono.Text),
                     Activo = chkActivo.Checked,
                     Roll = new Rol_Logica().SeleccionarRollPorId(Convert.ToInt32("3"))
                 };
+
+                
+
+                if (rbtnMasculino.Checked)
+                {
+                    estudiante.Genero = "Masculino";
+                }
+
+                if (rbtnFemenino.Checked)
+                {
+                    estudiante.Genero = "Femenino";
+                }
                 estudiante.Contrasenna = estudiante.IdCedula.ToString().Substring(0, 4) + estudiante.Nombre.Substring(0, 4);
 
                 QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
@@ -108,7 +110,7 @@ namespace Capa.UI.Mantenimientos
         private void Refrescar()
         {
             dtgEstudiantes.DataSource = Logica.SeleccionarTodos();
-            
+
 
         }
 

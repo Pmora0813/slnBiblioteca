@@ -63,10 +63,7 @@ namespace Capa.UI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-            frmLogin ofmr = new frmLogin();
-            ofmr.ShowDialog();
-
+           
         }
     }
 }

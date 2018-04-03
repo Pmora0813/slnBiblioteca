@@ -41,15 +41,18 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbmAutores = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.mskAnno = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLibros)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(16, 180);
+            this.btnNuevo.Location = new System.Drawing.Point(16, 197);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(146, 41);
@@ -60,7 +63,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(231, 180);
+            this.btnEliminar.Location = new System.Drawing.Point(231, 197);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(146, 41);
@@ -80,7 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Location = new System.Drawing.Point(13, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 17);
@@ -90,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 55);
+            this.label2.Location = new System.Drawing.Point(12, 78);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 17);
@@ -100,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 97);
+            this.label3.Location = new System.Drawing.Point(13, 114);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
@@ -109,7 +112,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(85, 55);
+            this.txtNombre.Location = new System.Drawing.Point(85, 78);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(109, 23);
@@ -118,7 +121,7 @@
             // cbmEditoriales
             // 
             this.cbmEditoriales.FormattingEnabled = true;
-            this.cbmEditoriales.Location = new System.Drawing.Point(85, 95);
+            this.cbmEditoriales.Location = new System.Drawing.Point(85, 114);
             this.cbmEditoriales.Name = "cbmEditoriales";
             this.cbmEditoriales.Size = new System.Drawing.Size(133, 25);
             this.cbmEditoriales.TabIndex = 12;
@@ -130,14 +133,15 @@
             this.Codigo,
             this.Column1,
             this.Nombre,
-            this.id_Editorial});
-            this.dtgLibros.Location = new System.Drawing.Point(16, 228);
+            this.id_Editorial,
+            this.Anno});
+            this.dtgLibros.Location = new System.Drawing.Point(16, 245);
             this.dtgLibros.MultiSelect = false;
             this.dtgLibros.Name = "dtgLibros";
             this.dtgLibros.ReadOnly = true;
             this.dtgLibros.RowTemplate.Height = 24;
             this.dtgLibros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgLibros.Size = new System.Drawing.Size(361, 215);
+            this.dtgLibros.Size = new System.Drawing.Size(361, 176);
             this.dtgLibros.TabIndex = 13;
             this.dtgLibros.SelectionChanged += new System.EventHandler(this.dtgLibros_SelectionChanged);
             // 
@@ -147,6 +151,7 @@
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 70;
             // 
             // Column1
             // 
@@ -170,10 +175,18 @@
             this.id_Editorial.Name = "id_Editorial";
             this.id_Editorial.ReadOnly = true;
             // 
+            // Anno
+            // 
+            this.Anno.DataPropertyName = "anno";
+            this.Anno.HeaderText = "Año";
+            this.Anno.Name = "Anno";
+            this.Anno.ReadOnly = true;
+            this.Anno.Width = 50;
+            // 
             // cbmAutores
             // 
             this.cbmAutores.FormattingEnabled = true;
-            this.cbmAutores.Location = new System.Drawing.Point(85, 137);
+            this.cbmAutores.Location = new System.Drawing.Point(85, 156);
             this.cbmAutores.Name = "cbmAutores";
             this.cbmAutores.Size = new System.Drawing.Size(133, 25);
             this.cbmAutores.TabIndex = 15;
@@ -181,7 +194,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 139);
+            this.label5.Location = new System.Drawing.Point(13, 156);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 17);
@@ -196,11 +209,31 @@
             this.txtCodigo.TabIndex = 17;
             this.txtCodigo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 47);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Año";
+            // 
+            // mskAnno
+            // 
+            this.mskAnno.Location = new System.Drawing.Point(85, 47);
+            this.mskAnno.Mask = "9999";
+            this.mskAnno.Name = "mskAnno";
+            this.mskAnno.Size = new System.Drawing.Size(74, 23);
+            this.mskAnno.TabIndex = 19;
+            // 
             // frmMant_Libros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 456);
+            this.ClientSize = new System.Drawing.Size(390, 427);
+            this.Controls.Add(this.mskAnno);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.cbmAutores);
             this.Controls.Add(this.label5);
@@ -215,6 +248,8 @@
             this.Controls.Add(this.btnNuevo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMant_Libros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Libros";
@@ -239,9 +274,12 @@
         private System.Windows.Forms.ComboBox cbmAutores;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox txtCodigo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MaskedTextBox mskAnno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Editorial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Anno;
     }
 }

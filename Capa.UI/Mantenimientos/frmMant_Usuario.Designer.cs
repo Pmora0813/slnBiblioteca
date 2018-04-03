@@ -144,7 +144,6 @@
             this.id.HeaderText = "Cedula";
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Width = 70;
             // 
             // Contrasenna
             // 
@@ -160,6 +159,7 @@
             this.id_Rol.HeaderText = "Tipo";
             this.id_Rol.Name = "id_Rol";
             this.id_Rol.ReadOnly = true;
+            this.id_Rol.Width = 150;
             // 
             // frmMant_Usuario
             // 

@@ -57,11 +57,7 @@ namespace Capa.UI.Mantenimientos
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -78,7 +74,7 @@ namespace Capa.UI.Mantenimientos
                     Logica_Lib_Aut.guardar(lib, aut);
 
                     Refrescar();
-                    MessageBox.Show("Se Agrego un Autor al Libro seleccionado");
+                    MessageBox.Show("Se Agrego un Autor al Libro seleccionado", "Escuela Platanares",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
                 }
             }
@@ -93,6 +89,10 @@ namespace Capa.UI.Mantenimientos
         {
             try
             {
+                if (lstAutores.SelectedItem == null)
+                {
+                    MessageBox.Show("No se encuentran Autores para eliminar", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 Libros lib = (Libros)lstLibros.SelectedItem;
                 Autor aut = (Autor)lstAutores.SelectedItem;
 
@@ -102,7 +102,7 @@ namespace Capa.UI.Mantenimientos
                     Logica_Lib_Aut.Eliminar(lib, aut);
 
                     Refrescar();
-                    MessageBox.Show("Se elimino un Autor del Libro seleccionado");
+                    MessageBox.Show("Se elimino un Autor del Libro seleccionado","Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)

@@ -34,6 +34,7 @@ namespace Capa.Datos
                 //Paso 4: Enviar los parametros
                 comando.Parameters.AddWithValue("@Id", libro.Id);
                 comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
+                comando.Parameters.AddWithValue("@anno", libro.anno);
                 comando.Parameters.AddWithValue("@QR", libro.Qr);
                 comando.Parameters.AddWithValue("@id_Editorial",libro.Editorial.Id);
 
@@ -76,6 +77,7 @@ namespace Capa.Datos
                 //Paso 4: Enviar los parametros
                 comando.Parameters.AddWithValue("@Id", libro.Id);
                 comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
+                comando.Parameters.AddWithValue("@anno", libro.anno);
                 comando.Parameters.AddWithValue("@QR", libro.Qr);
                 comando.Parameters.AddWithValue("@id_Editorial", libro.Editorial.Id);
 
@@ -171,6 +173,7 @@ namespace Capa.Datos
                     {
                         Id = Convert.ToInt32(reader["Id"]),
                         Titulo = reader["titulo"].ToString(),
+                        anno = Convert.ToInt32(reader["anno"]),
                         Qr = reader["QR"].ToString(),
                         Editorial = new Editorial_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Editorial"]))
                   
@@ -224,6 +227,7 @@ namespace Capa.Datos
                     {
                         Id = Convert.ToInt32(reader["Id"]),
                         Titulo = reader["titulo"].ToString(),
+                        anno = Convert.ToInt32(reader["anno"]),
                         Qr = reader["QR"].ToString(),
                         Editorial = new Editorial_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Editorial"]))
                     };
