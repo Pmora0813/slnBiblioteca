@@ -279,5 +279,67 @@ namespace Capa.Datos
 
         }
 
+        public List<Estudiante> SeleccionarTodosFiltro(int idCedula, string nombre, string seccion)
+        {
+            List<Estudiante> lista = new List<Estudiante>();
+
+            //Paso 1: conexion BD
+            SqlConnection conexion = new SqlConnection(Conexion.Cadena);
+
+            try
+            {
+                //Abrir la conexion
+                conexion.Open();
+                //Paso 2: Instruccion
+                string sql = "SP_Estudiante_Filtro";
+
+                //Paso 3: Comando para ejecutar el paso 2
+                SqlCommand comando = new SqlCommand(sql, conexion);
+
+
+                comando.Parameters.AddWithValue("@id_Cedula", idCedula);
+                comando.Parameters.AddWithValue("@nombre", nombre);
+                comando.Parameters.AddWithValue("@seccion", seccion);
+                //Paso 4.1: Usar el Procedimineto Almacenado
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //Paso 5: Ejecutar el Comando que permite obtener registros de la tabla
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    Estudiante estudiante = new Estudiante
+                    {
+                        IdCedula = Convert.ToInt32(reader["Id_Cedula"]),
+                        Contrasenna = reader["contrasenna"].ToString(),
+                        Nombre = reader["nombre"].ToString(),
+                        Seccion = reader["seccion"].ToString(),
+                        Genero = reader["genero"].ToString(),
+                        F_Nacimiento = Convert.ToDateTime(reader["fecha_Nacimiento"]),
+                        Email = reader["email"].ToString(),
+                        Telefono = Convert.ToInt32(reader["telefono"]),
+                        Activo = Convert.ToBoolean(reader["activo"]),
+                        QR = reader["QR"].ToString(),
+                        Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
+                    };
+
+
+                    lista.Add(estudiante);
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return lista;
+
+
+        }
+
     }
 }

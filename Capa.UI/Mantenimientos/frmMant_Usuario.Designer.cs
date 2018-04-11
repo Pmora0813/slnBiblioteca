@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dtgUsuarios = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contrasenna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,9 +40,7 @@
             this.mskContrasenna = new System.Windows.Forms.MaskedTextBox();
             this.Categoria = new System.Windows.Forms.Label();
             this.cmbRoles = new System.Windows.Forms.ComboBox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contrasenna = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,25 +62,54 @@
             this.dtgUsuarios.TabIndex = 13;
             this.dtgUsuarios.SelectionChanged += new System.EventHandler(this.dtgUsuarios_SelectionChanged);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Cedula";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // Contrasenna
+            // 
+            this.Contrasenna.DataPropertyName = "Contrasenna";
+            this.Contrasenna.HeaderText = "Column1";
+            this.Contrasenna.Name = "Contrasenna";
+            this.Contrasenna.ReadOnly = true;
+            this.Contrasenna.Visible = false;
+            // 
+            // id_Rol
+            // 
+            this.id_Rol.DataPropertyName = "Rol";
+            this.id_Rol.HeaderText = "Tipo";
+            this.id_Rol.Name = "id_Rol";
+            this.id_Rol.ReadOnly = true;
+            this.id_Rol.Width = 150;
+            // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(205, 155);
+            this.btnEliminar.BackgroundImage = global::Capa.UI.Properties.Resources.trashcan_full48;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEliminar.Location = new System.Drawing.Point(205, 151);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(120, 40);
+            this.btnEliminar.Size = new System.Drawing.Size(120, 54);
             this.btnEliminar.TabIndex = 12;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(13, 155);
+            this.btnNuevo.BackgroundImage = global::Capa.UI.Properties.Resources.floppy48;
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNuevo.Location = new System.Drawing.Point(13, 151);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(120, 40);
+            this.btnNuevo.Size = new System.Drawing.Size(120, 54);
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -132,40 +162,28 @@
             // 
             // cmbRoles
             // 
+            this.cmbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRoles.FormattingEnabled = true;
             this.cmbRoles.Location = new System.Drawing.Point(118, 95);
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(126, 25);
             this.cmbRoles.TabIndex = 17;
             // 
-            // id
+            // panel1
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Cedula";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // Contrasenna
-            // 
-            this.Contrasenna.DataPropertyName = "Contrasenna";
-            this.Contrasenna.HeaderText = "Column1";
-            this.Contrasenna.Name = "Contrasenna";
-            this.Contrasenna.ReadOnly = true;
-            this.Contrasenna.Visible = false;
-            // 
-            // id_Rol
-            // 
-            this.id_Rol.DataPropertyName = "Rol";
-            this.id_Rol.HeaderText = "Tipo";
-            this.id_Rol.Name = "id_Rol";
-            this.id_Rol.ReadOnly = true;
-            this.id_Rol.Width = 150;
+            this.panel1.BackgroundImage = global::Capa.UI.Properties.Resources.contact48;
+            this.panel1.Location = new System.Drawing.Point(273, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(52, 49);
+            this.panel1.TabIndex = 18;
             // 
             // frmMant_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(352, 421);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbRoles);
             this.Controls.Add(this.Categoria);
             this.Controls.Add(this.mskContrasenna);
@@ -203,5 +221,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contrasenna;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Rol;
+        private System.Windows.Forms.Panel panel1;
     }
 }

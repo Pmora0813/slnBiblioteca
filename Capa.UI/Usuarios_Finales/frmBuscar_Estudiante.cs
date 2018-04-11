@@ -32,6 +32,7 @@ namespace Capa.UI.Usuarios_Finales
             else
             {
                 mskCedula.Visible = false;
+                mskCedula.Text = "";
             }
         }
 
@@ -44,6 +45,7 @@ namespace Capa.UI.Usuarios_Finales
             else
             {
                 mskNombre.Visible = false;
+                mskNombre.Text = "";
             }
         }
 
@@ -56,33 +58,25 @@ namespace Capa.UI.Usuarios_Finales
             else
             {
                 txtSeccion.Visible = false;
+                txtSeccion.Text = "";
             }
         }
 
-        private void chkedad_CheckedChanged(object sender, EventArgs e)
-        {
 
-            if (chkedad.Checked)
-            {
-                mskedad.Visible = true;
-            }
-            else
-            {
-                mskedad.Visible = false;
-            }
-        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            int cedula = 0;
+            dtgEstudiantes.Refresh();
+
+            int cedula = -1;
             string nombre = "";
-            int edad = 0;
             string seccion = "";
-            List<Estudiante> lista_est = new List<Estudiante>();
+
             if (chkCedula.Checked)
             {
-                cedula = Convert.ToInt32(mskCedula.Text);
-                if (mskCedula.Text.Equals(""))
+                cedula = Convert.ToInt32(mskCedula.Text.Trim());
+
+                if (mskCedula.Text.Trim().Equals(""))
                 {
                     MessageBox.Show("Ingrese la Cedula del Estudiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
@@ -91,7 +85,7 @@ namespace Capa.UI.Usuarios_Finales
 
             if (chkNombre.Checked)
             {
-                nombre = mskNombre.Text;
+                nombre = mskNombre.Text.Trim();
 
                 if (mskNombre.Text.Equals(""))
                 {
@@ -99,21 +93,13 @@ namespace Capa.UI.Usuarios_Finales
                     return;
                 }
             }
+            
 
-            if (chkedad.Checked)
-            {
-                edad = Convert.ToInt32(mskedad.Text);
-                if (mskedad.Text.Equals(""))
-                {
-                    MessageBox.Show("Ingrese la Edad del Estudiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-            }
 
             if (chkSeccion.Checked)
             {
 
-                seccion = txtSeccion.Text;
+                seccion = txtSeccion.Text.Trim();
                 if (txtSeccion.Text.Equals(""))
                 {
                     MessageBox.Show("Ingrese la Sección del Estudiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -121,52 +107,9 @@ namespace Capa.UI.Usuarios_Finales
                 }
             }
 
-            try
-            {
-
-                List<Estudiante> lista = new Estudiante_Logica().SeleccionarTodos();
-
-                foreach (var item in lista)
-                {
-
-                   // Estudiante estudiante = null;
-                    if (item.IdCedula == cedula)
-                    {
-                        estudiante = item;
-                    }
-                    if (item.Nombre.Equals(nombre))
-                    {
-                        estudiante = item;
-                    }
-                    if (Logica.edad(item) == edad && edad > 0)
-                    {
-                        estudiante = item;
-                    }
-                    if (item.Seccion.Equals(seccion))
-                    {
-                        estudiante = item;
-                    }
-
-                    if (estudiante != null)
-                    {
-                        lista_est.Add(estudiante);
-                    }
-
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            dtgEstudiantes.DataSource = lista_est;
+            dtgEstudiantes.DataSource = Logica.SeleccionarTodosFiltro(cedula, nombre, seccion);
         }
 
-        private void frmBusquedaAvanzada_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -177,13 +120,14 @@ namespace Capa.UI.Usuarios_Finales
             }
             else
             {
+                estudiante = dtgEstudiantes.SelectedRows[0].DataBoundItem as Estudiante;
                 this.Close();
             }
         }
 
         private void dtgEstudiantes_SelectionChanged(object sender, EventArgs e)
         {
-            if(dtgEstudiantes.DataSource != null)
+            if (dtgEstudiantes.DataSource != null)
             {
                 btnAceptar.Enabled = true;
             }
@@ -191,6 +135,11 @@ namespace Capa.UI.Usuarios_Finales
             {
                 btnAceptar.Enabled = false;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

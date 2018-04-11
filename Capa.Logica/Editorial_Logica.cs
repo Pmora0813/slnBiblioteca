@@ -38,5 +38,18 @@ namespace Capa.Logica
             Datos.Editorial_Datos datos = new Datos.Editorial_Datos();
             datos.Eliminar(Id);
         }
+
+
+        public List<Editorial> SeleccionarTodosFiltro()
+        {
+            Datos.Editorial_Datos datos = new Datos.Editorial_Datos();
+            var lista= datos.SeleccionarTodos();
+            Editorial editorial = new Editorial()
+            {
+                Id = -1,
+                Nombre = "Todas"
+            };
+            return lista;
+        }
     }
 }

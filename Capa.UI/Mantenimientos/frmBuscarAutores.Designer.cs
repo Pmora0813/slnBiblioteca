@@ -34,7 +34,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(47, 182);
+            this.btnAceptar.Location = new System.Drawing.Point(69, 182);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 29);
             this.btnAceptar.TabIndex = 3;
@@ -48,7 +48,7 @@
             this.lstAutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstAutores.FormattingEnabled = true;
             this.lstAutores.ItemHeight = 16;
-            this.lstAutores.Location = new System.Drawing.Point(12, 12);
+            this.lstAutores.Location = new System.Drawing.Point(34, 12);
             this.lstAutores.Name = "lstAutores";
             this.lstAutores.Size = new System.Drawing.Size(140, 164);
             this.lstAutores.TabIndex = 2;
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(174, 219);
+            this.ClientSize = new System.Drawing.Size(215, 245);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lstAutores);
             this.MaximizeBox = false;

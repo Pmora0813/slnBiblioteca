@@ -44,7 +44,7 @@
             this.lstLibros.ItemHeight = 16;
             this.lstLibros.Location = new System.Drawing.Point(14, 22);
             this.lstLibros.Name = "lstLibros";
-            this.lstLibros.Size = new System.Drawing.Size(99, 164);
+            this.lstLibros.Size = new System.Drawing.Size(156, 228);
             this.lstLibros.TabIndex = 5;
             this.lstLibros.SelectedIndexChanged += new System.EventHandler(this.lstLibros_SelectedIndexChanged);
             // 
@@ -53,7 +53,7 @@
             this.groupBox1.Controls.Add(this.lstLibros);
             this.groupBox1.Location = new System.Drawing.Point(3, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(129, 207);
+            this.groupBox1.Size = new System.Drawing.Size(184, 262);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Libros";
@@ -63,9 +63,9 @@
             this.groupBox2.Controls.Add(this.btnBorrar);
             this.groupBox2.Controls.Add(this.lstAutores);
             this.groupBox2.Controls.Add(this.btnAgregar);
-            this.groupBox2.Location = new System.Drawing.Point(138, 12);
+            this.groupBox2.Location = new System.Drawing.Point(193, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(167, 207);
+            this.groupBox2.Size = new System.Drawing.Size(213, 262);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Autores";
@@ -74,7 +74,7 @@
             // 
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.Color.Red;
-            this.btnBorrar.Location = new System.Drawing.Point(123, 57);
+            this.btnBorrar.Location = new System.Drawing.Point(175, 57);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(32, 30);
             this.btnBorrar.TabIndex = 9;
@@ -88,14 +88,14 @@
             this.lstAutores.ItemHeight = 16;
             this.lstAutores.Location = new System.Drawing.Point(14, 22);
             this.lstAutores.Name = "lstAutores";
-            this.lstAutores.Size = new System.Drawing.Size(99, 164);
+            this.lstAutores.Size = new System.Drawing.Size(155, 228);
             this.lstAutores.TabIndex = 5;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Green;
-            this.btnAgregar.Location = new System.Drawing.Point(123, 21);
+            this.btnAgregar.Location = new System.Drawing.Point(175, 21);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(32, 30);
             this.btnAgregar.TabIndex = 8;
@@ -108,7 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(317, 225);
+            this.ClientSize = new System.Drawing.Size(420, 288);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

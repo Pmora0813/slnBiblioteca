@@ -15,7 +15,7 @@ namespace Capa.Entidades
         public int horas { get; set; }
         public int dias { get; set; }
         public Estudiante estudiant { get; set; }
-        public Libros Libro { get; set; }
+        //public Libros Libro { get; set; }
         public Usuario Usuario { get; set; }
         public Categoria Categoria { get; set; }
     }

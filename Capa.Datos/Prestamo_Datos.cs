@@ -31,23 +31,22 @@ namespace Capa.Datos
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
                 //Paso 4: Enviar los parametros
-                //comando.Parameters.AddWithValue("@Id", prestamo.id);
+                comando.Parameters.AddWithValue("@Id", prestamo.id);
                 comando.Parameters.AddWithValue("@fecha_Act", prestamo.Fecha_Act);
                 comando.Parameters.AddWithValue("@fecha_Dev", prestamo.Fecha_Dev);
                 comando.Parameters.AddWithValue("@minutos_Dev", prestamo.minutos);
                 comando.Parameters.AddWithValue("@horas_Dev", prestamo.horas);
                 comando.Parameters.AddWithValue("@dias_Dev", prestamo.dias);
                 comando.Parameters.AddWithValue("@ID_ESTUDIANTE", prestamo.estudiant.IdCedula);
-                comando.Parameters.AddWithValue("@ID_LIBRO", prestamo.Libro.Id);
+                //comando.Parameters.AddWithValue("@ID_LIBRO", prestamo.Libro.Id);
                 comando.Parameters.AddWithValue("@ID_USUARIO", prestamo.Usuario.id);
                 comando.Parameters.AddWithValue("@ID_CATEGORIA", prestamo.Categoria.Id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
 
-                //Paso 5: Ejecutar el Comando
-                object resultado = comando.ExecuteScalar();
-                prestamo.id = Convert.ToInt32(resultado);
+                //Paso 5: Ejecutar el Comando 
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -86,7 +85,7 @@ namespace Capa.Datos
                 comando.Parameters.AddWithValue("@horas_Dev", prestamo.horas);
                 comando.Parameters.AddWithValue("@dias_Dev", prestamo.dias);
                 comando.Parameters.AddWithValue("@ID_ESTUDIANTE", prestamo.estudiant.IdCedula);
-                comando.Parameters.AddWithValue("@ID_LIBRO", prestamo.Libro.Id);
+               // comando.Parameters.AddWithValue("@ID_LIBRO", prestamo.Libro.Id);
                 comando.Parameters.AddWithValue("@ID_USUARIO", prestamo.Usuario.id);
                 comando.Parameters.AddWithValue("@ID_CATEGORIA", prestamo.Categoria.Id);
 
@@ -187,7 +186,7 @@ namespace Capa.Datos
                         horas = Convert.ToInt32(reader["horas_Dev"]),
                         dias = Convert.ToInt32(reader["dias_Dev"]),
                         estudiant = new Estudiante_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ESTUDIANTE"])),
-                        Libro = new Libro_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_LIBRO"])),
+                        //Libro = new Libro_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_LIBRO"])),
                         Usuario = new Usuario_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_USUARIO"])),
                         Categoria = new Categoria_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_CATEGORIA"]))
                     };
@@ -245,7 +244,7 @@ namespace Capa.Datos
                         horas = Convert.ToInt32(reader["horas_Dev"]),
                         dias = Convert.ToInt32(reader["dias_Dev"]),
                         estudiant = new Estudiante_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ESTUDIANTE"])),
-                        Libro = new Libro_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_LIBRO"])),
+                        //Libro = new Libro_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_LIBRO"])),
                         Usuario = new Usuario_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_USUARIO"])),
                         Categoria = new Categoria_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_CATEGORIA"]))
                     };

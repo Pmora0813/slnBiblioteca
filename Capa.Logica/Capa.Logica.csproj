@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Autor_Logica.cs" />
     <Compile Include="Categoira_Logica.cs" />
+    <Compile Include="Prestamo_Libros_Logica.cs" />
     <Compile Include="Prestamo_Logica.cs" />
     <Compile Include="Editorial_Logica.cs" />
     <Compile Include="Estudiante_Logica.cs" />

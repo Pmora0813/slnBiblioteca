@@ -68,23 +68,29 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(52, 113);
+            this.btnEntrar.BackgroundImage = global::Capa.UI.Properties.Resources.hire_me;
+            this.btnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEntrar.Location = new System.Drawing.Point(30, 114);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(97, 26);
+            this.btnEntrar.Size = new System.Drawing.Size(98, 39);
             this.btnEntrar.TabIndex = 3;
-            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.Text = "Ingresar";
+            this.btnEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnRegistrarse
             // 
-            this.btnRegistrarse.Location = new System.Drawing.Point(158, 113);
+            this.btnRegistrarse.BackgroundImage = global::Capa.UI.Properties.Resources.issue1;
+            this.btnRegistrarse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRegistrarse.Location = new System.Drawing.Point(136, 114);
             this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrarse.Name = "btnRegistrarse";
-            this.btnRegistrarse.Size = new System.Drawing.Size(97, 26);
+            this.btnRegistrarse.Size = new System.Drawing.Size(123, 39);
             this.btnRegistrarse.TabIndex = 4;
             this.btnRegistrarse.Text = "Registrarse";
+            this.btnRegistrarse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrarse.UseVisualStyleBackColor = true;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
@@ -99,7 +105,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(52, 147);
+            this.button1.Location = new System.Drawing.Point(104, 172);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 26);

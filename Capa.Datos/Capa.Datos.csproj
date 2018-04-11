@@ -55,6 +55,7 @@
     <Compile Include="Libro_Autor_Datos.cs" />
     <Compile Include="Libro_Datos.cs" />
     <Compile Include="Prestamo_Datos.cs" />
+    <Compile Include="Prestamo_Libros_Datos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol_Datos.cs" />
     <Compile Include="Usuario_Datos.cs" />

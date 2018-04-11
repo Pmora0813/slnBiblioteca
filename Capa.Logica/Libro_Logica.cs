@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Capa.Logica
 {
-    public class Libro_Logica 
+    public class Libro_Logica
     {
         public void Actualizar(Libros obj)
         {
@@ -38,6 +38,12 @@ namespace Capa.Logica
         {
             Libro_Datos datos = new Libro_Datos();
             return datos.SeleccionarTodos();
+        }
+
+        public List<Libros> SeleccionarTodosFiltro(int id, string titulo, int idAutor, int idEditorial, int anno)
+        {
+            Libro_Datos datos = new Libro_Datos();
+            return datos.SeleccionarTodosFiltro(id,titulo,idAutor,idEditorial,anno);
         }
     }
 }

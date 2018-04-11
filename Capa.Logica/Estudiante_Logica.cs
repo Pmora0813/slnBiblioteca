@@ -85,5 +85,12 @@ namespace Capa.Logica
             return edad;
 
         }
+
+
+        public List<Estudiante> SeleccionarTodosFiltro(int cedula, string nombre,string seccion)
+        {
+            Datos.Estudiante_Datos datos = new Datos.Estudiante_Datos();
+            return datos.SeleccionarTodosFiltro(cedula, nombre,seccion);
+        }
     }
 }

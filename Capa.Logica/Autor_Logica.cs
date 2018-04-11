@@ -56,5 +56,18 @@ namespace Capa.Logica
             Datos.Libro_Autor_Datos datos = new Datos.Libro_Autor_Datos();
             datos.Insertar(libro, autor);
         }
+
+        public List<Autor> SeleccionarTodosFiltro()
+        {
+            Datos.Autor_Datos datos = new Datos.Autor_Datos();
+            var lista = datos.SeleccionarTodos();
+            Autor autor = new Autor()
+            {
+                Id = -1,
+                Nombre = "Todos"
+            };
+
+            return lista;
+        }
     }
 }

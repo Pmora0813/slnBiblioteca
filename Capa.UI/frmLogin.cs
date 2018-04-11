@@ -22,6 +22,8 @@ namespace Capa.UI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            mskUsuario.Text = "115100427";
+            mskContrasenna.Text = "Pablomora";
         }
 
         private int validarUsuario()
@@ -74,10 +76,12 @@ namespace Capa.UI
                 case 1:
 
                     Limpiar();
-                    MessageBox.Show("Inicio de Seccion modo Administrador", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
+                   // MessageBox.Show("Inicio de Seccion modo Administrador", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Usuarios_Finales.frmMenu_Admin ofrm = new Usuarios_Finales.frmMenu_Admin();
+                    ofrm.Owner = this;
                     ofrm.Usuario = this.Usuario;
-                    ofrm.ShowDialog();
+                    ofrm.Show();
+                    this.Hide();
                     break;
                 case 2:
                     Limpiar();
@@ -116,6 +120,12 @@ namespace Capa.UI
             //Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
             //ofrm.Usuario = this.Usuario;
             //ofrm.Show();
+
+           // Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
+           // ofrm.Owner = this;
+           // ofrm.Usuario = this.Usuario;
+            //ofrm.Show();
+            this.Hide();
 
         }
     }
