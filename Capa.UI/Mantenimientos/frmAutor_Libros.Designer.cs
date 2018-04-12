@@ -65,18 +65,20 @@
             this.groupBox2.Controls.Add(this.btnAgregar);
             this.groupBox2.Location = new System.Drawing.Point(193, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(213, 262);
+            this.groupBox2.Size = new System.Drawing.Size(233, 262);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Autores";
             // 
             // btnBorrar
             // 
+            this.btnBorrar.BackgroundImage = global::Capa.UI.Properties.Resources.process;
+            this.btnBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.Color.Red;
-            this.btnBorrar.Location = new System.Drawing.Point(175, 57);
+            this.btnBorrar.Location = new System.Drawing.Point(175, 74);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(32, 30);
+            this.btnBorrar.Size = new System.Drawing.Size(52, 46);
             this.btnBorrar.TabIndex = 9;
             this.btnBorrar.Text = "x";
             this.btnBorrar.UseVisualStyleBackColor = true;
@@ -93,13 +95,15 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackgroundImage = global::Capa.UI.Properties.Resources.project1;
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Green;
-            this.btnAgregar.Location = new System.Drawing.Point(175, 21);
+            this.btnAgregar.Location = new System.Drawing.Point(175, 22);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(32, 30);
+            this.btnAgregar.Size = new System.Drawing.Size(52, 46);
             this.btnAgregar.TabIndex = 8;
-            this.btnAgregar.Text = "+";
+            this.btnAgregar.Tag = "";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -108,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(420, 288);
+            this.ClientSize = new System.Drawing.Size(438, 288);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

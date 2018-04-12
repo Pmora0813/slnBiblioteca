@@ -30,15 +30,19 @@
         {
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lstAutores = new System.Windows.Forms.ListBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(69, 182);
+            this.btnAceptar.BackgroundImage = global::Capa.UI.Properties.Resources.issue1;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAceptar.Location = new System.Drawing.Point(166, 12);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 29);
+            this.btnAceptar.Size = new System.Drawing.Size(89, 39);
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -48,16 +52,32 @@
             this.lstAutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstAutores.FormattingEnabled = true;
             this.lstAutores.ItemHeight = 16;
-            this.lstAutores.Location = new System.Drawing.Point(34, 12);
+            this.lstAutores.Location = new System.Drawing.Point(12, 12);
             this.lstAutores.Name = "lstAutores";
             this.lstAutores.Size = new System.Drawing.Size(140, 164);
             this.lstAutores.TabIndex = 2;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackgroundImage = global::Capa.UI.Properties.Resources.refresh;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancelar.Location = new System.Drawing.Point(167, 58);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(89, 39);
+            this.btnCancelar.TabIndex = 42;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmBuscarAutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 245);
+            this.ClientSize = new System.Drawing.Size(267, 188);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lstAutores);
             this.MaximizeBox = false;
@@ -74,5 +94,6 @@
 
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ListBox lstAutores;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

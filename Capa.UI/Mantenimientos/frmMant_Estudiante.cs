@@ -30,6 +30,8 @@ namespace Capa.UI.Mantenimientos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+
             try
             {
 
@@ -45,7 +47,7 @@ namespace Capa.UI.Mantenimientos
                     Roll = new Rol_Logica().SeleccionarRollPorId(Convert.ToInt32("3"))
                 };
 
-                
+
 
                 if (rbtnMasculino.Checked)
                 {
@@ -69,6 +71,7 @@ namespace Capa.UI.Mantenimientos
                 renderer.WriteToStream(qrCode.Matrix, ImageFormat.Png, ms);
                 var imageTemporal = new Bitmap(ms);
                 var imagen = new Bitmap(imageTemporal, new Size(new Point(145, 125)));
+                imagen.Save(estudiante.IdCedula + ".png", ImageFormat.Png);
                 panel1.BackgroundImage = imagen;
 
                 estudiante.QR = imagen.ToString();
@@ -77,8 +80,23 @@ namespace Capa.UI.Mantenimientos
                 Logica.guardar(estudiante);
                 Refrescar();
                 MessageBox.Show("Estudiante guardado con Exito", escuela, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //MessageBox.Show("La contraseña del estudiante es " + estudiante.Contrasenna, "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
+                string folderName = @"C:\Users\Pablo\Desktop\Codigos QR";
+                string pathString = System.IO.Path.Combine(folderName);
 
+
+                if (System.IO.Directory.Exists(pathString) != true)
+                {
+                    System.IO.Directory.CreateDirectory(pathString);
+                    imagen.Save("C:\\Users\\Pablo\\Desktop\\Codigos QR\\" + estudiante.IdCedula + ".png", ImageFormat.Png);
+                   
+
+                }
+                else
+                {
+                    imagen.Save("C:\\Users\\Pablo\\Desktop\\Codigos QR\\" + estudiante.IdCedula + ".png", ImageFormat.Png);
+                    
+                }
 
             }
             catch (Exception ex)
@@ -148,6 +166,18 @@ namespace Capa.UI.Mantenimientos
                 Estudiante est = (Estudiante)dtgEstudiantes.SelectedRows[0].DataBoundItem;
                 mskCedula.Text = est.IdCedula.ToString();
                 txtNombre.Text = est.Nombre;
+            }
+        }
+
+        private void txtEmai_TextChanged(object sender, EventArgs e)
+        {
+            if (Logica.ComprobarFormatoEmail(txtEmai.Text) == false)
+            {
+                txtEmai.ForeColor = Color.Red;
+            }
+            else
+            {
+                txtEmai.ForeColor = Color.Green;
             }
         }
     }

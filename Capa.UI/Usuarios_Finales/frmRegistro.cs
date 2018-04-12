@@ -31,7 +31,7 @@ namespace Capa.UI.Usuarios_Finales
         {
             try
             {
-                
+
                 Estudiante estudiante = new Estudiante()
                 {
                     IdCedula = Convert.ToInt32(mskCedula.Text),
@@ -40,7 +40,7 @@ namespace Capa.UI.Usuarios_Finales
                     Seccion = txtSeccion.Text,
                     F_Nacimiento = Convert.ToDateTime(dtpF_Nacimiento.Value),
                     Telefono = Convert.ToInt32(mskTelefono.Text),
-                    Activo = chkActivo.Checked,
+                    Activo = true,
                     Roll = new Rol_Logica().SeleccionarRollPorId(Convert.ToInt32("3"))
                 };
                 if (rbtnMasculino.Checked)
@@ -73,6 +73,20 @@ namespace Capa.UI.Usuarios_Finales
                 Logica.guardar(estudiante);
 
                 MessageBox.Show("Estudiante guardado con Exito", escuela, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                string folderName = @"C:\Users\Pablo\Desktop\Codigos QR";
+                string pathString = System.IO.Path.Combine(folderName);
+
+                if (System.IO.Directory.Exists(pathString) != true)
+                {
+                    System.IO.Directory.CreateDirectory(pathString);
+                    imagen.Save("C:\\Users\\Pablo\\Desktop\\Codigos QR\\" + estudiante.IdCedula + ".png", ImageFormat.Png);
+                }
+                else
+                {
+                    imagen.Save("C:\\Users\\Pablo\\Desktop\\Codigos QR\\" + estudiante.IdCedula + ".png", ImageFormat.Png);
+                }
+
                 this.Close();
             }
             catch (Exception ex)
@@ -90,6 +104,27 @@ namespace Capa.UI.Usuarios_Finales
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmRegistro_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Owner != null)
+            {
+                Owner.Show();
+            }
+        }
+
+        private void txtEmai_TextChanged(object sender, EventArgs e)
+        {
+            if (Logica.ComprobarFormatoEmail(txtEmai.Text) == false)
+            {
+                txtEmai.ForeColor = Color.Red;
+            }
+            else
+            {
+                txtEmai.ForeColor = Color.Green;
+            }
+            //txtEmai.ForeColor = Color.Black;
         }
     }
 }

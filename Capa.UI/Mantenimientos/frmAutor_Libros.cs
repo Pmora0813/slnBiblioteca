@@ -57,7 +57,7 @@ namespace Capa.UI.Mantenimientos
             }
         }
 
-        
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -74,14 +74,16 @@ namespace Capa.UI.Mantenimientos
                     Logica_Lib_Aut.guardar(lib, aut);
 
                     Refrescar();
-                    MessageBox.Show("Se Agrego un Autor al Libro seleccionado", "Escuela Platanares",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Se agrego un Autor al Libro seleccionado", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("El Autor seleccionado ya esta Registrado en este Libro", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
             }
         }
 
@@ -98,11 +100,11 @@ namespace Capa.UI.Mantenimientos
 
                 if (lib != null && aut != null)
                 {
-                    
+
                     Logica_Lib_Aut.Eliminar(lib, aut);
 
                     Refrescar();
-                    MessageBox.Show("Se elimino un Autor del Libro seleccionado","Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Se elimino un Autor del Libro seleccionado", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)

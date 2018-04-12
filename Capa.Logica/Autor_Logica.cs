@@ -66,6 +66,7 @@ namespace Capa.Logica
                 Id = -1,
                 Nombre = "Todos"
             };
+            lista.Insert(0, autor);
 
             return lista;
         }

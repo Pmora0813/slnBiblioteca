@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Capa.Logica
@@ -91,6 +92,28 @@ namespace Capa.Logica
         {
             Datos.Estudiante_Datos datos = new Datos.Estudiante_Datos();
             return datos.SeleccionarTodosFiltro(cedula, nombre,seccion);
+        }
+
+        public bool ComprobarFormatoEmail(string correo)
+        {
+
+            String sFormato;
+            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(correo, sFormato))
+            {
+                if (Regex.Replace(correo, sFormato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

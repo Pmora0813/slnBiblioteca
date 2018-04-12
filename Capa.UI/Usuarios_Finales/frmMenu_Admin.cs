@@ -170,5 +170,10 @@ namespace Capa.UI.Usuarios_Finales
 
             
         }
+
+        private void frmMenu_Admin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

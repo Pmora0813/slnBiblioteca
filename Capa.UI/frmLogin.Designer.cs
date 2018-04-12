@@ -59,11 +59,11 @@
             // 
             // mskContrasenna
             // 
-            this.mskContrasenna.Location = new System.Drawing.Point(104, 70);
+            this.mskContrasenna.Location = new System.Drawing.Point(105, 67);
             this.mskContrasenna.Margin = new System.Windows.Forms.Padding(4);
             this.mskContrasenna.Name = "mskContrasenna";
             this.mskContrasenna.PasswordChar = '*';
-            this.mskContrasenna.Size = new System.Drawing.Size(121, 22);
+            this.mskContrasenna.Size = new System.Drawing.Size(120, 22);
             this.mskContrasenna.TabIndex = 2;
             // 
             // btnEntrar

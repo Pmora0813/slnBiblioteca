@@ -106,6 +106,22 @@ namespace Capa.UI.Usuarios_Finales
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if(estudiante == null)
+            {
+                MessageBox.Show("Seleccione un Estudiante para el Prestamo", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (Usuario == null)
+            {
+                MessageBox.Show("Seleccione un Usuario no Autorizado", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cmbTipoSolicitud.SelectedItem == null)
+            {
+                MessageBox.Show("Seleccione una Categoria para el Prestamo", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 Prestamo = new Prestamo()
@@ -117,7 +133,6 @@ namespace Capa.UI.Usuarios_Finales
                     horas = Convert.ToInt32(dtpFecha_Dev.Value.Hour - dtpFechaAct.Value.Hour),
                     minutos = Convert.ToInt32(dtpFecha_Dev.Value.Minute - dtpFechaAct.Value.Minute),
                     estudiant = estudiante,
-                    //Libro = Libro,
                     Usuario = Usuario,
                     Categoria = (Categoria)cmbTipoSolicitud.SelectedItem
                 };
@@ -211,13 +226,26 @@ namespace Capa.UI.Usuarios_Finales
         {
             try
             {
+                if (Libro == null)
+                {
+                    MessageBox.Show("Seleccione un Libro para el Prestamo", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 PreLib_Logica.guardar(Prestamo, Libro);
+                MessageBox.Show("Se agrego un Libro para el Prestamo","Escuela Platanares", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (Exception)
             {
 
                 throw;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+            
         }
     }
 }

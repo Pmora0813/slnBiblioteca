@@ -34,6 +34,7 @@
             this.txtCodigo_Prestamo = new System.Windows.Forms.TextBox();
             this.dtpFecha_Dev = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBusquedaAvanzada = new System.Windows.Forms.Button();
             this.btnBuscar_est = new System.Windows.Forms.Button();
             this.txtSeccion_est = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFechaAct = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnBusquedaAvanzadaLibro = new System.Windows.Forms.Button();
             this.btnBuscarLibro = new System.Windows.Forms.Button();
             this.txtAnno = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,9 +62,6 @@
             this.wbbMostrar = new System.Windows.Forms.WebBrowser();
             this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.btnBusquedaAvanzada = new System.Windows.Forms.Button();
-            this.btnBusquedaAvanzadaLibro = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -127,6 +127,21 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estudiante";
+            // 
+            // btnBusquedaAvanzada
+            // 
+            this.btnBusquedaAvanzada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBusquedaAvanzada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnBusquedaAvanzada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btnBusquedaAvanzada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaAvanzada.Location = new System.Drawing.Point(214, 76);
+            this.btnBusquedaAvanzada.Name = "btnBusquedaAvanzada";
+            this.btnBusquedaAvanzada.Size = new System.Drawing.Size(152, 28);
+            this.btnBusquedaAvanzada.TabIndex = 9;
+            this.btnBusquedaAvanzada.Text = "Busqueda Avanzada";
+            this.btnBusquedaAvanzada.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusquedaAvanzada.UseVisualStyleBackColor = true;
+            this.btnBusquedaAvanzada.Click += new System.EventHandler(this.btnBusquedaAvanzada_Click);
             // 
             // btnBuscar_est
             // 
@@ -238,6 +253,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Libros";
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackgroundImage = global::Capa.UI.Properties.Resources.sign_up;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAceptar.Location = new System.Drawing.Point(216, 68);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(93, 37);
+            this.btnAceptar.TabIndex = 11;
+            this.btnAceptar.Text = "Agregar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnBusquedaAvanzadaLibro
+            // 
+            this.btnBusquedaAvanzadaLibro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBusquedaAvanzadaLibro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnBusquedaAvanzadaLibro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.btnBusquedaAvanzadaLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusquedaAvanzadaLibro.Location = new System.Drawing.Point(216, 121);
+            this.btnBusquedaAvanzadaLibro.Name = "btnBusquedaAvanzadaLibro";
+            this.btnBusquedaAvanzadaLibro.Size = new System.Drawing.Size(152, 28);
+            this.btnBusquedaAvanzadaLibro.TabIndex = 10;
+            this.btnBusquedaAvanzadaLibro.Text = "Busqueda Avanzada";
+            this.btnBusquedaAvanzadaLibro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusquedaAvanzadaLibro.UseVisualStyleBackColor = true;
+            this.btnBusquedaAvanzadaLibro.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnBuscarLibro
             // 
             this.btnBuscarLibro.BackgroundImage = global::Capa.UI.Properties.Resources.search1;
@@ -336,13 +379,17 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackgroundImage = global::Capa.UI.Properties.Resources.refresh;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancelar.Location = new System.Drawing.Point(731, 531);
+            this.btnCancelar.Location = new System.Drawing.Point(758, 531);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(134, 46);
+            this.btnCancelar.Size = new System.Drawing.Size(107, 46);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // wbbMostrar
             // 
@@ -365,49 +412,6 @@
             this.btnEnviarCorreo.UseVisualStyleBackColor = true;
             this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
             // 
-            // btnBusquedaAvanzada
-            // 
-            this.btnBusquedaAvanzada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBusquedaAvanzada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.btnBusquedaAvanzada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.btnBusquedaAvanzada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaAvanzada.Location = new System.Drawing.Point(214, 76);
-            this.btnBusquedaAvanzada.Name = "btnBusquedaAvanzada";
-            this.btnBusquedaAvanzada.Size = new System.Drawing.Size(152, 28);
-            this.btnBusquedaAvanzada.TabIndex = 9;
-            this.btnBusquedaAvanzada.Text = "Busqueda Avanzada";
-            this.btnBusquedaAvanzada.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBusquedaAvanzada.UseVisualStyleBackColor = true;
-            this.btnBusquedaAvanzada.Click += new System.EventHandler(this.btnBusquedaAvanzada_Click);
-            // 
-            // btnBusquedaAvanzadaLibro
-            // 
-            this.btnBusquedaAvanzadaLibro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBusquedaAvanzadaLibro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.btnBusquedaAvanzadaLibro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-            this.btnBusquedaAvanzadaLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBusquedaAvanzadaLibro.Location = new System.Drawing.Point(216, 121);
-            this.btnBusquedaAvanzadaLibro.Name = "btnBusquedaAvanzadaLibro";
-            this.btnBusquedaAvanzadaLibro.Size = new System.Drawing.Size(152, 28);
-            this.btnBusquedaAvanzadaLibro.TabIndex = 10;
-            this.btnBusquedaAvanzadaLibro.Text = "Busqueda Avanzada";
-            this.btnBusquedaAvanzadaLibro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBusquedaAvanzadaLibro.UseVisualStyleBackColor = true;
-            this.btnBusquedaAvanzadaLibro.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackgroundImage = global::Capa.UI.Properties.Resources.sign_up;
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAceptar.Location = new System.Drawing.Point(216, 68);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(93, 37);
-            this.btnAceptar.TabIndex = 11;
-            this.btnAceptar.Text = "Agregar";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.groupBox1);
@@ -427,6 +431,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(885, 605);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnEnviarCorreo);
@@ -440,6 +445,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.C);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

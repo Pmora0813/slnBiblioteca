@@ -85,15 +85,20 @@ namespace Capa.UI
                     break;
                 case 2:
                     Limpiar();
+                    //MessageBox.Show("Inicio de Seccion modo Profesor", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    MessageBox.Show("Inicio de Seccion modo Profesor", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
+                    Usuarios_Finales.frmMenu_Profesor frmProf = new Usuarios_Finales.frmMenu_Profesor();
+                    frmProf.Owner = this;
+                    frmProf.usuario = this.Usuario;
+                    frmProf.Show();break;
                 case 3:
+                    Limpiar();
+
                     MessageBox.Show("Inicio de Seccion modo Estudiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
                     Limpiar();
-                    MessageBox.Show("Usuario Incorecto", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Usuario Incorecto", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
@@ -107,10 +112,12 @@ namespace Capa.UI
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            //frmLogin ofrm2 = new frmLogin();
-            //Usuarios_Finales.frmRegistro ofrm = new Usuarios_Finales.frmRegistro();
-            //ofrm2.MinimizeBox = true;
-            //ofrm.ShowDialog();
+            Limpiar();
+            Usuarios_Finales.frmRegistro ofrm = new Usuarios_Finales.frmRegistro();
+            ofrm.Owner = this;
+            this.Hide();
+            ofrm.ShowDialog();
+            
 
 
         }

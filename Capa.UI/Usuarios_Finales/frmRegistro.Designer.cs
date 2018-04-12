@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.chkActivo = new System.Windows.Forms.CheckBox();
             this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
             this.dtpF_Nacimiento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,29 +52,21 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(243, 210);
+            this.btnRegistrar.BackgroundImage = global::Capa.UI.Properties.Resources.issue1;
+            this.btnRegistrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRegistrar.Location = new System.Drawing.Point(180, 268);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(90, 34);
+            this.btnRegistrar.Size = new System.Drawing.Size(111, 44);
             this.btnRegistrar.TabIndex = 38;
             this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // chkActivo
-            // 
-            this.chkActivo.AutoSize = true;
-            this.chkActivo.Location = new System.Drawing.Point(160, 106);
-            this.chkActivo.Margin = new System.Windows.Forms.Padding(4);
-            this.chkActivo.Name = "chkActivo";
-            this.chkActivo.Size = new System.Drawing.Size(64, 20);
-            this.chkActivo.TabIndex = 36;
-            this.chkActivo.Text = "Activo";
-            this.chkActivo.UseVisualStyleBackColor = true;
-            // 
             // mskTelefono
             // 
-            this.mskTelefono.Location = new System.Drawing.Point(72, 134);
+            this.mskTelefono.Location = new System.Drawing.Point(71, 161);
             this.mskTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.mskTelefono.Mask = "0000-00-00";
             this.mskTelefono.Name = "mskTelefono";
@@ -86,7 +77,7 @@
             // dtpF_Nacimiento
             // 
             this.dtpF_Nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpF_Nacimiento.Location = new System.Drawing.Point(16, 180);
+            this.dtpF_Nacimiento.Location = new System.Drawing.Point(20, 223);
             this.dtpF_Nacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dtpF_Nacimiento.Name = "dtpF_Nacimiento";
             this.dtpF_Nacimiento.Size = new System.Drawing.Size(107, 22);
@@ -96,7 +87,7 @@
             // 
             this.groupBox1.Controls.Add(this.rbtnFemenino);
             this.groupBox1.Controls.Add(this.rbtnMasculino);
-            this.groupBox1.Location = new System.Drawing.Point(16, 210);
+            this.groupBox1.Location = new System.Drawing.Point(211, 172);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -131,7 +122,7 @@
             // 
             // txtSeccion
             // 
-            this.txtSeccion.Location = new System.Drawing.Point(72, 104);
+            this.txtSeccion.Location = new System.Drawing.Point(71, 123);
             this.txtSeccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtSeccion.Name = "txtSeccion";
             this.txtSeccion.Size = new System.Drawing.Size(80, 22);
@@ -139,23 +130,24 @@
             // 
             // txtEmai
             // 
-            this.txtEmai.Location = new System.Drawing.Point(72, 75);
+            this.txtEmai.Location = new System.Drawing.Point(70, 85);
             this.txtEmai.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmai.Name = "txtEmai";
-            this.txtEmai.Size = new System.Drawing.Size(148, 22);
+            this.txtEmai.Size = new System.Drawing.Size(189, 22);
             this.txtEmai.TabIndex = 31;
+            this.txtEmai.TextChanged += new System.EventHandler(this.txtEmai_TextChanged);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(72, 43);
+            this.txtNombre.Location = new System.Drawing.Point(71, 47);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(148, 22);
+            this.txtNombre.Size = new System.Drawing.Size(188, 22);
             this.txtNombre.TabIndex = 30;
             // 
             // mskCedula
             // 
-            this.mskCedula.Location = new System.Drawing.Point(75, 13);
+            this.mskCedula.Location = new System.Drawing.Point(74, 9);
             this.mskCedula.Margin = new System.Windows.Forms.Padding(4);
             this.mskCedula.Mask = "0-0000-0000";
             this.mskCedula.Name = "mskCedula";
@@ -166,7 +158,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(240, 9);
+            this.label7.Location = new System.Drawing.Point(264, 9);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 16);
@@ -176,7 +168,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 130);
+            this.label6.Location = new System.Drawing.Point(13, 165);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 16);
@@ -186,7 +178,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 160);
+            this.label5.Location = new System.Drawing.Point(15, 203);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 16);
@@ -196,7 +188,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 75);
+            this.label4.Location = new System.Drawing.Point(12, 89);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 16);
@@ -206,7 +198,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 100);
+            this.label3.Location = new System.Drawing.Point(13, 127);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 16);
@@ -216,7 +208,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 41);
+            this.label2.Location = new System.Drawing.Point(13, 51);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
@@ -235,7 +227,7 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(243, 37);
+            this.panel1.Location = new System.Drawing.Point(267, 37);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(145, 124);
@@ -243,12 +235,16 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(243, 249);
+            this.btnCancelar.BackgroundImage = global::Capa.UI.Properties.Resources.refresh;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancelar.Location = new System.Drawing.Point(301, 268);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 34);
+            this.btnCancelar.Size = new System.Drawing.Size(111, 44);
             this.btnCancelar.TabIndex = 41;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -256,11 +252,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 295);
+            this.ClientSize = new System.Drawing.Size(441, 335);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.mskTelefono);
             this.Controls.Add(this.dtpF_Nacimiento);
             this.Controls.Add(this.groupBox1);
@@ -282,6 +277,7 @@
             this.Name = "frmRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Estudiantes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmRegistro_FormClosed);
             this.Load += new System.EventHandler(this.frmRegistro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -292,7 +288,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.MaskedTextBox mskTelefono;
         private System.Windows.Forms.DateTimePicker dtpF_Nacimiento;
         private System.Windows.Forms.GroupBox groupBox1;
