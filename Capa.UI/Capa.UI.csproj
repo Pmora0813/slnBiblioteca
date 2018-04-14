@@ -57,6 +57,11 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios_Finales\frmAd_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +154,12 @@
     <Compile Include="Usuarios_Finales\frmRegistro.Designer.cs">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios_Finales\Menu_Profesor\frmDevoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios_Finales\Menu_Profesor\frmDevoluciones.Designer.cs">
+      <DependentUpon>frmDevoluciones.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,14 +192,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Usuarios_Finales\frmBuscar_Estudiante.resx">
       <DependentUpon>frmBuscar_Estudiante.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios_Finales\frmRegistro.resx">
       <DependentUpon>frmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios_Finales\Menu_Profesor\frmDevoluciones.resx">
+      <DependentUpon>frmDevoluciones.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -237,111 +247,12 @@
   <ItemGroup>
     <None Include="Resources\2017_ktm_390_duke_5k-wide.jpg" />
     <None Include="Resources\address.png" />
-    <None Include="Resources\administrative-docs.png" />
-    <None Include="Resources\advertising.png" />
-    <None Include="Resources\archives.png" />
-    <None Include="Resources\attibutes.png" />
-    <None Include="Resources\bank.png" />
-    <None Include="Resources\basket.png" />
-    <None Include="Resources\bestseller.png" />
-    <None Include="Resources\billing.png" />
-    <None Include="Resources\bookmark.png" />
-    <None Include="Resources\brainstorming.png" />
-    <None Include="Resources\brand.png" />
-    <None Include="Resources\business-contact.png" />
-    <None Include="Resources\busy.png" />
-    <None Include="Resources\calendar.png" />
-    <None Include="Resources\category-2.png" />
-    <None Include="Resources\categoty.png" />
-    <None Include="Resources\collaboration.png" />
-    <None Include="Resources\comment.png" />
-    <None Include="Resources\communication.png" />
-    <None Include="Resources\config.png" />
-    <None Include="Resources\consulting.png" />
-    <None Include="Resources\contact.png" />
-    <None Include="Resources\cost.png" />
-    <None Include="Resources\credit.png" />
-    <None Include="Resources\credit-card.png" />
-    <None Include="Resources\current-work.png" />
-    <None Include="Resources\customers.png" />
-    <None Include="Resources\cv.png" />
-    <None Include="Resources\database.png" />
-    <None Include="Resources\date.png" />
-    <None Include="Resources\delicious.png" />
-    <None Include="Resources\document-library.png" />
-    <None Include="Resources\donate.png" />
-    <None Include="Resources\drawings.png" />
-    <None Include="Resources\edit.png" />
-    <None Include="Resources\email.png" />
-    <None Include="Resources\featured.png" />
-    <None Include="Resources\feed.png" />
-    <None Include="Resources\finished-work.png" />
-    <None Include="Resources\flag.png" />
-    <None Include="Resources\folder.png" />
-    <None Include="Resources\free-for-job.png" />
-    <None Include="Resources\freelance.png" />
-    <None Include="Resources\full-time.png" />
-    <None Include="Resources\future-projects.png" />
-    <None Include="Resources\graphic-design.png" />
-    <None Include="Resources\heart.png" />
-    <None Include="Resources\hire-me.png" />
-    <None Include="Resources\home.png" />
-    <None Include="Resources\illustration.png" />
-    <None Include="Resources\invoice.png" />
-    <None Include="Resources\invoice-2.png" />
-    <None Include="Resources\issue.png" />
-    <None Include="Resources\library.png" />
-    <None Include="Resources\lightbulb.png" />
-    <None Include="Resources\limited-edition.png" />
-    <None Include="Resources\link.png" />
-    <None Include="Resources\lock.png" />
-    <None Include="Resources\login.png" />
-    <None Include="Resources\logo1.png" />
-    <None Include="Resources\logout.png" />
-    <None Include="Resources\milestone.png" />
-    <None Include="Resources\my-account.png" />
-    <None Include="Resources\networking.png" />
-    <None Include="Resources\old-versions.png" />
-    <None Include="Resources\order.png" />
-    <None Include="Resources\order-2.png" />
-    <None Include="Resources\payment-card.png" />
-    <None Include="Resources\paypal.png" />
-    <None Include="Resources\pen.png" />
-    <None Include="Resources\pencil.png" />
-    <None Include="Resources\phone.png" />
-    <None Include="Resources\photography.png" />
-    <None Include="Resources\premium.png" />
-    <None Include="Resources\print.png" />
-    <None Include="Resources\process.png" />
-    <None Include="Resources\product.png" />
-    <None Include="Resources\product-2.png" />
-    <None Include="Resources\product-design.png" />
-    <None Include="Resources\project.png" />
-    <None Include="Resources\publish.png" />
-    <None Include="Resources\refresh.png" />
-    <None Include="Resources\search.png" />
-    <None Include="Resources\settings.png" />
-    <None Include="Resources\shipping.png" />
-    <None Include="Resources\showreel.png" />
-    <None Include="Resources\sign-in.png" />
-    <None Include="Resources\sign-out.png" />
-    <None Include="Resources\sign-up.png" />
-    <None Include="Resources\sitemap.png" />
-    <None Include="Resources\special-offer.png" />
-    <None Include="Resources\star.png" />
-    <None Include="Resources\statistics.png" />
-    <None Include="Resources\suppliers.png" />
-    <None Include="Resources\tag.png" />
-    <None Include="Resources\ticket.png" />
-    <None Include="Resources\twitter.png" />
-    <None Include="Resources\upcoming-work.png" />
-    <None Include="Resources\user.png" />
-    <None Include="Resources\world.png" />
-    <None Include="Resources\images.jpg" />
     <None Include="Resources\address1.png" />
     <None Include="Resources\address-book-2.png" />
+    <None Include="Resources\administrative-docs.png" />
     <None Include="Resources\administrative-docs1.png" />
     <None Include="Resources\adress-book.png" />
+    <None Include="Resources\advertising.png" />
     <None Include="Resources\advertising1.png" />
     <None Include="Resources\alarm.png" />
     <None Include="Resources\alarm_off_48.png" />
@@ -349,28 +260,40 @@
     <None Include="Resources\anchor.png" />
     <None Include="Resources\antenna.png" />
     <None Include="Resources\archive48.png" />
+    <None Include="Resources\archives.png" />
     <None Include="Resources\archives1.png" />
     <None Include="Resources\arrow-down.png" />
     <None Include="Resources\arrow-left.png" />
     <None Include="Resources\arrow-right.png" />
     <None Include="Resources\arrow-up.png" />
+    <None Include="Resources\attibutes.png" />
     <None Include="Resources\attibutes1.png" />
     <None Include="Resources\b-2.jpg" />
     <None Include="Resources\back_48.png" />
     <None Include="Resources\bag.png" />
+    <None Include="Resources\bank.png" />
     <None Include="Resources\bank1.png" />
+    <None Include="Resources\basket.png" />
     <None Include="Resources\basket1.png" />
+    <None Include="Resources\bestseller.png" />
     <None Include="Resources\bestseller1.png" />
+    <None Include="Resources\billing.png" />
     <None Include="Resources\billing1.png" />
     <None Include="Resources\bison.jpg" />
     <None Include="Resources\bluetooth.png" />
     <None Include="Resources\bold.png" />
+    <None Include="Resources\bookmark.png" />
     <None Include="Resources\bookmark1.png" />
+    <None Include="Resources\brainstorming.png" />
     <None Include="Resources\brainstorming1.png" />
+    <None Include="Resources\brand.png" />
     <None Include="Resources\broom.png" />
+    <None Include="Resources\business-contact.png" />
     <None Include="Resources\business-contact1.png" />
+    <None Include="Resources\busy.png" />
     <None Include="Resources\busy1.png" />
     <None Include="Resources\calc.png" />
+    <None Include="Resources\calendar.png" />
     <None Include="Resources\calendar1.png" />
     <None Include="Resources\camera48.png" />
     <None Include="Resources\camera-boot48.png" />
@@ -383,6 +306,8 @@
     <None Include="Resources\card_mntd48_0.png" />
     <None Include="Resources\card48.png" />
     <None Include="Resources\category.png" />
+    <None Include="Resources\category-2.png" />
+    <None Include="Resources\categoty.png" />
     <None Include="Resources\cc-license.png" />
     <None Include="Resources\chat48.png" />
     <None Include="Resources\check.png" />
@@ -390,43 +315,61 @@
     <None Include="Resources\click-to-call.png" />
     <None Include="Resources\clipboard48.png" />
     <None Include="Resources\clock_48.png" />
+    <None Include="Resources\collaboration.png" />
     <None Include="Resources\collaboration1.png" />
     <None Include="Resources\comic-book.png" />
+    <None Include="Resources\comment.png" />
     <None Include="Resources\comment1.png" />
+    <None Include="Resources\communication.png" />
     <None Include="Resources\communication1.png" />
     <None Include="Resources\compass.png" />
+    <None Include="Resources\config.png" />
     <None Include="Resources\config1.png" />
     <None Include="Resources\configuration48.png" />
     <None Include="Resources\connect48.png" />
     <None Include="Resources\console48.png" />
+    <None Include="Resources\consulting.png" />
     <None Include="Resources\consulting1.png" />
+    <None Include="Resources\contact.png" />
     <None Include="Resources\contact1.png" />
     <None Include="Resources\contact48.png" />
     <None Include="Resources\copyright.png" />
+    <None Include="Resources\cost.png" />
     <None Include="Resources\cost1.png" />
+    <None Include="Resources\credit.png" />
     <None Include="Resources\credit1.png" />
+    <None Include="Resources\credit-card.png" />
     <None Include="Resources\credit-card1.png" />
     <None Include="Resources\csharp-logo.png" />
     <None Include="Resources\CsharpWallpaper.jpg" />
+    <None Include="Resources\current-work.png" />
     <None Include="Resources\current-work1.png" />
+    <None Include="Resources\customers.png" />
     <None Include="Resources\customers1.png" />
+    <None Include="Resources\cv.png" />
     <None Include="Resources\cv1.png" />
     <None Include="Resources\c-y-mono.png" />
+    <None Include="Resources\database.png" />
     <None Include="Resources\database1.png" />
+    <None Include="Resources\date.png" />
     <None Include="Resources\date1.png" />
     <None Include="Resources\date48.png" />
     <None Include="Resources\delete.png" />
+    <None Include="Resources\delicious.png" />
     <None Include="Resources\delicious1.png" />
     <None Include="Resources\dial.png" />
     <None Include="Resources\disable_48.png" />
     <None Include="Resources\disk.png" />
     <None Include="Resources\display.png" />
     <None Include="Resources\display2.png" />
+    <None Include="Resources\document-library.png" />
     <None Include="Resources\document-library1.png" />
+    <None Include="Resources\donate.png" />
     <None Include="Resources\donate1.png" />
     <None Include="Resources\download.png" />
     <None Include="Resources\drag.png" />
     <None Include="Resources\draw48.png" />
+    <None Include="Resources\drawings.png" />
     <None Include="Resources\drawings1.png" />
     <None Include="Resources\drive_mntd_boot48.png" />
     <None Include="Resources\drive_mntd_boot48_0.png" />
@@ -434,8 +377,10 @@
     <None Include="Resources\drive_mntd48_0.png" />
     <None Include="Resources\drive48.png" />
     <None Include="Resources\drives48.png" />
+    <None Include="Resources\edit.png" />
     <None Include="Resources\edit1.png" />
     <None Include="Resources\edit48.png" />
+    <None Include="Resources\email.png" />
     <None Include="Resources\email1.png" />
     <None Include="Resources\email48.png" />
     <None Include="Resources\enable_48.png" />
@@ -444,18 +389,23 @@
     <None Include="Resources\faq.png" />
     <None Include="Resources\fast_forward_48.png" />
     <None Include="Resources\favorite.png" />
+    <None Include="Resources\featured.png" />
     <None Include="Resources\featured1.png" />
+    <None Include="Resources\feed.png" />
     <None Include="Resources\feed1.png" />
     <None Include="Resources\feedback.png" />
     <None Include="Resources\file-manager48.png" />
     <None Include="Resources\finder.png" />
+    <None Include="Resources\finished-work.png" />
     <None Include="Resources\finished-work1.png" />
+    <None Include="Resources\flag.png" />
     <None Include="Resources\flag1.png" />
     <None Include="Resources\floppy_mntd_boot48.png" />
     <None Include="Resources\floppy_mntd_boot48_0.png" />
     <None Include="Resources\floppy_mntd48.png" />
     <None Include="Resources\floppy_mntd48_0.png" />
     <None Include="Resources\floppy48.png" />
+    <None Include="Resources\folder.png" />
     <None Include="Resources\folder1.png" />
     <None Include="Resources\folder48.png" />
     <None Include="Resources\folder-clipart.png" />
@@ -468,14 +418,19 @@
     <None Include="Resources\folder-open.png" />
     <None Include="Resources\folder-picture.png" />
     <None Include="Resources\forward_48.png" />
+    <None Include="Resources\free-for-job.png" />
     <None Include="Resources\free-for-job1.png" />
+    <None Include="Resources\freelance.png" />
     <None Include="Resources\freelance1.png" />
+    <None Include="Resources\full-time.png" />
     <None Include="Resources\full-time1.png" />
+    <None Include="Resources\future-projects.png" />
     <None Include="Resources\future-projects1.png" />
     <None Include="Resources\galaxias.jpg" />
     <None Include="Resources\games_48.png" />
     <None Include="Resources\games48.png" />
     <None Include="Resources\gift.png" />
+    <None Include="Resources\graphic-design.png" />
     <None Include="Resources\graphic-design1.png" />
     <None Include="Resources\guarantee.png" />
     <None Include="Resources\hang-up.png" />
@@ -483,32 +438,48 @@
     <None Include="Resources\hdd.png" />
     <None Include="Resources\headphone.png" />
     <None Include="Resources\headphones.png" />
+    <None Include="Resources\heart.png" />
     <None Include="Resources\heart1.png" />
     <None Include="Resources\Helicoptero.jpg" />
     <None Include="Resources\help.png" />
     <None Include="Resources\help48.png" />
+    <None Include="Resources\hire-me.png" />
     <None Include="Resources\hire-me1.png" />
+    <None Include="Resources\home.png" />
     <None Include="Resources\home1.png" />
     <None Include="Resources\home48.png" />
     <None Include="Resources\ice-kolbi2010.jpg" />
+    <None Include="Resources\illustration.png" />
     <None Include="Resources\illustration1.png" />
     <None Include="Resources\image.png" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\invoice.png" />
     <None Include="Resources\invoice1.png" />
+    <None Include="Resources\invoice-2.png" />
     <None Include="Resources\Ipod.jpg" />
+    <None Include="Resources\issue.png" />
     <None Include="Resources\issue1.png" />
     <None Include="Resources\italic.png" />
     <None Include="Resources\itunesmusic.jpg" />
     <None Include="Resources\keypad.png" />
     <None Include="Resources\lens.png" />
     <None Include="Resources\leon.jpg" />
+    <None Include="Resources\library.png" />
     <None Include="Resources\library1.png" />
     <None Include="Resources\license.png" />
+    <None Include="Resources\lightbulb.png" />
     <None Include="Resources\lightbulb1.png" />
+    <None Include="Resources\limited-edition.png" />
     <None Include="Resources\limited-edition1.png" />
+    <None Include="Resources\link.png" />
     <None Include="Resources\link1.png" />
+    <None Include="Resources\lock.png" />
     <None Include="Resources\lock1.png" />
     <None Include="Resources\lock-screen48.png" />
+    <None Include="Resources\login.png" />
     <None Include="Resources\login1.png" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\logout.png" />
     <None Include="Resources\logout1.png" />
     <None Include="Resources\magnet.png" />
     <None Include="Resources\magnifying_glass_48.png" />
@@ -519,6 +490,7 @@
     <None Include="Resources\media-flash48.png" />
     <None Include="Resources\memory.png" />
     <None Include="Resources\Mig29.jpg" />
+    <None Include="Resources\milestone.png" />
     <None Include="Resources\milestone1.png" />
     <None Include="Resources\minus_48 2.png" />
     <None Include="Resources\minus_48.png" />
@@ -526,6 +498,7 @@
     <None Include="Resources\mug.png" />
     <None Include="Resources\multimedia48.png" />
     <None Include="Resources\music-cd.png" />
+    <None Include="Resources\my-account.png" />
     <None Include="Resources\my-account1.png" />
     <None Include="Resources\my-invoices.png" />
     <None Include="Resources\my-profile.png" />
@@ -536,9 +509,11 @@
     <None Include="Resources\naveUP.gif" />
     <None Include="Resources\naveUPClean.gif" />
     <None Include="Resources\network48.png" />
+    <None Include="Resources\networking.png" />
     <None Include="Resources\networking1.png" />
     <None Include="Resources\newspaper.png" />
     <None Include="Resources\office.png" />
+    <None Include="Resources\old-versions.png" />
     <None Include="Resources\old-versions1.png" />
     <None Include="Resources\optical_mntd_boot48.png" />
     <None Include="Resources\optical_mntd_boot48_0.png" />
@@ -546,70 +521,100 @@
     <None Include="Resources\optical_mntd48_0.png" />
     <None Include="Resources\optical48.png" />
     <None Include="Resources\options_48.png" />
+    <None Include="Resources\order.png" />
     <None Include="Resources\order1.png" />
+    <None Include="Resources\order-2.png" />
     <None Include="Resources\order-149.png" />
     <None Include="Resources\paint48.png" />
     <None Include="Resources\pause_48.png" />
+    <None Include="Resources\payment-card.png" />
     <None Include="Resources\payment-card1.png" />
+    <None Include="Resources\paypal.png" />
     <None Include="Resources\paypal1.png" />
     <None Include="Resources\pc48.png" />
     <None Include="Resources\pdfreader.png" />
+    <None Include="Resources\pen.png" />
     <None Include="Resources\pen1.png" />
+    <None Include="Resources\pencil.png" />
     <None Include="Resources\pencil1.png" />
     <None Include="Resources\pepperoni-pizza.jpeg" />
     <None Include="Resources\pet48.png" />
+    <None Include="Resources\phone.png" />
     <None Include="Resources\phone1.png" />
+    <None Include="Resources\photography.png" />
     <None Include="Resources\photography1.png" />
     <None Include="Resources\photos.png" />
     <None Include="Resources\pizza_quesos.jpg" />
     <None Include="Resources\plan_48.png" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\plus_48.png" />
+    <None Include="Resources\premium.png" />
     <None Include="Resources\premium1.png" />
+    <None Include="Resources\print.png" />
     <None Include="Resources\print1.png" />
     <None Include="Resources\printer48.png" />
+    <None Include="Resources\process.png" />
     <None Include="Resources\process1.png" />
     <None Include="Resources\processor.png" />
+    <None Include="Resources\product.png" />
     <None Include="Resources\product1.png" />
+    <None Include="Resources\product-2.png" />
     <None Include="Resources\product-163.png" />
+    <None Include="Resources\product-design.png" />
     <None Include="Resources\product-design1.png" />
+    <None Include="Resources\project.png" />
     <None Include="Resources\project1.png" />
+    <None Include="Resources\publish.png" />
     <None Include="Resources\publish1.png" />
     <None Include="Resources\quote.png" />
     <None Include="Resources\radio.png" />
     <None Include="Resources\receptionist.png" />
+    <None Include="Resources\refresh.png" />
     <None Include="Resources\refresh1.png" />
     <None Include="Resources\rewind_48.png" />
     <None Include="Resources\ringtone_48.png" />
     <None Include="Resources\save48.png" />
     <None Include="Resources\scanner48.png" />
+    <None Include="Resources\search.png" />
     <None Include="Resources\search1.png" />
     <None Include="Resources\send_48.png" />
     <None Include="Resources\set_date_48.png" />
     <None Include="Resources\set_time_48.png" />
-    <None Include="Resources\settings1.png" />
+    <None Include="Resources\settings.png" />
     <None Include="Resources\settings_48.png" />
+    <None Include="Resources\settings1.png" />
+    <None Include="Resources\shipping.png" />
     <None Include="Resources\shipping1.png" />
     <None Include="Resources\shop.png" />
+    <None Include="Resources\showreel.png" />
     <None Include="Resources\showreel1.png" />
     <None Include="Resources\shutdown48.png" />
+    <None Include="Resources\sign-in.png" />
     <None Include="Resources\sign-in1.png" />
+    <None Include="Resources\sign-out.png" />
     <None Include="Resources\sign-out1.png" />
+    <None Include="Resources\sign-up.png" />
     <None Include="Resources\sign-up1.png" />
+    <None Include="Resources\sitemap.png" />
     <None Include="Resources\sitemap1.png" />
     <None Include="Resources\smartphone.png" />
     <None Include="Resources\sms.png" />
     <None Include="Resources\sms-call.png" />
     <None Include="Resources\sofa.png" />
+    <None Include="Resources\special-offer.png" />
     <None Include="Resources\special-offer1.png" />
     <None Include="Resources\spread48.png" />
+    <None Include="Resources\star.png" />
     <None Include="Resources\star1.png" />
+    <None Include="Resources\statistics.png" />
     <None Include="Resources\statistics1.png" />
     <None Include="Resources\stop.png" />
     <None Include="Resources\superturbo.gif" />
+    <None Include="Resources\suppliers.png" />
     <None Include="Resources\suppliers1.png" />
     <None Include="Resources\support-man.png" />
     <None Include="Resources\support-woman.png" />
+    <None Include="Resources\tag.png" />
     <None Include="Resources\tag1.png" />
     <None Include="Resources\target.png" />
     <None Include="Resources\telecom.png" />
@@ -617,12 +622,15 @@
     <None Include="Resources\telephone_receiver.png" />
     <None Include="Resources\tell-a-friend.png" />
     <None Include="Resources\tick.png" />
+    <None Include="Resources\ticket.png" />
     <None Include="Resources\ticket1.png" />
     <None Include="Resources\trashcan_empty48.png" />
     <None Include="Resources\trashcan_full48.png" />
     <None Include="Resources\turbo.gif" />
+    <None Include="Resources\twitter.png" />
     <None Include="Resources\twitter1.png" />
     <None Include="Resources\under-construction.png" />
+    <None Include="Resources\upcoming-work.png" />
     <None Include="Resources\upcoming-work1.png" />
     <None Include="Resources\usb.png" />
     <None Include="Resources\usbdrv_mntd_boot48.png" />
@@ -631,6 +639,7 @@
     <None Include="Resources\usbdrv_mntd48_0.png" />
     <None Include="Resources\usbdrv48.png" />
     <None Include="Resources\usbpendrive48.png" />
+    <None Include="Resources\user.png" />
     <None Include="Resources\user1.png" />
     <None Include="Resources\utility48.png" />
     <None Include="Resources\voip.png" />
@@ -645,6 +654,7 @@
     <None Include="Resources\wildebeest.jpg" />
     <None Include="Resources\wolf.jpg" />
     <None Include="Resources\word48.png" />
+    <None Include="Resources\world.png" />
     <None Include="Resources\world1.png" />
     <None Include="Resources\write.png" />
     <None Include="Resources\www48.png" />

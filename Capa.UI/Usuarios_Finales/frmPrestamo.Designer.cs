@@ -367,7 +367,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackgroundImage = global::Capa.UI.Properties.Resources.issue1;
+            this.btnGuardar.BackgroundImage = global::Capa.UI.Properties.Resources.disk;
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGuardar.Location = new System.Drawing.Point(12, 261);
             this.btnGuardar.Name = "btnGuardar";

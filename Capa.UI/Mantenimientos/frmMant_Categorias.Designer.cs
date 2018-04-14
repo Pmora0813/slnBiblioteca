@@ -45,7 +45,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 20);
+            this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             // 
@@ -54,7 +54,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
             // 
@@ -62,7 +62,7 @@
             // 
             this.npdID.Location = new System.Drawing.Point(97, 12);
             this.npdID.Name = "npdID";
-            this.npdID.Size = new System.Drawing.Size(53, 27);
+            this.npdID.Size = new System.Drawing.Size(53, 23);
             this.npdID.TabIndex = 2;
             this.npdID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -70,7 +70,7 @@
             // 
             this.txtCateg.Location = new System.Drawing.Point(97, 56);
             this.txtCateg.Name = "txtCateg";
-            this.txtCateg.Size = new System.Drawing.Size(140, 27);
+            this.txtCateg.Size = new System.Drawing.Size(140, 23);
             this.txtCateg.TabIndex = 3;
             // 
             // btnNuevo
@@ -117,7 +117,7 @@
             // 
             // frmMant_Categorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(271, 275);
             this.Controls.Add(this.dtgCategorias);

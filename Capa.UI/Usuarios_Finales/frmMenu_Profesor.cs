@@ -125,5 +125,10 @@ namespace Capa.UI.Usuarios_Finales
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -30,53 +30,68 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSolicitudes = new System.Windows.Forms.Button();
-            this.btnDevoluciones = new System.Windows.Forms.Button();
             this.btnRegistro = new System.Windows.Forms.Button();
+            this.btnRealiazar_Devol = new System.Windows.Forms.Button();
+            this.btnSolicitudes = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnRegistro);
-            this.panel1.Controls.Add(this.btnDevoluciones);
-            this.panel1.Controls.Add(this.btnSolicitudes);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1254, 84);
-            this.panel1.TabIndex = 4;
-            // 
-            // btnSolicitudes
-            // 
-            this.btnSolicitudes.Location = new System.Drawing.Point(325, 21);
-            this.btnSolicitudes.Name = "btnSolicitudes";
-            this.btnSolicitudes.Size = new System.Drawing.Size(125, 40);
-            this.btnSolicitudes.TabIndex = 0;
-            this.btnSolicitudes.Text = "Solicitudes";
-            this.btnSolicitudes.UseVisualStyleBackColor = true;
-            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
-            // 
-            // btnDevoluciones
-            // 
-            this.btnDevoluciones.Location = new System.Drawing.Point(530, 21);
-            this.btnDevoluciones.Name = "btnDevoluciones";
-            this.btnDevoluciones.Size = new System.Drawing.Size(125, 40);
-            this.btnDevoluciones.TabIndex = 1;
-            this.btnDevoluciones.Text = "Devoluciones";
-            this.btnDevoluciones.UseVisualStyleBackColor = true;
-            this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
-            // 
             // btnRegistro
             // 
-            this.btnRegistro.Location = new System.Drawing.Point(735, 21);
+            this.btnRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistro.Location = new System.Drawing.Point(786, 24);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(125, 40);
             this.btnRegistro.TabIndex = 2;
             this.btnRegistro.Text = "Registro";
             this.btnRegistro.UseVisualStyleBackColor = true;
             this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
+            // 
+            // btnRealiazar_Devol
+            // 
+            this.btnRealiazar_Devol.BackgroundImage = global::Capa.UI.Properties.Resources.document_library1;
+            this.btnRealiazar_Devol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRealiazar_Devol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRealiazar_Devol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRealiazar_Devol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRealiazar_Devol.Location = new System.Drawing.Point(499, 24);
+            this.btnRealiazar_Devol.Name = "btnRealiazar_Devol";
+            this.btnRealiazar_Devol.Size = new System.Drawing.Size(203, 40);
+            this.btnRealiazar_Devol.TabIndex = 1;
+            this.btnRealiazar_Devol.Text = "Realizar Devoluciones";
+            this.btnRealiazar_Devol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRealiazar_Devol.UseVisualStyleBackColor = true;
+            this.btnRealiazar_Devol.Click += new System.EventHandler(this.btnDevoluciones_Click);
+            // 
+            // btnSolicitudes
+            // 
+            this.btnSolicitudes.BackgroundImage = global::Capa.UI.Properties.Resources.issue1;
+            this.btnSolicitudes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSolicitudes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSolicitudes.Location = new System.Drawing.Point(315, 24);
+            this.btnSolicitudes.Name = "btnSolicitudes";
+            this.btnSolicitudes.Size = new System.Drawing.Size(125, 40);
+            this.btnSolicitudes.TabIndex = 0;
+            this.btnSolicitudes.Text = "Solicitudes";
+            this.btnSolicitudes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSolicitudes.UseVisualStyleBackColor = true;
+            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnRegistro);
+            this.panel1.Controls.Add(this.btnRealiazar_Devol);
+            this.panel1.Controls.Add(this.btnSolicitudes);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1254, 84);
+            this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmMenu_Profesor
             // 
@@ -97,10 +112,10 @@
         }
         #endregion
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnRegistro;
-        private System.Windows.Forms.Button btnDevoluciones;
+        private System.Windows.Forms.Button btnRealiazar_Devol;
         private System.Windows.Forms.Button btnSolicitudes;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
