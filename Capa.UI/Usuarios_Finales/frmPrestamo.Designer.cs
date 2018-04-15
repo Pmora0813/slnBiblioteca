@@ -59,10 +59,10 @@
             this.cmbTipoSolicitud = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.wbbMostrar = new System.Windows.Forms.WebBrowser();
             this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.wbbMostrar = new System.Windows.Forms.WebBrowser();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -382,22 +382,14 @@
             this.btnCancelar.BackgroundImage = global::Capa.UI.Properties.Resources.refresh;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCancelar.Location = new System.Drawing.Point(758, 531);
+            this.btnCancelar.Location = new System.Drawing.Point(783, 531);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(107, 46);
+            this.btnCancelar.Size = new System.Drawing.Size(82, 46);
             this.btnCancelar.TabIndex = 20;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Salir";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // wbbMostrar
-            // 
-            this.wbbMostrar.Location = new System.Drawing.Point(515, 53);
-            this.wbbMostrar.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbbMostrar.Name = "wbbMostrar";
-            this.wbbMostrar.Size = new System.Drawing.Size(350, 452);
-            this.wbbMostrar.TabIndex = 21;
             // 
             // btnEnviarCorreo
             // 
@@ -427,15 +419,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion del Prestamo";
             // 
+            // wbbMostrar
+            // 
+            this.wbbMostrar.Location = new System.Drawing.Point(524, 49);
+            this.wbbMostrar.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbbMostrar.Name = "wbbMostrar";
+            this.wbbMostrar.Size = new System.Drawing.Size(340, 446);
+            this.wbbMostrar.TabIndex = 24;
+            // 
             // frmPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(885, 605);
+            this.Controls.Add(this.wbbMostrar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnEnviarCorreo);
-            this.Controls.Add(this.wbbMostrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dtpFechaAct);
@@ -494,12 +494,12 @@
         private System.Windows.Forms.ComboBox cmbTipoSolicitud;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.WebBrowser wbbMostrar;
         private System.Windows.Forms.Button btnEnviarCorreo;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button btnBusquedaAvanzada;
         private System.Windows.Forms.Button btnBusquedaAvanzadaLibro;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.WebBrowser wbbMostrar;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Capa.Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -9,14 +10,18 @@ using System.Xml.Xsl;
 
 namespace Capa.Logica
 {
-    
+
     public class Prestamo_Logica
     {
         public string Ruta
         {
-            get { return Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Prestamos.xml"; }
+            get { return Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Comprobantes\\Prestamos.xml"; }
         }
-       
+        public string RutaHtml
+        {
+            get { return "D:\\2018\\Proyecto C# 2018\\slnBiblioteca\\Capa.UI\\bin\\Debug\\Prestamos_de_Libros.html"; }
+        }
+
         public void guardar(Prestamo prestamo)
         {
             if (String.IsNullOrWhiteSpace(prestamo.id.ToString()))
@@ -56,7 +61,7 @@ namespace Capa.Logica
                 string[] dt = response.Headers.GetValues("Date");
                 DateTime t = Convert.ToDateTime(dt[0]);
 
-                if (t == null)
+                if (t.Equals(DateTime.Now))
                 {
                     t = DateTime.Now;
                 }
@@ -69,8 +74,10 @@ namespace Capa.Logica
             }
         }
 
-        public void GuardarXML(Prestamo prestamo, string Ruta)
+
+        public void GuardarXML(Prestamo prestamo)
         {
+            List<Libros> lista = new Prestamo_Libros_Logica().SeleccionarTodos(prestamo.id);
 
             XmlDocument doc = new XmlDocument();
             doc.LoadXml("<Prestamos></Prestamos>");
@@ -140,45 +147,64 @@ namespace Capa.Logica
             NodoEstudiante.AppendChild(NodoEmail);
             //--FIN NODO ESTUDIANTE
 
-            //--INICIO NODO LIBRO
-            XmlElement NodoLibro = doc.CreateElement("Libro");
-            //--
-            XmlElement NodoCodigo_L = doc.CreateElement("Codigo");
-           // NodoCodigo_L.InnerText = prestamo.Libro.Id.ToString();
-            NodoLibro.AppendChild(NodoCodigo_L);
-            //--
-            //--
-            XmlElement NodoTitulo = doc.CreateElement("Titulo");
-            //NodoTitulo.InnerText = prestamo.Libro.Titulo.ToString();
-            NodoLibro.AppendChild(NodoTitulo);
-            //--
-            //--
-            XmlElement NodoAnno = doc.CreateElement("Año");
-            //NodoAnno.InnerText = prestamo.Libro.anno.ToString();
-            NodoLibro.AppendChild(NodoAnno);
-            //--
-            //--
-            XmlElement NodoEditoial = doc.CreateElement("Editorial");
-           // NodoEditoial.InnerText = prestamo.Libro.Editorial.Nombre.ToString();
-            NodoLibro.AppendChild(NodoEditoial);
+            XmlElement NodoLibros = doc.CreateElement("Libros");
+            foreach (Libros Libro in lista)
+            {
+                //--INICIO NODO LIBRO
+                XmlElement NodoLibro = doc.CreateElement("Libro");
+                //--
+                XmlElement NodoCodigo_L = doc.CreateElement("Codigo");
+                NodoCodigo_L.InnerText = Libro.Id.ToString();
+                NodoLibro.AppendChild(NodoCodigo_L);
+                //--
+                //--
+                XmlElement NodoTitulo = doc.CreateElement("Titulo");
+                NodoTitulo.InnerText = Libro.Titulo.ToString();
+                NodoLibro.AppendChild(NodoTitulo);
+                //--
+                //--
+                XmlElement NodoAnno = doc.CreateElement("Año");
+                NodoAnno.InnerText = Libro.anno.ToString();
+                NodoLibro.AppendChild(NodoAnno);
+                //--
+                //--
+                XmlElement NodoEditoial = doc.CreateElement("Editorial");
+                NodoEditoial.InnerText = Libro.Editorial.Nombre.ToString();
+                NodoLibro.AppendChild(NodoEditoial);
+                //--
+                //--FIN NODO LIBRO
+
+                NodoLibros.AppendChild(NodoLibro);
+            }
+
             //--CAT
             XmlElement NodoTipo_solicitud = doc.CreateElement("Tipo_Solicitud");
             NodoTipo_solicitud.InnerText = prestamo.Categoria.Descripcion.ToString();
-            NodoLibro.AppendChild(NodoTipo_solicitud);
+            NodoLibros.AppendChild(NodoTipo_solicitud);
             //--
-            //--FIN NODO LIBRO
-
-
 
             //--FIN NODO PRESTAMO
-
             root.AppendChild(NodoPrestamo);
             root.AppendChild(NodoEstudiante);
-            root.AppendChild(NodoLibro);
+            root.AppendChild(NodoLibros);
 
 
             // Guardamos el Archivo XML
             doc.Save(Ruta);
+
+        }
+
+        public void CrearCarpeta()
+        {
+            string folderName = @"C:\Users\Pablo\Desktop\Comprobantes";
+            string pathString = System.IO.Path.Combine(folderName);
+
+
+            if (System.IO.Directory.Exists(pathString) != true)
+            {
+                System.IO.Directory.CreateDirectory(pathString);
+
+            }
         }
 
         public string TransformXMLToHTML(string rutaXML)
@@ -188,7 +214,7 @@ namespace Capa.Logica
             // Carga en memoria la lectura xslt
             myXslTrans.Load("Xslt\\Prestamos.xslt");
             // Transforma el archivo xml aun archivo HTML
-            myXslTrans.Transform(rutaXML, "Prestamos_de_Libros.html");
+            myXslTrans.Transform(rutaXML, RutaHtml);
 
             return "Prestamos_de_Libros.html";
         }

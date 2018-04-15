@@ -88,43 +88,47 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </td>
           </tr>
 
-          <tr bgcolor="#1FC533">
-            <th colspan="2">Libro</th>
-          </tr>
-          <tr>
-            <td>Código:</td>
-            <td colspan="2">
-              <xsl:value-of select="Prestamos/Libro/Codigo"/>
-            </td>
-          </tr>
+          <xsl:for-each select="Prestamos/Libros/Libro">
+            <tr bgcolor="#1FC533">
+              <th colspan="2">Libro</th>
+            </tr>
 
-          <tr>
-            <td>Título:</td>
-            <td colspan="2">
-              <xsl:value-of select="Prestamos/Libro/Titulo"/>
-            </td>
-          </tr>
+            <tr>
+              <td>Código:</td>
+              <td colspan="2">
+                <xsl:value-of select="./Codigo"/>
+              </td>
+            </tr>
 
-          <tr>
-            <td>Año:</td>
-            <td colspan="2">
-              <xsl:value-of select="Prestamos/Libro/Año"/>
-            </td>
-          </tr>
+            <tr>
+              <td>Título:</td>
+              <td colspan="2">
+                <xsl:value-of select="./Titulo"/>
+              </td>
+            </tr>
 
-          <tr>
-            <td>Editorial</td>
-            <td colspan="2">
-              <xsl:value-of select="Prestamos/Libro/Editorial"/>
-            </td>
-          </tr>
+            <tr>
+              <td>Año:</td>
+              <td colspan="2">
+                <xsl:value-of select="./Año"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Editorial</td>
+              <td colspan="2">
+                <xsl:value-of select="./Editorial"/>
+              </td>
+            </tr>
+
+          </xsl:for-each>
 
           <tr bgcolor="#1FC533">
             <th colspan="2">Tipo de Solicitud</th>
             <tr>
               <td>Clasificación:</td>
               <td>
-                <xsl:value-of select="Prestamos/Libro/Tipo_Solicitud"/>
+                <xsl:value-of select="Prestamos/Libros/Tipo_Solicitud"/>
               </td>
             </tr>
           </tr>

@@ -71,6 +71,8 @@ namespace Capa.UI.Usuarios_Finales
                 cmbTipoSolicitud.ValueMember = "Id";
                 cmbTipoSolicitud.SelectedIndex = -1;
 
+                Prest_Logica.CrearCarpeta();
+
             }
             catch (Exception)
             {
@@ -106,7 +108,7 @@ namespace Capa.UI.Usuarios_Finales
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(estudiante == null)
+            if (estudiante == null)
             {
                 MessageBox.Show("Seleccione un Estudiante para el Prestamo", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -140,36 +142,38 @@ namespace Capa.UI.Usuarios_Finales
                 Prest_Logica.guardar(Prestamo);
                 MessageBox.Show("Se registro un Prestamo con exito", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                
             }
             catch (Exception)
             {
                 throw;
             }
-            //Mostrar_Prestamo();
-
+            Mostrar_Prestamo();
 
         }
         //Metodo para cargar el XML y mostrarlo en el webbroser
         private void Mostrar_Prestamo()
         {
             string ruta = Prest_Logica.Ruta;
-
-            Prest_Logica.GuardarXML(Prestamo, ruta);
+            Prest_Logica.GuardarXML(Prestamo);
             //Transformanos el archivo XML en HTML con el metodo
             ruta = Prest_Logica.TransformXMLToHTML(ruta);
 
             //Le asignamos el HTML al web broser
             wbbMostrar.Url = new Uri(Application.StartupPath + "\\" + ruta);
+
+
         }
 
         private void btnEnviarCorreo_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop );
-            saveFileDialog.Filter = "Archivos de texto (*.pdf)|*.txt|Todos los archivos (*.*)|*.*";
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            saveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = saveFileDialog.FileName;
+
             }
 
             //string nombreArchivo = Prest_Logica.RutaPDF + Guid.NewGuid().ToString() + ".pdf";
@@ -206,11 +210,11 @@ namespace Capa.UI.Usuarios_Finales
             ofrm.ShowDialog();
 
             Libro = ofrm.Libro;
-            if (Libro!=null)
+            if (Libro != null)
             {
                 mskCodigo_Libro.Text = Libro.Id.ToString();
                 txtTitulo.Text = Libro.Titulo;
-                txtAnno.Text = Libro.anno.ToString();                     
+                txtAnno.Text = Libro.anno.ToString();
             }
         }
 
@@ -232,20 +236,21 @@ namespace Capa.UI.Usuarios_Finales
                     return;
                 }
                 PreLib_Logica.guardar(Prestamo, Libro);
-                MessageBox.Show("Se agrego un Libro para el Prestamo","Escuela Platanares", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Se agrego un Libro para el Prestamo", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Se agrego esté Libro para el Prestamo", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+            Mostrar_Prestamo();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            
-            
+
         }
     }
 }

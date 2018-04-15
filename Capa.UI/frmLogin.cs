@@ -22,7 +22,7 @@ namespace Capa.UI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            mskUsuario.Text = "115100427";
+            mskUsuario.Text = "115100428";
             mskContrasenna.Text = "Pablomora";
         }
 
