@@ -181,6 +181,7 @@
             this.mskCedula_estudiant.Size = new System.Drawing.Size(117, 22);
             this.mskCedula_estudiant.TabIndex = 4;
             this.mskCedula_estudiant.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskCedula_estudiant.TextChanged += new System.EventHandler(this.mskCedula_estudiant_TextChanged);
             this.mskCedula_estudiant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskCedula_estudiant_KeyDown);
             // 
             // txtNombre_est
@@ -319,6 +320,7 @@
             this.mskCodigo_Libro.Size = new System.Drawing.Size(117, 22);
             this.mskCodigo_Libro.TabIndex = 4;
             this.mskCodigo_Libro.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskCodigo_Libro.TextChanged += new System.EventHandler(this.mskCodigo_Libro_TextChanged);
             this.mskCodigo_Libro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskCodigo_Libro_KeyDown);
             // 
             // txtTitulo

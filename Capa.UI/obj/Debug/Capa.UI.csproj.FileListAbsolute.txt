@@ -35,3 +35,16 @@ D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Usuarios_Finale
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.csproj.GenerateResource.Cache
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.exe
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.pdb
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\HtmlRenderer.dll
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\PdfSharp.Charting.dll
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\PdfSharp.dll
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\HtmlRenderer.pdb
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\PdfSharp.xml
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\PdfSharp.Charting.xml
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\de\PdfSharp.resources.dll
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\itextsharp.dll
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\itextsharp.xml
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Usuarios_Finales.Menu_Profesor.frmEnviarCorreos.resources

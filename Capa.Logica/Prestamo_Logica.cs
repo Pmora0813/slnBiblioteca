@@ -1,4 +1,8 @@
 ﻿using Capa.Entidades;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
+using PdfSharp.Charting;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,12 +19,13 @@ namespace Capa.Logica
     {
         public string Ruta
         {
-            get { return Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Comprobantes\\Prestamos.xml"; }
+            get { return Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Comprobantes\\Prestamos"; }
         }
         public string RutaHtml
         {
             get { return "D:\\2018\\Proyecto C# 2018\\slnBiblioteca\\Capa.UI\\bin\\Debug\\Prestamos_de_Libros.html"; }
         }
+
 
         public void guardar(Prestamo prestamo)
         {
@@ -53,29 +58,27 @@ namespace Capa.Logica
         }
         public DateTime ObtenerFecha()
         {
+            DateTime t = new DateTime();
             try
             {
                 var myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://www.microsoft.com");
                 var response = myHttpWebRequest.GetResponse();
 
                 string[] dt = response.Headers.GetValues("Date");
-                DateTime t = Convert.ToDateTime(dt[0]);
+                 t = Convert.ToDateTime(dt[0]);
 
-                if (t.Equals(DateTime.Now))
-                {
-                    t = DateTime.Now;
-                }
-                return t;
             }
             catch (Exception)
             {
-
-                throw;
+                t = DateTime.Now;
+                //throw;
             }
+
+            return t;
         }
 
 
-        public void GuardarXML(Prestamo prestamo)
+        public void GuardarXML(Prestamo prestamo, string ruta)
         {
             List<Libros> lista = new Prestamo_Libros_Logica().SeleccionarTodos(prestamo.id);
 
@@ -190,7 +193,7 @@ namespace Capa.Logica
 
 
             // Guardamos el Archivo XML
-            doc.Save(Ruta);
+            doc.Save(ruta);
 
         }
 
@@ -207,7 +210,7 @@ namespace Capa.Logica
             }
         }
 
-        public string TransformXMLToHTML(string rutaXML)
+        public string TransformXMLToHTML(string rutaXML,string html)
         {
             // Transformación del XMl utilizando XSLT
             XslCompiledTransform myXslTrans = new XslCompiledTransform();
@@ -215,14 +218,96 @@ namespace Capa.Logica
             myXslTrans.Load("Xslt\\Prestamos.xslt");
             // Transforma el archivo xml aun archivo HTML
             myXslTrans.Transform(rutaXML, RutaHtml);
+            myXslTrans.Transform(rutaXML, html);
 
             return "Prestamos_de_Libros.html";
         }
 
-        public string PDF(string ruta)
+        public void pdf(Prestamo prestamo)
         {
-            return "";
+            var p = prestamo;
+            // Creamos el documento con el tamaño de página tradicional
+            Document doc = new Document(PageSize.LETTER);
+            // Indicamos donde vamos a guardar el documento
+            PdfWriter writer = PdfWriter.GetInstance(doc,
+                                        new FileStream(@"D:\prueba.pdf", FileMode.Create));
+
+            // Le colocamos el título y el autor
+            // **Nota: Esto no será visible en el documento
+            doc.AddTitle("Mi primer PDF");
+            doc.AddCreator("Escuela Platanares");
+
+            // Abrimos el archivo
+            doc.Open();
+
+            // Escribimos el encabezamiento en el documento
+            doc.Add(new Paragraph("Comprobante"));
+            doc.Add(Chunk.NEWLINE);
+
+            iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+
+            // Creamos una tabla que contendrá el nombre, apellido y país 
+            // de nuestros visitante.
+            PdfPTable tblPrueba = new PdfPTable(1);
+            tblPrueba.WidthPercentage = 100;
+
+            //// Configuramos el título de las columnas de la tabla
+            PdfPCell clNombre = new PdfPCell(new Phrase("Prestamo", _standardFont));
+            clNombre.BorderWidth = 0;
+            clNombre.BorderWidthBottom = 0.75f;
+
+            //PdfPCell clApellido = new PdfPCell(new Phrase("Apellido", _standardFont));
+            //clApellido.BorderWidth = 0;
+            //clApellido.BorderWidthBottom = 0.75f;
+
+            //PdfPCell clPais = new PdfPCell(new Phrase("País", _standardFont));
+            //clPais.BorderWidth = 0;
+            //clPais.BorderWidthBottom = 0.75f;
+
+            //// Añadimos las celdas a la tabla
+            //tblPrueba.AddCell(clNombre);
+            //tblPrueba.AddCell(clApellido);
+            //tblPrueba.AddCell(clPais);
+
+            //// Llenamos la tabla con información
+            clNombre = new PdfPCell(new Phrase(prestamo.ToString(), _standardFont));
+            clNombre.BorderWidth = 0;
+
+            //clApellido = new PdfPCell(new Phrase("Torres", _standardFont));
+            //clApellido.BorderWidth = 0;
+
+            //clPais = new PdfPCell(new Phrase("Puerto Rico", _standardFont));
+            //clPais.BorderWidth = 0;
+
+            //// Añadimos las celdas a la tabla
+            tblPrueba.AddCell(clNombre);
+            //tblPrueba.AddCell(clApellido);
+            //tblPrueba.AddCell(clPais);
+
+            //clNombre = new PdfPCell(new Phrase("Juan", _standardFont));
+            //clNombre.BorderWidth = 0;
+
+            //clApellido = new PdfPCell(new Phrase("Rodríguez", _standardFont));
+            //clApellido.BorderWidth = 0;
+
+            //clPais = new PdfPCell(new Phrase("México", _standardFont));
+            //clPais.BorderWidth = 0;
+
+            //tblPrueba.AddCell(clNombre);
+            //tblPrueba.AddCell(clApellido);
+            //tblPrueba.AddCell(clPais);
+            tblPrueba.AddCell(prestamo.ToString());
+            
+            // Finalmente, añadimos la tabla al documento PDF y cerramos el documento
+            doc.Add(tblPrueba);
+
+            doc.Close();
+            writer.Close();
+
+           // MessageBox.Show("¡PDF creado!");
         }
 
+
     }
+
 }

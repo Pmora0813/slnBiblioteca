@@ -151,7 +151,7 @@ namespace Capa.UI.Mantenimientos
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            Mantenimientos.frmLibros_Autores ofrm = new frmLibros_Autores();
+            frmLibros_Autores ofrm = new frmLibros_Autores();
 
             ofrm.Show();
         }
