@@ -397,7 +397,7 @@
             // 
             this.btnEnviarCorreo.BackgroundImage = global::Capa.UI.Properties.Resources.contact;
             this.btnEnviarCorreo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnEnviarCorreo.Location = new System.Drawing.Point(515, 531);
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(524, 531);
             this.btnEnviarCorreo.Name = "btnEnviarCorreo";
             this.btnEnviarCorreo.Size = new System.Drawing.Size(173, 46);
             this.btnEnviarCorreo.TabIndex = 22;

@@ -65,7 +65,7 @@ namespace Capa.Logica
                 var response = myHttpWebRequest.GetResponse();
 
                 string[] dt = response.Headers.GetValues("Date");
-                 t = Convert.ToDateTime(dt[0]);
+                t = Convert.ToDateTime(dt[0]);
 
             }
             catch (Exception)
@@ -210,7 +210,7 @@ namespace Capa.Logica
             }
         }
 
-        public string TransformXMLToHTML(string rutaXML,string html)
+        public string TransformXMLToHTML(string rutaXML, string html)
         {
             // Transformación del XMl utilizando XSLT
             XslCompiledTransform myXslTrans = new XslCompiledTransform();
@@ -218,93 +218,158 @@ namespace Capa.Logica
             myXslTrans.Load("Xslt\\Prestamos.xslt");
             // Transforma el archivo xml aun archivo HTML
             myXslTrans.Transform(rutaXML, RutaHtml);
-            myXslTrans.Transform(rutaXML, html);
+            //myXslTrans.Transform(rutaXML, html);
 
             return "Prestamos_de_Libros.html";
         }
 
         public void pdf(Prestamo prestamo)
         {
-            var p = prestamo;
+            List<Libros> lista = new Prestamo_Libros_Logica().SeleccionarTodos(prestamo.id);
+            //var p = prestamo;
             // Creamos el documento con el tamaño de página tradicional
             Document doc = new Document(PageSize.LETTER);
+
             // Indicamos donde vamos a guardar el documento
             PdfWriter writer = PdfWriter.GetInstance(doc,
-                                        new FileStream(@"D:\prueba.pdf", FileMode.Create));
+                                        new FileStream(@"C:\Users\Pablo\Desktop\Comprobantes\Prestamo_" + prestamo.id + ".pdf", FileMode.Create));
+
 
             // Le colocamos el título y el autor
             // **Nota: Esto no será visible en el documento
-            doc.AddTitle("Mi primer PDF");
+            doc.AddTitle("Prestamos de Libros");
             doc.AddCreator("Escuela Platanares");
 
             // Abrimos el archivo
             doc.Open();
 
             // Escribimos el encabezamiento en el documento
-            doc.Add(new Paragraph("Comprobante"));
+            doc.Add(new Paragraph("Prestamos de Libros"));
             doc.Add(Chunk.NEWLINE);
+            
 
             iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
 
             // Creamos una tabla que contendrá el nombre, apellido y país 
             // de nuestros visitante.
             PdfPTable tblPrueba = new PdfPTable(1);
-            tblPrueba.WidthPercentage = 100;
+            tblPrueba.WidthPercentage = 25;
 
             //// Configuramos el título de las columnas de la tabla
-            PdfPCell clNombre = new PdfPCell(new Phrase("Prestamo", _standardFont));
-            clNombre.BorderWidth = 0;
-            clNombre.BorderWidthBottom = 0.75f;
+            //--Inicio Prestamo
+            PdfPCell clPrestamo = new PdfPCell(new Phrase("Informacion del Prestamo", _standardFont));
+            clPrestamo.BorderWidth = 2;
+            clPrestamo.HorizontalAlignment = 1;
+            clPrestamo.BorderWidthBottom = 0.75f;
+            tblPrueba.AddCell(clPrestamo);
 
-            //PdfPCell clApellido = new PdfPCell(new Phrase("Apellido", _standardFont));
-            //clApellido.BorderWidth = 0;
-            //clApellido.BorderWidthBottom = 0.75f;
+            clPrestamo = new PdfPCell(new Phrase("Codido: " + prestamo.id.ToString(), _standardFont));
+            clPrestamo.BorderWidth = 0;
+            tblPrueba.AddCell(clPrestamo);
 
-            //PdfPCell clPais = new PdfPCell(new Phrase("País", _standardFont));
-            //clPais.BorderWidth = 0;
-            //clPais.BorderWidthBottom = 0.75f;
+            clPrestamo = new PdfPCell(new Phrase("Fecha de Solicitud: " + prestamo.Fecha_Act.ToString("dd/mm/yyyy"), _standardFont));
+            clPrestamo.BorderWidth = 0;
+            tblPrueba.AddCell(clPrestamo);
 
-            //// Añadimos las celdas a la tabla
-            //tblPrueba.AddCell(clNombre);
-            //tblPrueba.AddCell(clApellido);
-            //tblPrueba.AddCell(clPais);
+            clPrestamo = new PdfPCell(new Phrase("Fecha de Devolución: " + prestamo.Fecha_Dev.ToString("dd/mm/yyyy"), _standardFont));
+            clPrestamo.BorderWidth = 0;
+            tblPrueba.AddCell(clPrestamo);
 
-            //// Llenamos la tabla con información
-            clNombre = new PdfPCell(new Phrase(prestamo.ToString(), _standardFont));
-            clNombre.BorderWidth = 0;
+            clPrestamo = new PdfPCell(new Phrase("Días de Prestamo: " + prestamo.dias.ToString(), _standardFont));
+            clPrestamo.BorderWidth = 0;
+            tblPrueba.AddCell(clPrestamo);
+            //--Fin Prestamo
 
-            //clApellido = new PdfPCell(new Phrase("Torres", _standardFont));
-            //clApellido.BorderWidth = 0;
+            //--Inicio Usuario
+            PdfPCell clUsuario = new PdfPCell(new Phrase("Usuario Autorizado", _standardFont));
+            clUsuario.BorderWidth = 2;
+            clUsuario.HorizontalAlignment = 1;
+            clUsuario.BorderWidthBottom = 0.75f;
 
-            //clPais = new PdfPCell(new Phrase("Puerto Rico", _standardFont));
-            //clPais.BorderWidth = 0;
+            tblPrueba.AddCell(clUsuario);
 
-            //// Añadimos las celdas a la tabla
-            tblPrueba.AddCell(clNombre);
-            //tblPrueba.AddCell(clApellido);
-            //tblPrueba.AddCell(clPais);
+            clUsuario = new PdfPCell(new Phrase("Usuario: " + prestamo.Usuario.id.ToString(), _standardFont));
+            clUsuario.BorderWidth = 0;
+            tblPrueba.AddCell(clUsuario);
 
-            //clNombre = new PdfPCell(new Phrase("Juan", _standardFont));
-            //clNombre.BorderWidth = 0;
+            clUsuario = new PdfPCell(new Phrase("Tipo: " + prestamo.Usuario.Rol.descripcion.ToString(), _standardFont));
+            clUsuario.BorderWidth = 0;
+            tblPrueba.AddCell(clUsuario);
+            //--Fin Usuario
 
-            //clApellido = new PdfPCell(new Phrase("Rodríguez", _standardFont));
-            //clApellido.BorderWidth = 0;
+            //--Inicio Estudiante
+            PdfPCell clEstudiante = new PdfPCell(new Phrase("Informacion del Estudiante", _standardFont));
+            clEstudiante.BorderWidth = 2;
+            clEstudiante.HorizontalAlignment = 1;
+            clEstudiante.BorderWidthBottom = 0.75f;
+            tblPrueba.AddCell(clEstudiante);
 
-            //clPais = new PdfPCell(new Phrase("México", _standardFont));
-            //clPais.BorderWidth = 0;
+            clEstudiante = new PdfPCell(new Phrase("Cédula: " + prestamo.estudiant.IdCedula.ToString(), _standardFont));
+            clEstudiante.BorderWidth = 0;
+            tblPrueba.AddCell(clEstudiante);
 
-            //tblPrueba.AddCell(clNombre);
-            //tblPrueba.AddCell(clApellido);
-            //tblPrueba.AddCell(clPais);
-            tblPrueba.AddCell(prestamo.ToString());
-            
+            clEstudiante = new PdfPCell(new Phrase("Nombre: " + prestamo.estudiant.Nombre.ToString(), _standardFont));
+            clEstudiante.BorderWidth = 0;
+            tblPrueba.AddCell(clEstudiante);
+
+            clEstudiante = new PdfPCell(new Phrase("Sección: " + prestamo.estudiant.Seccion.ToString(), _standardFont));
+            clEstudiante.BorderWidth = 0;
+            tblPrueba.AddCell(clEstudiante);
+
+            clEstudiante = new PdfPCell(new Phrase("Teléfono: " + prestamo.estudiant.Telefono.ToString(), _standardFont));
+            clEstudiante.BorderWidth = 0;
+            tblPrueba.AddCell(clEstudiante);
+
+            clEstudiante = new PdfPCell(new Phrase("Email: " + prestamo.estudiant.Email.ToString(), _standardFont));
+            clEstudiante.BorderWidth = 0;
+            tblPrueba.AddCell(clEstudiante);
+            //--Fin Estudiante
+
+            foreach (Libros libro in lista)
+            {
+                //--Inicio Libro
+                PdfPCell clLibro = new PdfPCell(new Phrase("Libro", _standardFont));
+                clLibro.BorderWidth = 2;
+                clLibro.HorizontalAlignment = 1;
+                clLibro.BorderWidthBottom = 0.75f;
+                tblPrueba.AddCell(clLibro);
+
+                clLibro = new PdfPCell(new Phrase("Código: " + libro.Id.ToString(), _standardFont));
+                clLibro.BorderWidth = 0;
+                tblPrueba.AddCell(clLibro);
+
+                clLibro = new PdfPCell(new Phrase("Título: " + libro.Titulo.ToString(), _standardFont));
+                clLibro.BorderWidth = 0;
+                tblPrueba.AddCell(clLibro);
+
+                clLibro = new PdfPCell(new Phrase("Año: " + libro.anno.ToString(), _standardFont));
+                clLibro.BorderWidth = 0;
+                tblPrueba.AddCell(clLibro);
+
+                clLibro = new PdfPCell(new Phrase("Editorial: " + libro.Editorial.Nombre.ToString(), _standardFont));
+                clLibro.BorderWidth = 0;
+                tblPrueba.AddCell(clLibro);
+                //--Fin Libro            
+
+            }
+            //--Inicio Tipo Solicitud
+            PdfPCell clTipo = new PdfPCell(new Phrase("Tipo de Solicitud", _standardFont));
+            clTipo.BorderWidth = 2;
+            clTipo.HorizontalAlignment = 1;
+            clTipo.BorderWidthBottom = 0.75f;
+            tblPrueba.AddCell(clTipo);
+
+            clTipo = new PdfPCell(new Phrase("Clasificasión: " + prestamo.Categoria.Descripcion.ToString(), _standardFont));
+            clTipo.BorderWidth = 0;
+            tblPrueba.AddCell(clTipo);
+            //--Fin Tipo Solicitud
+
             // Finalmente, añadimos la tabla al documento PDF y cerramos el documento
             doc.Add(tblPrueba);
 
             doc.Close();
             writer.Close();
 
-           // MessageBox.Show("¡PDF creado!");
         }
 
 

@@ -118,7 +118,9 @@ namespace Capa.UI.Usuarios_Finales
 
         private void btnDevoluciones_Click(object sender, EventArgs e)
         {
-
+            Menu_Profesor.frmDevoluciones ofrm = new Menu_Profesor.frmDevoluciones();
+            ofrm.MdiParent = this;
+            ofrm.Show();
         }
 
         private void btnRegistro_Click(object sender, EventArgs e)

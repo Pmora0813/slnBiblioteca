@@ -78,7 +78,7 @@ namespace Capa.UI.Usuarios_Finales.Menu_Profesor
             OpenFileDialog menu_abrir = new OpenFileDialog();
             menu_abrir.Filter = "Todos los archivos|*.*";
             menu_abrir.Title = "Abrir...";
-            menu_abrir.InitialDirectory = @"C:\";
+            menu_abrir.InitialDirectory = @"C:\Users\Pablo\Desktop\Comprobantes\";
             if (menu_abrir.ShowDialog() == DialogResult.OK)
             {
                 if (txtadjuntos.Text == "" || txtadjuntos.Text == null)
@@ -86,6 +86,11 @@ namespace Capa.UI.Usuarios_Finales.Menu_Profesor
                 else
                     txtadjuntos.Text += @"|" + menu_abrir.FileName;
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

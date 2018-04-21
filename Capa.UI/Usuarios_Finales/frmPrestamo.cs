@@ -184,8 +184,10 @@ namespace Capa.UI.Usuarios_Finales
 
         private void btnEnviarCorreo_Click(object sender, EventArgs e)
         {
-            if (estudiante != null)
+
+            if (Prestamo != null)
             {
+                Prest_Logica.pdf(Prestamo);
                 try
                 {
                     Menu_Profesor.frmEnviarCorreos ofrm = new Menu_Profesor.frmEnviarCorreos();
@@ -300,6 +302,10 @@ namespace Capa.UI.Usuarios_Finales
                 txtAnno.Text = "";
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-

@@ -14,6 +14,10 @@ namespace Capa.Entidades
         public string Qr { get; set; }
         public Editorial Editorial { get; set; }
         public List<Autor> Lista { get; set; }
-        
+
+        public override string ToString()
+        {
+            return "Codigo: " + Id + "\r\n   Titulo: " + Titulo;
+        }
     }
 }
