@@ -125,7 +125,9 @@ namespace Capa.UI.Usuarios_Finales
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-
+            Usuarios_Finales.Menu_Profesor.frmSolicitudes_Prestamo ofrm = new Menu_Profesor.frmSolicitudes_Prestamo();
+            ofrm.MdiParent = this;
+            ofrm.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

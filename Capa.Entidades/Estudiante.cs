@@ -20,5 +20,10 @@ namespace Capa.Entidades
         public bool Activo { get; set; }
         public string QR { get; set; }
         public Roll Roll { get; set; }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }

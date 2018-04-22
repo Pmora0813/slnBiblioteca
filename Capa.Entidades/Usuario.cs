@@ -11,6 +11,11 @@ namespace Capa.Entidades
         public int id { get; set; }
         public string Contrasenna { get; set; }
         public Roll Rol { get; set; }
+
+        public override string ToString()
+        {
+            return id.ToString();
+        }
     }
 }
 

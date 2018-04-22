@@ -39,14 +39,17 @@
             // 
             // btnRegistro
             // 
+            this.btnRegistro.BackgroundImage = global::Capa.UI.Properties.Resources.administrative_docs;
+            this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistro.Location = new System.Drawing.Point(835, 26);
+            this.btnRegistro.Location = new System.Drawing.Point(839, 26);
             this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(203, 40);
+            this.btnRegistro.Size = new System.Drawing.Size(210, 40);
             this.btnRegistro.TabIndex = 2;
-            this.btnRegistro.Text = "Registro de Libros";
+            this.btnRegistro.Text = "Registro de Solicitudes";
+            this.btnRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistro.UseVisualStyleBackColor = true;
             this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
@@ -57,7 +60,7 @@
             this.btnRealiazar_Devol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnRealiazar_Devol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRealiazar_Devol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRealiazar_Devol.Location = new System.Drawing.Point(572, 26);
+            this.btnRealiazar_Devol.Location = new System.Drawing.Point(563, 26);
             this.btnRealiazar_Devol.Name = "btnRealiazar_Devol";
             this.btnRealiazar_Devol.Size = new System.Drawing.Size(203, 40);
             this.btnRealiazar_Devol.TabIndex = 1;
@@ -75,9 +78,9 @@
             this.btnSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSolicitudes.Location = new System.Drawing.Point(309, 26);
             this.btnSolicitudes.Name = "btnSolicitudes";
-            this.btnSolicitudes.Size = new System.Drawing.Size(203, 40);
+            this.btnSolicitudes.Size = new System.Drawing.Size(181, 40);
             this.btnSolicitudes.TabIndex = 0;
-            this.btnSolicitudes.Text = "Realizar Solicitudes";
+            this.btnSolicitudes.Text = "Realizar Prestamo";
             this.btnSolicitudes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSolicitudes.UseVisualStyleBackColor = true;
             this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);

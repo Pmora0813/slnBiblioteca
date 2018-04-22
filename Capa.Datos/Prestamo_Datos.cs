@@ -78,14 +78,14 @@ namespace Capa.Datos
                 SqlCommand comando = new SqlCommand(sql, conexion);
 
                 //Paso 4: Enviar los parametros
-                //comando.Parameters.AddWithValue("@Id", prestamo.id);
+                comando.Parameters.AddWithValue("@Id", prestamo.id);
                 comando.Parameters.AddWithValue("@fecha_Act", prestamo.Fecha_Act);
                 comando.Parameters.AddWithValue("@fecha_Dev", prestamo.Fecha_Dev);
                 comando.Parameters.AddWithValue("@minutos_Dev", prestamo.minutos);
                 comando.Parameters.AddWithValue("@horas_Dev", prestamo.horas);
                 comando.Parameters.AddWithValue("@dias_Dev", prestamo.dias);
                 comando.Parameters.AddWithValue("@ID_ESTUDIANTE", prestamo.estudiant.IdCedula);
-               // comando.Parameters.AddWithValue("@ID_LIBRO", prestamo.Libro.Id);
+                // comando.Parameters.AddWithValue("@ID_LIBRO", prestamo.Libro.Id);
                 comando.Parameters.AddWithValue("@ID_USUARIO", prestamo.Usuario.id);
                 comando.Parameters.AddWithValue("@ID_CATEGORIA", prestamo.Categoria.Id);
 
@@ -245,6 +245,113 @@ namespace Capa.Datos
                         dias = Convert.ToInt32(reader["dias_Dev"]),
                         estudiant = new Estudiante_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ESTUDIANTE"])),
                         //Libro = new Libro_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_LIBRO"])),
+                        Usuario = new Usuario_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_USUARIO"])),
+                        Categoria = new Categoria_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_CATEGORIA"]))
+                    };
+
+                    lista.Add(prestamo);
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return lista;
+
+
+        }
+        public List<Prestamo> Solicitudes_Devolucion()
+        {
+            List<Prestamo> lista = new List<Prestamo>();
+
+            //Paso 1: conexion BD
+            SqlConnection conexion = new SqlConnection(Conexion.Cadena);
+
+            try
+            {
+                //Abrir la conexion
+                conexion.Open();
+                //Paso 2: Instruccion
+                string sql = "SP_Prestamos_Solic_Devol";
+
+                //Paso 3: Comando para ejecutar el paso 2
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                //Paso 4.1: Usar el Procedimineto Almacenado
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //Paso 5: Ejecutar el Comando que permite obtener registros de la tabla
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    Prestamo prestamo = new Prestamo
+                    {
+                        id = Convert.ToInt32(reader["Id"]),
+                        Fecha_Act = Convert.ToDateTime(reader["fecha_Act"]),
+                        Fecha_Dev = Convert.ToDateTime(reader["fecha_Dev"]),
+                        minutos = Convert.ToInt32(reader["minutos_Dev"]),
+                        horas = Convert.ToInt32(reader["horas_Dev"]),
+                        dias = Convert.ToInt32(reader["dias_Dev"]),
+                        estudiant = new Estudiante_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ESTUDIANTE"])),
+                        //Libro = new Libro_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_LIBRO"])),
+                        Usuario = new Usuario_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_USUARIO"])),
+                        Categoria = new Categoria_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_CATEGORIA"]))
+                    };
+
+                    lista.Add(prestamo);
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return lista;
+
+
+        }
+        public List<Prestamo> Solicitudes_Prestamo()
+        {
+            List<Prestamo> lista = new List<Prestamo>();
+
+            //Paso 1: conexion BD
+            SqlConnection conexion = new SqlConnection(Conexion.Cadena);
+
+            try
+            {
+                //Abrir la conexion
+                conexion.Open();
+                //Paso 2: Instruccion
+                string sql = "SP_Prestamos_Solic_Prestamo";
+
+                //Paso 3: Comando para ejecutar el paso 2
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                //Paso 4.1: Usar el Procedimineto Almacenado
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //Paso 5: Ejecutar el Comando que permite obtener registros de la tabla
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    Prestamo prestamo = new Prestamo
+                    {
+                        id = Convert.ToInt32(reader["Id"]),
+                        Fecha_Act = Convert.ToDateTime(reader["fecha_Act"]),
+                        Fecha_Dev = Convert.ToDateTime(reader["fecha_Dev"]),
+                        minutos = Convert.ToInt32(reader["minutos_Dev"]),
+                        horas = Convert.ToInt32(reader["horas_Dev"]),
+                        dias = Convert.ToInt32(reader["dias_Dev"]),
+                        estudiant = new Estudiante_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ESTUDIANTE"])),
                         Usuario = new Usuario_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_USUARIO"])),
                         Categoria = new Categoria_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_CATEGORIA"]))
                     };

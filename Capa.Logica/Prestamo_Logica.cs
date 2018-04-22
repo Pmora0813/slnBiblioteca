@@ -26,7 +26,6 @@ namespace Capa.Logica
             get { return "D:\\2018\\Proyecto C# 2018\\slnBiblioteca\\Capa.UI\\bin\\Debug\\Prestamos_de_Libros.html"; }
         }
 
-
         public void guardar(Prestamo prestamo)
         {
             if (String.IsNullOrWhiteSpace(prestamo.id.ToString()))
@@ -50,7 +49,6 @@ namespace Capa.Logica
             Datos.Prestamo_Datos datos = new Datos.Prestamo_Datos();
             return datos.SeleccionarPorID(Id);
         }
-
         public void Eliminar(int Id)
         {
             Datos.Prestamo_Datos datos = new Datos.Prestamo_Datos();
@@ -76,7 +74,6 @@ namespace Capa.Logica
 
             return t;
         }
-
 
         public void GuardarXML(Prestamo prestamo, string ruta)
         {
@@ -246,7 +243,7 @@ namespace Capa.Logica
             // Escribimos el encabezamiento en el documento
             doc.Add(new Paragraph("Prestamos de Libros"));
             doc.Add(Chunk.NEWLINE);
-            
+
 
             iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
 
@@ -371,8 +368,17 @@ namespace Capa.Logica
             writer.Close();
 
         }
+        public List<Prestamo> Solicitudes_Devol()
+        {
+            Datos.Prestamo_Datos datos = new Datos.Prestamo_Datos();
+            return datos.Solicitudes_Devolucion();
+        }
 
-
+        public List<Prestamo> Solicitudes_Prestamo()
+        {
+            Datos.Prestamo_Datos datos = new Datos.Prestamo_Datos();
+            return datos.Solicitudes_Prestamo();
+        }
     }
 
 }
