@@ -73,6 +73,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu_Estudiante\frmPrestamo_Estudiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Estudiante\frmPrestamo_Estudiente.Designer.cs">
+      <DependentUpon>frmPrestamo_Estudiente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +196,9 @@
     </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Estudiante\frmPrestamo_Estudiente.resx">
+      <DependentUpon>frmPrestamo_Estudiente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios_Finales\frmAd_Principal.resx">
       <DependentUpon>frmAd_Principal.cs</DependentUpon>

@@ -321,7 +321,7 @@
             this.mskCodigo_Libro.TabIndex = 4;
             this.mskCodigo_Libro.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskCodigo_Libro.TextChanged += new System.EventHandler(this.mskCodigo_Libro_TextChanged);
-            this.mskCodigo_Libro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskCodigo_Libro_KeyDown);
+            this.mskCodigo_Libro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskCedula_estudiant_KeyDown);
             // 
             // txtTitulo
             // 

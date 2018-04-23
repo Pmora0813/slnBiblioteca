@@ -15,6 +15,7 @@ namespace Capa.UI
     public partial class frmLogin : Form
     {
         public Usuario Usuario { get; set; }
+        public Estudiante Estudiante { get; set; }
         public frmLogin()
         {
             InitializeComponent();
@@ -22,8 +23,8 @@ namespace Capa.UI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            mskUsuario.Text = "115100428";
-            mskContrasenna.Text = "Pablomora";
+            mskUsuario.Text = "115100427";
+            mskContrasenna.Text = "1151Pabl";
         }
 
         private int validarUsuario()
@@ -52,6 +53,7 @@ namespace Capa.UI
                 if (item.IdCedula.Equals(Convert.ToInt32(mskUsuario.Text.Trim())) && item.Contrasenna.Equals(mskContrasenna.Text.Trim()))
                 {
                     Roll = Convert.ToInt32(item.Roll.id);
+                    Estudiante = item;
                 }
             }
 
@@ -76,7 +78,7 @@ namespace Capa.UI
                 case 1:
 
                     Limpiar();
-                   // MessageBox.Show("Inicio de Seccion modo Administrador", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // MessageBox.Show("Inicio de Seccion modo Administrador", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Usuarios_Finales.frmMenu_Admin ofrm = new Usuarios_Finales.frmMenu_Admin();
                     ofrm.Owner = this;
                     ofrm.Usuario = this.Usuario;
@@ -90,11 +92,19 @@ namespace Capa.UI
                     Usuarios_Finales.frmMenu_Profesor frmProf = new Usuarios_Finales.frmMenu_Profesor();
                     frmProf.Owner = this;
                     frmProf.usuario = this.Usuario;
-                    frmProf.Show();break;
+                    frmProf.Show(); break;
                 case 3:
                     Limpiar();
-
                     MessageBox.Show("Inicio de Seccion modo Estudiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Usuario = new Usuario()
+                    {
+                        id = 100000000,
+                        Contrasenna = "123456",
+                        Rol = new Capa.Logica.Rol_Logica().SeleccionarRollPorId(3)
+                    };
+                    Menu_Estudiante.frmPrestamo_Estudiente ofrmEstudiante = new Menu_Estudiante.frmPrestamo_Estudiente();
+                    ofrmEstudiante.Usuario = Usuario;
+                    ofrmEstudiante.Show();
                     break;
                 default:
                     Limpiar();
@@ -117,7 +127,7 @@ namespace Capa.UI
             ofrm.Owner = this;
             this.Hide();
             ofrm.ShowDialog();
-            
+
 
 
         }
@@ -128,9 +138,9 @@ namespace Capa.UI
             //ofrm.Usuario = this.Usuario;
             //ofrm.Show();
 
-           // Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
-           // ofrm.Owner = this;
-           // ofrm.Usuario = this.Usuario;
+            // Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
+            // ofrm.Owner = this;
+            // ofrm.Usuario = this.Usuario;
             //ofrm.Show();
             this.Hide();
 

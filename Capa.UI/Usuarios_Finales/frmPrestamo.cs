@@ -240,14 +240,6 @@ namespace Capa.UI.Usuarios_Finales
             }
         }
 
-        private void mskCodigo_Libro_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                BuscarLibro();
-            }
-        }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (mskCodigo_Libro.Text.Equals(""))

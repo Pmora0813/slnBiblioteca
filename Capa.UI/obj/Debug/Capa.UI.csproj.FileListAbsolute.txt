@@ -49,3 +49,4 @@ D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\itextsharp.dll
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\itextsharp.xml
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Usuarios_Finales.Menu_Profesor.frmEnviarCorreos.resources
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Usuarios_Finales.Menu_Profesor.frmSolicitudes_Prestamo.resources
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Menu_Estudiante.frmPrestamo_Estudiente.resources
