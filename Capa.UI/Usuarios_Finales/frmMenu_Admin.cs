@@ -175,5 +175,24 @@ namespace Capa.UI.Usuarios_Finales
         {
 
         }
+
+        private void toolsMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reporteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Reportes.frmRepLibrosPrestamo ofrm = new Reportes.frmRepLibrosPrestamo();
+            ofrm.MdiParent = this;
+            ofrm.Show();
+        }
+
+        private void librosPendientesDevolucionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frmRep_Libros_Pen_Devolucion ofrm = new Reportes.frmRep_Libros_Pen_Devolucion();
+            ofrm.MdiParent = this;
+            ofrm.Show();
+        }
     }
 }

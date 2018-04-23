@@ -45,7 +45,9 @@
       <HintPath>..\packages\HtmlRenderer.PdfSharp.1.5.0.6\lib\net45\HtmlRenderer.PdfSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
       <Private>True</Private>
@@ -56,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +70,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BibliotecaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BibliotecaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +96,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRepLibrosPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRepLibrosPrestamo.Designer.cs">
+      <DependentUpon>frmRepLibrosPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRep_Libros_Pen_Devolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRep_Libros_Pen_Devolucion.Designer.cs">
+      <DependentUpon>frmRep_Libros_Pen_Devolucion.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios_Finales\frmAd_Principal.cs">
       <SubType>Form</SubType>
@@ -200,6 +225,14 @@
     <EmbeddedResource Include="Menu_Estudiante\frmPrestamo_Estudiente.resx">
       <DependentUpon>frmPrestamo_Estudiente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRepLibrosPrestamo.resx">
+      <DependentUpon>frmRepLibrosPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRep_Libros_Pen_Devolucion.resx">
+      <DependentUpon>frmRep_Libros_Pen_Devolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RepLibrosPrestamo.rdlc" />
+    <EmbeddedResource Include="Reportes\RepLibros_Pen_Devolucion.rdlc" />
     <EmbeddedResource Include="Usuarios_Finales\frmAd_Principal.resx">
       <DependentUpon>frmAd_Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +293,28 @@
     <EmbeddedResource Include="Usuarios_Finales\Menu_Profesor\frmSolicitudes_Prestamo.resx">
       <DependentUpon>frmSolicitudes_Prestamo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BibliotecaDataSet.xsc">
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BibliotecaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BibliotecaDataSet.xss">
+      <DependentUpon>BibliotecaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDataSet1.xsc">
+      <DependentUpon>BibliotecaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BibliotecaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BibliotecaDataSet1.xss">
+      <DependentUpon>BibliotecaDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -284,9 +339,7 @@
       <Name>Capa.Logica</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\2017_ktm_390_duke_5k-wide.jpg" />
     <None Include="Resources\address.png" />
