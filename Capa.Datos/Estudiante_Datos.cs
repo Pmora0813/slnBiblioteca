@@ -46,7 +46,6 @@ namespace Capa.Datos
                 comando.Parameters.AddWithValue("@email", estudiante.Email);
                 comando.Parameters.AddWithValue("@telefono", estudiante.Telefono);
                 comando.Parameters.AddWithValue("@activo", estudiante.Activo);
-                comando.Parameters.AddWithValue("@QR", estudiante.QR);
                 comando.Parameters.AddWithValue("@ID_ROL", estudiante.Roll.id);
 
 
@@ -95,7 +94,6 @@ namespace Capa.Datos
                 comando.Parameters.AddWithValue("@email", estudiante.Email);
                 comando.Parameters.AddWithValue("@telefono", estudiante.Telefono);
                 comando.Parameters.AddWithValue("@activo", estudiante.Activo);
-                comando.Parameters.AddWithValue("@QR", estudiante.QR);
                 comando.Parameters.AddWithValue("@ID_ROL", estudiante.Roll.id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
@@ -196,11 +194,9 @@ namespace Capa.Datos
                         F_Nacimiento = Convert.ToDateTime(reader["fecha_Nacimiento"]),
                         Email = reader["email"].ToString(),
                         Telefono = Convert.ToInt32(reader["telefono"]),
-                        Activo = Convert.ToBoolean(reader["activo"]),
-                        QR = reader["QR"].ToString(),
+                        Activo = Convert.ToBoolean(reader["activo"]),                        
                         Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
                     };
-
 
                 }
             }
@@ -256,10 +252,8 @@ namespace Capa.Datos
                         Email = reader["email"].ToString(),
                         Telefono = Convert.ToInt32(reader["telefono"]),
                         Activo = Convert.ToBoolean(reader["activo"]),
-                        QR = reader["QR"].ToString(),
                         Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
                     };
-
 
                     lista.Add(estudiante);
 
@@ -318,11 +312,9 @@ namespace Capa.Datos
                         Email = reader["email"].ToString(),
                         Telefono = Convert.ToInt32(reader["telefono"]),
                         Activo = Convert.ToBoolean(reader["activo"]),
-                        QR = reader["QR"].ToString(),
-                        Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
+                    Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
                     };
-
-
+                    
                     lista.Add(estudiante);
 
                 }

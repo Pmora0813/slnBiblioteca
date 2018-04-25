@@ -67,7 +67,8 @@ namespace Capa.UI.Usuarios_Finales
                 var imagen = new Bitmap(imageTemporal, new Size(new Point(145, 125)));
                 panel1.BackgroundImage = imagen;
 
-                estudiante.QR = imagen.ToString();
+                ImageConverter converter = new ImageConverter();
+                estudiante.QR = (byte[])converter.ConvertTo(imagen, typeof(byte[]));
 
 
                 Logica.guardar(estudiante);

@@ -30,8 +30,7 @@ namespace Capa.UI.Mantenimientos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-
+            
             try
             {
 
@@ -74,7 +73,8 @@ namespace Capa.UI.Mantenimientos
                 imagen.Save(estudiante.IdCedula + ".png", ImageFormat.Png);
                 panel1.BackgroundImage = imagen;
 
-                estudiante.QR = imagen.ToString();
+                //ImageConverter converter = new ImageConverter();
+                //estudiante.QR = (byte[])converter.ConvertTo(imagen, typeof(byte[]));
 
 
                 Logica.guardar(estudiante);

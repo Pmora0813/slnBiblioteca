@@ -24,7 +24,7 @@ namespace Capa.UI
         private void frmLogin_Load(object sender, EventArgs e)
         {
             mskUsuario.Text = "115100427";
-            mskContrasenna.Text = "1151Pabl";
+            mskContrasenna.Text = "Pablomora";
         }
 
         private int validarUsuario()

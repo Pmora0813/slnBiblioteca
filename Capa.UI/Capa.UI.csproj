@@ -103,6 +103,24 @@
     <Compile Include="Reportes\frmRepLibrosPrestamo.Designer.cs">
       <DependentUpon>frmRepLibrosPrestamo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmRepLibros_QR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRepLibros_QR.Designer.cs">
+      <DependentUpon>frmRepLibros_QR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRep_Estudiantes_QR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRep_Estudiantes_QR.Designer.cs">
+      <DependentUpon>frmRep_Estudiantes_QR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRep_Libros_Estudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRep_Libros_Estudiantes.Designer.cs">
+      <DependentUpon>frmRep_Libros_Estudiantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmRep_Libros_Pen_Devolucion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,11 +246,22 @@
     <EmbeddedResource Include="Reportes\frmRepLibrosPrestamo.resx">
       <DependentUpon>frmRepLibrosPrestamo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRepLibros_QR.resx">
+      <DependentUpon>frmRepLibros_QR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRep_Estudiantes_QR.resx">
+      <DependentUpon>frmRep_Estudiantes_QR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRep_Libros_Estudiantes.resx">
+      <DependentUpon>frmRep_Libros_Estudiantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmRep_Libros_Pen_Devolucion.resx">
       <DependentUpon>frmRep_Libros_Pen_Devolucion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RepLibrosPrestamo.rdlc" />
     <EmbeddedResource Include="Reportes\RepLibros_Pen_Devolucion.rdlc" />
+    <EmbeddedResource Include="Reportes\RepLibros_QR.rdlc" />
+    <EmbeddedResource Include="Reportes\Rep_EstudiantesQR.rdlc" />
     <EmbeddedResource Include="Usuarios_Finales\frmAd_Principal.resx">
       <DependentUpon>frmAd_Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +345,9 @@
       <DependentUpon>BibliotecaDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Capa.Entidades.Estudiante.datasource" />
+    <None Include="Properties\DataSources\Capa.Entidades.Libros.datasource" />
+    <None Include="Properties\DataSources\Capa.Logica.Libro_Logica.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

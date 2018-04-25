@@ -67,3 +67,6 @@ D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Reportes.frmRep
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\RdlCompile.cache
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\RdlCompile.compiled
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Reportes.frmRep_Libros_Pen_Devolucion.resources
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Reportes.frmRep_Libros_Estudiantes.resources
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Reportes.frmRepLibros_QR.resources
+D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Reportes.frmRep_Estudiantes_QR.resources

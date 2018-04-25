@@ -118,7 +118,7 @@ namespace Capa.Datos
                         Id = Convert.ToInt32(reader["Id"]),
                         Titulo = reader["titulo"].ToString(),
                         anno = Convert.ToInt32(reader["anno"]),
-                        Qr = reader["QR"].ToString(),
+                     //   Qr = reader["QR"].ToString(),
                         Editorial = new Editorial_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Editorial"]))
                     };
 

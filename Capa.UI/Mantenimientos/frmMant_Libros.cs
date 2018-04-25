@@ -78,24 +78,6 @@ namespace Capa.UI.Mantenimientos
 
                 };
 
-                QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
-                QrCode qrCode = new QrCode();
-                qrEncoder.TryEncode(txtCodigo.Text, out qrCode);
-
-                GraphicsRenderer renderer = new GraphicsRenderer(new FixedCodeSize(400, QuietZoneModules.Zero), Brushes.Black, Brushes.White);
-
-                MemoryStream ms = new MemoryStream();
-
-                renderer.WriteToStream(qrCode.Matrix, ImageFormat.Png, ms);
-                var imageTemporal = new Bitmap(ms);
-                var imagen = new Bitmap(imageTemporal, new Size(new Point(145, 125)));
-                QR.BackgroundImage = imagen;
-
-                libro.Qr = imagen.ToString();
-
-                // Guardar en el disco duro la imagen (Carpeta del proyecto)
-                //imagen.Save("imagen.png", ImageFormat.Png);
-                // btnEliminar.Enabled = true;
                 Logica.Insertar(libro);
             }
             catch (Exception)

@@ -35,8 +35,7 @@ namespace Capa.Datos
                 comando.Parameters.AddWithValue("@Id", libro.Id);
                 comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
                 comando.Parameters.AddWithValue("@anno", libro.anno);
-                comando.Parameters.AddWithValue("@QR", libro.Qr);
-                comando.Parameters.AddWithValue("@id_Editorial",libro.Editorial.Id);
+                comando.Parameters.AddWithValue("@id_Editorial", libro.Editorial.Id);
 
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
@@ -78,7 +77,6 @@ namespace Capa.Datos
                 comando.Parameters.AddWithValue("@Id", libro.Id);
                 comando.Parameters.AddWithValue("@Titulo", libro.Titulo);
                 comando.Parameters.AddWithValue("@anno", libro.anno);
-                comando.Parameters.AddWithValue("@QR", libro.Qr);
                 comando.Parameters.AddWithValue("@id_Editorial", libro.Editorial.Id);
 
                 //Paso 4.1: Usar el Procedimineto Almacenado
@@ -174,9 +172,8 @@ namespace Capa.Datos
                         Id = Convert.ToInt32(reader["Id"]),
                         Titulo = reader["titulo"].ToString(),
                         anno = Convert.ToInt32(reader["anno"]),
-                        Qr = reader["QR"].ToString(),
                         Editorial = new Editorial_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Editorial"]))
-                  
+
                     };
 
 
@@ -228,7 +225,6 @@ namespace Capa.Datos
                         Id = Convert.ToInt32(reader["Id"]),
                         Titulo = reader["titulo"].ToString(),
                         anno = Convert.ToInt32(reader["anno"]),
-                        Qr = reader["QR"].ToString(),
                         Editorial = new Editorial_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Editorial"]))
                     };
 
@@ -252,7 +248,7 @@ namespace Capa.Datos
 
 
 
-        public List<Libros> SeleccionarTodosFiltro(int id,string titulo,int idAutor,int idEditorial,int anno)
+        public List<Libros> SeleccionarTodosFiltro(int id, string titulo, int idAutor, int idEditorial, int anno)
         {
             List<Libros> lista = new List<Libros>();
 
@@ -286,7 +282,6 @@ namespace Capa.Datos
                         Id = Convert.ToInt32(reader["Id"]),
                         Titulo = reader["titulo"].ToString(),
                         anno = Convert.ToInt32(reader["anno"]),
-                        Qr = reader["QR"].ToString(),
                         Editorial = new Editorial_Datos().SeleccionarPorID(Convert.ToInt32(reader["id_Editorial"]))
                     };
 
