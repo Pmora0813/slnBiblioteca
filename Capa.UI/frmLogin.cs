@@ -118,6 +118,7 @@ namespace Capa.UI
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            int roll = validarUsuario();
             if (mskUsuario.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Ingrese el Usuario", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -129,12 +130,10 @@ namespace Capa.UI
                 return;
             }
 
-            switch (validarUsuario())
+            switch (roll)
             {
                 case 1:
-
                     Limpiar();
-                    // MessageBox.Show("Inicio de Seccion modo Administrador", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Usuarios_Finales.frmMenu_Admin ofrm = new Usuarios_Finales.frmMenu_Admin();
                     ofrm.Owner = this;
                     ofrm.Usuario = this.Usuario;
@@ -143,8 +142,6 @@ namespace Capa.UI
                     break;
                 case 2:
                     Limpiar();
-                    //MessageBox.Show("Inicio de Seccion modo Profesor", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     Usuarios_Finales.frmMenu_Profesor frmProf = new Usuarios_Finales.frmMenu_Profesor();
                     frmProf.Owner = this;
                     frmProf.usuario = this.Usuario;
@@ -153,8 +150,7 @@ namespace Capa.UI
                     break;
                 case 3:
                     Limpiar();
-                    MessageBox.Show("Inicio de Seccion modo Estudiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Usuario = new Usuario()
+                   this.Usuario = new Usuario()
                     {
                         id = 100000000,
                         Contrasenna = "123456",
@@ -187,21 +183,6 @@ namespace Capa.UI
             ofrm.ShowDialog();
 
 
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
-            //ofrm.Usuario = this.Usuario;
-            //ofrm.Show();
-            Reportes.frmRepLibros_Mas_Prestados ofrm = new Reportes.frmRepLibros_Mas_Prestados();
-            ofrm.Show();
-            // Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
-            // ofrm.Owner = this;
-            // ofrm.Usuario = this.Usuario;
-            //ofrm.Show();
-            //this.Hide();
 
         }
     }
