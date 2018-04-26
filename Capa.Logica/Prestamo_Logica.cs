@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Net.Mail;
 using System.Xml;
 using System.Xml.Xsl;
 
@@ -379,6 +380,8 @@ namespace Capa.Logica
             Datos.Prestamo_Datos datos = new Datos.Prestamo_Datos();
             return datos.Solicitudes_Prestamo();
         }
+
+      
     }
 
 }

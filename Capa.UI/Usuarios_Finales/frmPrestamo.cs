@@ -109,7 +109,7 @@ namespace Capa.UI.Usuarios_Finales
 
                 if (Libro == null)
                 {
-                    MessageBox.Show("Libro No." + mskCodigo_Libro.Text + "no se encuentra registrado.", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Libro #: " + mskCodigo_Libro.Text + " no se encuentra registrado.", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 txtTitulo.Text = Libro.Titulo;
@@ -151,13 +151,16 @@ namespace Capa.UI.Usuarios_Finales
                     id = Convert.ToInt32(txtCodigo_Prestamo.Text),
                     Fecha_Act = dtpFechaAct.Value,
                     Fecha_Dev = dtpFecha_Dev.Value,
-                    dias = Convert.ToInt32(dtpFecha_Dev.Value.Day - dtpFechaAct.Value.Day),
-                    horas = Convert.ToInt32(dtpFecha_Dev.Value.Hour - dtpFechaAct.Value.Hour),
-                    minutos = Convert.ToInt32(dtpFecha_Dev.Value.Minute - dtpFechaAct.Value.Minute),
+                    //dias = Convert.ToInt32(dtpFecha_Dev.Value.Day - dtpFechaAct.Value.Day),
+                    //horas = Convert.ToInt32(dtpFecha_Dev.Value.Hour - dtpFechaAct.Value.Hour),
+                    //minutos = Convert.ToInt32(dtpFecha_Dev.Value.Minute - dtpFechaAct.Value.Minute),
                     estudiant = estudiante,
                     Usuario = Usuario,
                     Categoria = (Categoria)cmbTipoSolicitud.SelectedItem
                 };
+                Prestamo.dias = Convert.ToInt32(dtpFecha_Dev.Value.Day);
+                Prestamo.horas = Convert.ToInt32(dtpFecha_Dev.Value.Hour);
+                Prestamo.minutos = Convert.ToInt32(dtpFecha_Dev.Value.Minute);
 
                 Prest_Logica.guardar(Prestamo);
                 MessageBox.Show("Se registro un Prestamo con exito", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -277,6 +280,11 @@ namespace Capa.UI.Usuarios_Finales
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            if (Libro == null)
+            {
+                MessageBox.Show("Agregé un Libro el Prestamo", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             this.Close();
 
         }
@@ -298,7 +306,7 @@ namespace Capa.UI.Usuarios_Finales
                 txtAnno.Text = "";
             }
         }
-        
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {

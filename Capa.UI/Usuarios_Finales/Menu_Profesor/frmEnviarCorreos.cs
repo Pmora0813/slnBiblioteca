@@ -51,7 +51,8 @@ namespace Capa.UI.Usuarios_Finales.Menu_Profesor
                 else
                 {
                     string[] cadena = destinatarios.Split(delimitador_cc);
-                    foreach (string word in cadena) correo.To.Add(word.Trim());
+                    foreach (string word in cadena)
+                        correo.To.Add(word.Trim());
                 }
                 
                 if (adjuntos == "") { }

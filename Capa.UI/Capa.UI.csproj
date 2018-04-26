@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BibliotecaDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,7 +278,7 @@
       <DependentUpon>frmRep_Libros_Pen_Devolucion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RepLibros+Prestados.rdlc" />
-    <EmbeddedResource Include="Reportes\RepLibrosPrestamo.rdlc" />
+    <EmbeddedResource Include="Reportes\RepLibrosporPrestamo.rdlc" />
     <EmbeddedResource Include="Reportes\RepLibros_Pen_Devolucion.rdlc" />
     <EmbeddedResource Include="Reportes\RepLibros_QR.rdlc" />
     <EmbeddedResource Include="Reportes\Rep_EstudiantesQR.rdlc" />
@@ -369,6 +374,17 @@
     </None>
     <None Include="BibliotecaDataSet2.xss">
       <DependentUpon>BibliotecaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDataSet3.xsc">
+      <DependentUpon>BibliotecaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BibliotecaDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BibliotecaDataSet3.xss">
+      <DependentUpon>BibliotecaDataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Capa.Entidades.Estudiante.datasource" />

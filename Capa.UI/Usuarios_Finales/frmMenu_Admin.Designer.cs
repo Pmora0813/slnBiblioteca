@@ -47,10 +47,11 @@
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.librosPendientesDevolucionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.librosYEstudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.librosYEstudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.librosMasPrestadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -189,10 +190,11 @@
             this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteToolStripMenuItem1,
             this.librosPendientesDevolucionToolStripMenuItem,
-            this.librosYEstudiantesToolStripMenuItem});
+            this.librosYEstudiantesToolStripMenuItem,
+            this.librosMasPrestadosToolStripMenuItem});
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
             this.reporteToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
-            this.reporteToolStripMenuItem.Text = "Reportes";
+            this.reporteToolStripMenuItem.Text = "&Reportes";
             // 
             // reporteToolStripMenuItem1
             // 
@@ -207,6 +209,13 @@
             this.librosPendientesDevolucionToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
             this.librosPendientesDevolucionToolStripMenuItem.Text = "Libros Pendientes Devolucion";
             this.librosPendientesDevolucionToolStripMenuItem.Click += new System.EventHandler(this.librosPendientesDevolucionToolStripMenuItem_Click);
+            // 
+            // librosYEstudiantesToolStripMenuItem
+            // 
+            this.librosYEstudiantesToolStripMenuItem.Name = "librosYEstudiantesToolStripMenuItem";
+            this.librosYEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
+            this.librosYEstudiantesToolStripMenuItem.Text = "Libros y Estudiantes";
+            this.librosYEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.librosYEstudiantesToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -225,12 +234,11 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // librosYEstudiantesToolStripMenuItem
+            // librosMasPrestadosToolStripMenuItem
             // 
-            this.librosYEstudiantesToolStripMenuItem.Name = "librosYEstudiantesToolStripMenuItem";
-            this.librosYEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
-            this.librosYEstudiantesToolStripMenuItem.Text = "Libros y Estudiantes";
-            this.librosYEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.librosYEstudiantesToolStripMenuItem_Click);
+            this.librosMasPrestadosToolStripMenuItem.Name = "librosMasPrestadosToolStripMenuItem";
+            this.librosMasPrestadosToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
+            this.librosMasPrestadosToolStripMenuItem.Text = "Libros más Prestados";
             // 
             // frmMenu_Admin
             // 
@@ -285,6 +293,7 @@
         private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem librosPendientesDevolucionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem librosYEstudiantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem librosMasPrestadosToolStripMenuItem;
     }
 }
 

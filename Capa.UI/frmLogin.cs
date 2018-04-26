@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +27,61 @@ namespace Capa.UI
         {
             mskUsuario.Text = "115100427";
             mskContrasenna.Text = "Pablomora";
+            EnviarNotificacionesDevoluciones();
+        }
+
+        private void EnviarNotificacionesDevoluciones()
+        {
+            DateTime Actual = new Capa.Logica.Prestamo_Logica().ObtenerFecha();
+            List<Prestamo> Lista = new Capa.Logica.Prestamo_Logica().SeleccionarTodos();
+            foreach (Prestamo item in Lista)
+            {
+                if (item.dias <= Actual.Day)
+                {
+                    if (item.horas <= Actual.Hour)
+                    {
+                        if (item.minutos < Actual.Minute)
+                        {
+                           // enviar_correo(item);
+                        }
+                    }
+                }
+            }
+        }
+        public void enviar_correo(Prestamo prestamo)
+        {
+            string host = "smtp-mail.outlook.com";
+            int puerto = 587;
+            string remitente = "pmora0813@hotmail.com";
+            string contraseña = "Pablomora0813";
+            string destinatarios = prestamo.estudiant.Email;
+            string nombre = "Escuela Platanares";
+            string cuerpo = "Estimado estudiante " + prestamo.estudiant.Nombre + "." +
+                           "Recuerde la devolucion de los libros que " +
+                           "se encuentra registrados a su nombre en el " +
+                            "pretamo #" + prestamo.id;
+            try
+            {
+
+                SmtpClient cliente = new SmtpClient(host, puerto);
+                MailMessage correo = new MailMessage();
+
+                correo.To.Add(destinatarios);
+                correo.From = new MailAddress(remitente, nombre);
+                correo.Body = cuerpo;
+
+                cliente.Credentials = new NetworkCredential(remitente, contraseña);
+                cliente.EnableSsl = true;
+                cliente.Send(correo);
+
+                MessageBox.Show("El correo se ha enviado correctamente");
+            }
+            catch (Exception)
+            {
+                throw;
+                
+            }
+            Cursor = Cursors.Arrow;
         }
 
         private int validarUsuario()

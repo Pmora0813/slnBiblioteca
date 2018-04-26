@@ -40,12 +40,12 @@
             this.chkAutor = new System.Windows.Forms.CheckBox();
             this.chkTitulo = new System.Windows.Forms.CheckBox();
             this.dtgLibros = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLibros)).BeginInit();
             this.SuspendLayout();
@@ -180,10 +180,11 @@
             // 
             // dtgLibros
             // 
+            this.dtgLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Qr,
+            this.Codigo,
             this.titulo,
             this.Anno,
             this.Editorial});
@@ -196,6 +197,19 @@
             this.dtgLibros.TabIndex = 2;
             this.dtgLibros.SelectionChanged += new System.EventHandler(this.dtgLibros_SelectionChanged);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackgroundImage = global::Capa.UI.Properties.Resources.sign_out;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.Location = new System.Drawing.Point(389, 353);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 40);
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Salir";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // id
             // 
             this.id.DataPropertyName = "id";
@@ -203,13 +217,13 @@
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
-            // Qr
+            // Codigo
             // 
-            this.Qr.DataPropertyName = "Qr";
-            this.Qr.HeaderText = "QR";
-            this.Qr.Name = "Qr";
-            this.Qr.ReadOnly = true;
-            this.Qr.Visible = false;
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
             // 
             // titulo
             // 
@@ -231,19 +245,6 @@
             this.Editorial.HeaderText = "Editorial";
             this.Editorial.Name = "Editorial";
             this.Editorial.ReadOnly = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackgroundImage = global::Capa.UI.Properties.Resources.sign_out;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCancelar.Location = new System.Drawing.Point(389, 353);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(84, 40);
-            this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Salir";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmBuscar_Libro
             // 
@@ -284,7 +285,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cmbAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Editorial;
