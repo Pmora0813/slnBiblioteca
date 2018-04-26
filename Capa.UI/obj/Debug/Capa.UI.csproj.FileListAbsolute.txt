@@ -14,7 +14,6 @@ D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\Capa.Logica.pdb
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\bin\Debug\Capa.Datos.pdb
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.csprojResolveAssemblyReference.cache
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.frmLogin.resources
-D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.frmPrincipal.resources
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Mantenimientos.frmLibros_Autores.resources
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Mantenimientos.frmBuscarAutores.resources
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.UI\obj\Debug\Capa.UI.Mantenimientos.frmMant_Autor.resources

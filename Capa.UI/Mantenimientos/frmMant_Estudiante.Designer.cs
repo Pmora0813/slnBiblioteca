@@ -47,6 +47,8 @@
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgEstudiantes = new System.Windows.Forms.DataGridView();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.IdCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +58,6 @@
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEstudiantes)).BeginInit();
             this.SuspendLayout();
@@ -228,6 +228,7 @@
             // 
             this.dtgEstudiantes.AllowUserToDeleteRows = false;
             this.dtgEstudiantes.AllowUserToResizeColumns = false;
+            this.dtgEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCedula,
@@ -248,75 +249,6 @@
             this.dtgEstudiantes.Size = new System.Drawing.Size(587, 175);
             this.dtgEstudiantes.TabIndex = 19;
             this.dtgEstudiantes.SelectionChanged += new System.EventHandler(this.dtgEstudiantes_SelectionChanged);
-            // 
-            // IdCedula
-            // 
-            this.IdCedula.DataPropertyName = "IdCedula";
-            this.IdCedula.HeaderText = "Cédula";
-            this.IdCedula.Name = "IdCedula";
-            this.IdCedula.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Genero
-            // 
-            this.Genero.DataPropertyName = "genero";
-            this.Genero.HeaderText = "Género";
-            this.Genero.Name = "Genero";
-            this.Genero.ReadOnly = true;
-            // 
-            // Teléfono
-            // 
-            this.Teléfono.DataPropertyName = "Telefono";
-            this.Teléfono.HeaderText = "Teléfono";
-            this.Teléfono.Name = "Teléfono";
-            this.Teléfono.ReadOnly = true;
-            // 
-            // Roll
-            // 
-            this.Roll.DataPropertyName = "Roll";
-            this.Roll.HeaderText = "Tipo";
-            this.Roll.Name = "Roll";
-            this.Roll.ReadOnly = true;
-            // 
-            // F_Nacimiento
-            // 
-            this.F_Nacimiento.DataPropertyName = "f_Nacimiento";
-            this.F_Nacimiento.HeaderText = "Fecha de Nacimiento";
-            this.F_Nacimiento.Name = "F_Nacimiento";
-            this.F_Nacimiento.ReadOnly = true;
-            // 
-            // Activo
-            // 
-            this.Activo.DataPropertyName = "Activo";
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "contrasenna";
-            this.Column1.HeaderText = "Contraseña";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // QR
-            // 
-            this.QR.DataPropertyName = "QR";
-            this.QR.HeaderText = "Codigo QR";
-            this.QR.Name = "QR";
-            this.QR.ReadOnly = true;
-            this.QR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.QR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.QR.Visible = false;
             // 
             // btnGuardar
             // 
@@ -344,6 +276,78 @@
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // IdCedula
+            // 
+            this.IdCedula.DataPropertyName = "IdCedula";
+            this.IdCedula.HeaderText = "Cédula";
+            this.IdCedula.Name = "IdCedula";
+            this.IdCedula.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Genero
+            // 
+            this.Genero.DataPropertyName = "genero";
+            this.Genero.HeaderText = "Género";
+            this.Genero.Name = "Genero";
+            this.Genero.ReadOnly = true;
+            this.Genero.Visible = false;
+            // 
+            // Teléfono
+            // 
+            this.Teléfono.DataPropertyName = "Telefono";
+            this.Teléfono.HeaderText = "Teléfono";
+            this.Teléfono.Name = "Teléfono";
+            this.Teléfono.ReadOnly = true;
+            // 
+            // Roll
+            // 
+            this.Roll.DataPropertyName = "Roll";
+            this.Roll.HeaderText = "Tipo";
+            this.Roll.Name = "Roll";
+            this.Roll.ReadOnly = true;
+            this.Roll.Visible = false;
+            // 
+            // F_Nacimiento
+            // 
+            this.F_Nacimiento.DataPropertyName = "f_Nacimiento";
+            this.F_Nacimiento.HeaderText = "Fecha de Nacimiento";
+            this.F_Nacimiento.Name = "F_Nacimiento";
+            this.F_Nacimiento.ReadOnly = true;
+            this.F_Nacimiento.Visible = false;
+            // 
+            // Activo
+            // 
+            this.Activo.DataPropertyName = "Activo";
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Activo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "contrasenna";
+            this.Column1.HeaderText = "Contraseña";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // QR
+            // 
+            this.QR.DataPropertyName = "QR";
+            this.QR.HeaderText = "Codigo QR";
+            this.QR.Name = "QR";
+            this.QR.ReadOnly = true;
+            this.QR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QR.Visible = false;
             // 
             // frmMant_Estudiante
             // 

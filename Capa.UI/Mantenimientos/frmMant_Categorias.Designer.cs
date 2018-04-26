@@ -95,6 +95,7 @@
             // 
             // dtgCategorias
             // 
+            this.dtgCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo});

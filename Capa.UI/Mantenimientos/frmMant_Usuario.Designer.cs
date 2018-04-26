@@ -46,6 +46,7 @@
             // 
             // dtgUsuarios
             // 
+            this.dtgUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -83,7 +84,6 @@
             this.id_Rol.HeaderText = "Tipo";
             this.id_Rol.Name = "id_Rol";
             this.id_Rol.ReadOnly = true;
-            this.id_Rol.Width = 150;
             // 
             // btnEliminar
             // 

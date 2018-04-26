@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu_Admin));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,10 +49,10 @@
             this.reporteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.librosPendientesDevolucionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.librosYEstudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.librosMasPrestadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.librosMasPrestadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -217,6 +218,12 @@
             this.librosYEstudiantesToolStripMenuItem.Text = "Libros y Estudiantes";
             this.librosYEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.librosYEstudiantesToolStripMenuItem_Click);
             // 
+            // librosMasPrestadosToolStripMenuItem
+            // 
+            this.librosMasPrestadosToolStripMenuItem.Name = "librosMasPrestadosToolStripMenuItem";
+            this.librosMasPrestadosToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
+            this.librosMasPrestadosToolStripMenuItem.Text = "Libros más Prestados";
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -234,17 +241,11 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // librosMasPrestadosToolStripMenuItem
-            // 
-            this.librosMasPrestadosToolStripMenuItem.Name = "librosMasPrestadosToolStripMenuItem";
-            this.librosMasPrestadosToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
-            this.librosMasPrestadosToolStripMenuItem.Text = "Libros más Prestados";
-            // 
             // frmMenu_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(955, 403);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);

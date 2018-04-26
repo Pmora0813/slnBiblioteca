@@ -37,15 +37,15 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cbmEditoriales = new System.Windows.Forms.ComboBox();
             this.dtgLibros = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbmAutores = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.mskAnno = new System.Windows.Forms.MaskedTextBox();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLibros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,6 +144,35 @@
             this.dtgLibros.TabIndex = 13;
             this.dtgLibros.SelectionChanged += new System.EventHandler(this.dtgLibros_SelectionChanged);
             // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "id";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "titulo";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // id_Editorial
+            // 
+            this.id_Editorial.DataPropertyName = "Editorial";
+            this.id_Editorial.HeaderText = "Editorial";
+            this.id_Editorial.Name = "id_Editorial";
+            this.id_Editorial.ReadOnly = true;
+            // 
+            // Anno
+            // 
+            this.Anno.DataPropertyName = "anno";
+            this.Anno.HeaderText = "Año";
+            this.Anno.Name = "Anno";
+            this.Anno.ReadOnly = true;
+            this.Anno.Visible = false;
+            // 
             // cbmAutores
             // 
             this.cbmAutores.FormattingEnabled = true;
@@ -187,35 +216,6 @@
             this.mskAnno.Name = "mskAnno";
             this.mskAnno.Size = new System.Drawing.Size(74, 23);
             this.mskAnno.TabIndex = 19;
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "id";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "titulo";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // id_Editorial
-            // 
-            this.id_Editorial.DataPropertyName = "Editorial";
-            this.id_Editorial.HeaderText = "Editorial";
-            this.id_Editorial.Name = "id_Editorial";
-            this.id_Editorial.ReadOnly = true;
-            // 
-            // Anno
-            // 
-            this.Anno.DataPropertyName = "anno";
-            this.Anno.HeaderText = "Año";
-            this.Anno.Name = "Anno";
-            this.Anno.ReadOnly = true;
-            this.Anno.Visible = false;
             // 
             // frmMant_Libros
             // 

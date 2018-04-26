@@ -143,12 +143,6 @@
     <Compile Include="Reportes\frmRep_Libros_Pen_Devolucion.Designer.cs">
       <DependentUpon>frmRep_Libros_Pen_Devolucion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios_Finales\frmAd_Principal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios_Finales\frmAd_Principal.Designer.cs">
-      <DependentUpon>frmAd_Principal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mantenimientos\frmAutor_Libros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,9 +276,6 @@
     <EmbeddedResource Include="Reportes\RepLibros_Pen_Devolucion.rdlc" />
     <EmbeddedResource Include="Reportes\RepLibros_QR.rdlc" />
     <EmbeddedResource Include="Reportes\Rep_EstudiantesQR.rdlc" />
-    <EmbeddedResource Include="Usuarios_Finales\frmAd_Principal.resx">
-      <DependentUpon>frmAd_Principal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmAutor_Libros.resx">
       <DependentUpon>frmAutor_Libros.cs</DependentUpon>
     </EmbeddedResource>

@@ -137,6 +137,7 @@
             this.Name = "frmEnviarCorreos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enviar Correos";
+            this.Load += new System.EventHandler(this.frmEnviarCorreos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

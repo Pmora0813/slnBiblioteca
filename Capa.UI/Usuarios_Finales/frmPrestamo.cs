@@ -280,7 +280,7 @@ namespace Capa.UI.Usuarios_Finales
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (Libro == null)
+            if (Libro == null && Prestamo != null)
             {
                 MessageBox.Show("Agregé un Libro el Prestamo", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;

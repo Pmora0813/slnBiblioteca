@@ -194,7 +194,7 @@ namespace Capa.Datos
                         F_Nacimiento = Convert.ToDateTime(reader["fecha_Nacimiento"]),
                         Email = reader["email"].ToString(),
                         Telefono = Convert.ToInt32(reader["telefono"]),
-                        Activo = Convert.ToBoolean(reader["activo"]),                        
+                        Activo = Convert.ToBoolean(reader["activo"]),
                         Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
                     };
 
@@ -312,9 +312,9 @@ namespace Capa.Datos
                         Email = reader["email"].ToString(),
                         Telefono = Convert.ToInt32(reader["telefono"]),
                         Activo = Convert.ToBoolean(reader["activo"]),
-                    Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
+                        Roll = new Rol_Datos().SeleccionarPorID(Convert.ToInt32(reader["ID_ROL"]))
                     };
-                    
+
                     lista.Add(estudiante);
 
                 }

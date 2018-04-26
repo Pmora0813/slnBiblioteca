@@ -29,6 +29,41 @@ namespace Capa.UI.Usuarios_Finales
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            if (mskCedula.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese la cedula del Estduiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                if (mskCedula.Text.Length<=3)
+                {
+                    MessageBox.Show("Complete la cedula del Estduiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            if (txtNombre.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese el nombre del Estduiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtEmai.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese el correo del Estduiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtSeccion.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese la sección del Estduiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (mskTelefono.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese el telefono del Estduiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
 
@@ -52,7 +87,8 @@ namespace Capa.UI.Usuarios_Finales
                 {
                     estudiante.Genero = "Femenino";
                 }
-                estudiante.Contrasenna = estudiante.IdCedula.ToString().Substring(0, 4) + estudiante.Nombre.Substring(0, 4);
+
+                estudiante.Contrasenna = estudiante.IdCedula.ToString().Substring(0, 4) + estudiante.Nombre.Substring(0, 3);
 
                 QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
                 QrCode qrCode = new QrCode();
@@ -67,8 +103,10 @@ namespace Capa.UI.Usuarios_Finales
                 var imagen = new Bitmap(imageTemporal, new Size(new Point(145, 125)));
                 panel1.BackgroundImage = imagen;
 
-                ImageConverter converter = new ImageConverter();
-                estudiante.QR = (byte[])converter.ConvertTo(imagen, typeof(byte[]));
+                if (estudiante == null)
+                {
+                    MessageBox.Show("No se a registrado nigun Estduiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
 
                 Logica.guardar(estudiante);
@@ -95,6 +133,10 @@ namespace Capa.UI.Usuarios_Finales
                 MessageBox.Show("Error: " + ex.Message, escuela, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void Validaciones()
+        {
         }
 
         private void frmRegistro_Load(object sender, EventArgs e)

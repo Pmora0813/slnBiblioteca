@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu_Profesor));
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btnRegistro = new System.Windows.Forms.Button();
             this.btnRealiazar_Devol = new System.Windows.Forms.Button();
@@ -101,6 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1254, 525);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
@@ -110,6 +112,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Profesor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMenu_Profesor_FormClosed);
+            this.Load += new System.EventHandler(this.frmMenu_Profesor_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

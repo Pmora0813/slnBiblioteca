@@ -42,7 +42,7 @@ namespace Capa.UI
                     {
                         if (item.minutos < Actual.Minute)
                         {
-                           // enviar_correo(item);
+                            //enviar_correo(item);
                         }
                     }
                 }
@@ -53,7 +53,7 @@ namespace Capa.UI
             string host = "smtp-mail.outlook.com";
             int puerto = 587;
             string remitente = "pmora0813@hotmail.com";
-            string contraseña = "Pablomora0813";
+            string contraseña = "Pabl0m0ra0813";
             string destinatarios = prestamo.estudiant.Email;
             string nombre = "Escuela Platanares";
             string cuerpo = "Estimado estudiante " + prestamo.estudiant.Nombre + "." +
@@ -73,8 +73,7 @@ namespace Capa.UI
                 cliente.Credentials = new NetworkCredential(remitente, contraseña);
                 cliente.EnableSsl = true;
                 cliente.Send(correo);
-
-                MessageBox.Show("El correo se ha enviado correctamente");
+                
             }
             catch (Exception)
             {
@@ -149,7 +148,9 @@ namespace Capa.UI
                     Usuarios_Finales.frmMenu_Profesor frmProf = new Usuarios_Finales.frmMenu_Profesor();
                     frmProf.Owner = this;
                     frmProf.usuario = this.Usuario;
-                    frmProf.Show(); break;
+                    frmProf.Show();
+                    this.Hide();
+                    break;
                 case 3:
                     Limpiar();
                     MessageBox.Show("Inicio de Seccion modo Estudiante", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);

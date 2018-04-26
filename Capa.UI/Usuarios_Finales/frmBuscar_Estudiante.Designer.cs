@@ -38,7 +38,9 @@
             this.chkNombre = new System.Windows.Forms.CheckBox();
             this.chkCedula = new System.Windows.Forms.CheckBox();
             this.dtgEstudiantes = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contrasenna = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +49,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEstudiantes)).BeginInit();
             this.SuspendLayout();
@@ -161,9 +161,11 @@
             // 
             // dtgEstudiantes
             // 
+            this.dtgEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
+            this.QR,
             this.Cedula,
             this.Seccion,
             this.Contrasenna,
@@ -172,7 +174,6 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5,
             this.Column6});
             this.dtgEstudiantes.Location = new System.Drawing.Point(19, 145);
             this.dtgEstudiantes.MultiSelect = false;
@@ -183,13 +184,33 @@
             this.dtgEstudiantes.TabIndex = 1;
             this.dtgEstudiantes.SelectionChanged += new System.EventHandler(this.dtgEstudiantes_SelectionChanged);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackgroundImage = global::Capa.UI.Properties.Resources.sign_out;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancelar.Location = new System.Drawing.Point(407, 338);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(87, 44);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Salir";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // Nombre
             // 
             this.Nombre.DataPropertyName = "Nombre";
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
+            // 
+            // QR
+            // 
+            this.QR.DataPropertyName = "QR";
+            this.QR.HeaderText = "QR";
+            this.QR.Name = "QR";
+            this.QR.ReadOnly = true;
+            this.QR.Visible = false;
             // 
             // Cedula
             // 
@@ -253,14 +274,6 @@
             this.Column4.ReadOnly = true;
             this.Column4.Visible = false;
             // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "QR";
-            this.Column5.HeaderText = "QR";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Visible = false;
-            // 
             // Column6
             // 
             this.Column6.DataPropertyName = "ROLL";
@@ -268,19 +281,6 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.Visible = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackgroundImage = global::Capa.UI.Properties.Resources.sign_out;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCancelar.Location = new System.Drawing.Point(407, 338);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(87, 44);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Salir";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmBuscar_Estudiante
             // 
@@ -318,6 +318,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QR;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Seccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contrasenna;
@@ -326,7 +327,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

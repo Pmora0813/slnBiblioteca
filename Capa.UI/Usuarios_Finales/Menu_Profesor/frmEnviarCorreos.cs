@@ -28,7 +28,7 @@ namespace Capa.UI.Usuarios_Finales.Menu_Profesor
 
             try
             {
-                enviar_correo("smtp-mail.outlook.com", 587, "pmora0813@hotmail.com", "Pablomora0813", "Pablo", Estudiante.Email, txtadjuntos.Text, rtbmensaje.Text);
+                enviar_correo("smtp-mail.outlook.com", 587, "pmora0813@hotmail.com", "Pabl0m0ra0813", "Pablo", Estudiante.Email, txtadjuntos.Text, rtbmensaje.Text);
                 Cursor = Cursors.WaitCursor;
             }
             catch (Exception)
@@ -66,6 +66,7 @@ namespace Capa.UI.Usuarios_Finales.Menu_Profesor
                 cliente.Send(correo);
 
                 MessageBox.Show("El correo se ha enviado correctamente");
+                Close();
             }
             catch (Exception ex)
             {
@@ -92,6 +93,11 @@ namespace Capa.UI.Usuarios_Finales.Menu_Profesor
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmEnviarCorreos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

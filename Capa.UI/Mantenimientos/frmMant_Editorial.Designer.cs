@@ -45,7 +45,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 20);
+            this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             // 
@@ -54,7 +54,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
             // 
@@ -82,7 +82,7 @@
             // 
             this.npdCodigo.Location = new System.Drawing.Point(83, 23);
             this.npdCodigo.Name = "npdCodigo";
-            this.npdCodigo.Size = new System.Drawing.Size(51, 26);
+            this.npdCodigo.Size = new System.Drawing.Size(51, 22);
             this.npdCodigo.TabIndex = 4;
             this.npdCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -90,11 +90,12 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(83, 59);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(111, 26);
+            this.txtNombre.Size = new System.Drawing.Size(111, 22);
             this.txtNombre.TabIndex = 5;
             // 
             // dtgEditoriales
             // 
+            this.dtgEditoriales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgEditoriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgEditoriales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id});
@@ -116,7 +117,7 @@
             // 
             // frmMant_Editorial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(286, 267);
             this.Controls.Add(this.dtgEditoriales);
