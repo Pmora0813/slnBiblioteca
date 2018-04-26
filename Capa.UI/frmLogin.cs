@@ -137,12 +137,13 @@ namespace Capa.UI
             //Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
             //ofrm.Usuario = this.Usuario;
             //ofrm.Show();
-
+            Reportes.frmRepLibros_Mas_Prestados ofrm = new Reportes.frmRepLibros_Mas_Prestados();
+            ofrm.Show();
             // Usuarios_Finales.frmP_Menu_Admin ofrm = new Usuarios_Finales.frmP_Menu_Admin();
             // ofrm.Owner = this;
             // ofrm.Usuario = this.Usuario;
             //ofrm.Show();
-            this.Hide();
+            //this.Hide();
 
         }
     }

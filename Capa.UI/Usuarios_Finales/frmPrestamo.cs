@@ -107,7 +107,11 @@ namespace Capa.UI.Usuarios_Finales
                 }
                 Libro = new Libro_Logica().SeleccionarPorID(Convert.ToInt32(mskCodigo_Libro.Text));
 
-
+                if (Libro == null)
+                {
+                    MessageBox.Show("Libro No." + mskCodigo_Libro.Text + "no se encuentra registrado.", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 txtTitulo.Text = Libro.Titulo;
                 txtAnno.Text = Libro.anno.ToString();
             }
@@ -294,10 +298,11 @@ namespace Capa.UI.Usuarios_Finales
                 txtAnno.Text = "";
             }
         }
+        
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            txtCodigo_Prestamo.Text = DateTime.Now.Ticks.ToString().Substring(12, 6);
         }
     }
 }

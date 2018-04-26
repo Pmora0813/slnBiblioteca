@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibliotecaDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BibliotecaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +107,12 @@
     </Compile>
     <Compile Include="Reportes\frmRepLibrosPrestamo.Designer.cs">
       <DependentUpon>frmRepLibrosPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRepLibros_Mas_Prestados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRepLibros_Mas_Prestados.Designer.cs">
+      <DependentUpon>frmRepLibros_Mas_Prestados.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmRepLibros_QR.cs">
       <SubType>Form</SubType>
@@ -246,6 +257,9 @@
     <EmbeddedResource Include="Reportes\frmRepLibrosPrestamo.resx">
       <DependentUpon>frmRepLibrosPrestamo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRepLibros_Mas_Prestados.resx">
+      <DependentUpon>frmRepLibros_Mas_Prestados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmRepLibros_QR.resx">
       <DependentUpon>frmRepLibros_QR.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +272,7 @@
     <EmbeddedResource Include="Reportes\frmRep_Libros_Pen_Devolucion.resx">
       <DependentUpon>frmRep_Libros_Pen_Devolucion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RepLibros+Prestados.rdlc" />
     <EmbeddedResource Include="Reportes\RepLibrosPrestamo.rdlc" />
     <EmbeddedResource Include="Reportes\RepLibros_Pen_Devolucion.rdlc" />
     <EmbeddedResource Include="Reportes\RepLibros_QR.rdlc" />
@@ -343,6 +358,17 @@
     </None>
     <None Include="BibliotecaDataSet1.xss">
       <DependentUpon>BibliotecaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDataSet2.xsc">
+      <DependentUpon>BibliotecaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BibliotecaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BibliotecaDataSet2.xss">
+      <DependentUpon>BibliotecaDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Capa.Entidades.Estudiante.datasource" />

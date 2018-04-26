@@ -63,6 +63,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.wbbMostrar = new System.Windows.Forms.WebBrowser();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -397,7 +398,7 @@
             // 
             this.btnEnviarCorreo.BackgroundImage = global::Capa.UI.Properties.Resources.contact;
             this.btnEnviarCorreo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnEnviarCorreo.Location = new System.Drawing.Point(524, 531);
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(604, 531);
             this.btnEnviarCorreo.Name = "btnEnviarCorreo";
             this.btnEnviarCorreo.Size = new System.Drawing.Size(173, 46);
             this.btnEnviarCorreo.TabIndex = 22;
@@ -429,12 +430,27 @@
             this.wbbMostrar.Size = new System.Drawing.Size(340, 446);
             this.wbbMostrar.TabIndex = 24;
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackgroundImage = global::Capa.UI.Properties.Resources.sign_up11;
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNuevo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnNuevo.Location = new System.Drawing.Point(189, 2);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(84, 46);
+            this.btnNuevo.TabIndex = 25;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // frmPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(885, 605);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.wbbMostrar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnEnviarCorreo);
@@ -503,5 +519,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.WebBrowser wbbMostrar;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }
