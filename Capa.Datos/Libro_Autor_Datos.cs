@@ -91,8 +91,12 @@ namespace Capa.Datos
                 conexion.Close();
             }
         }
-
-
+        /// <summary>
+        /// Metodo que retorna una lista 
+        /// de autores de un libro en especifico
+        /// </summary>
+        /// <param name="idPorv"></param>
+        /// <returns></returns>
         public List<Autor> SeleccionarAutorPorLibro(int idPorv)
         {
             Autor autor = null;

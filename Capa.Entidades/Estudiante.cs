@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Capa.Entidades
 {
+    /// <summary>
+    /// Entidad de Estdiante
+    /// con todos los atributos
+    /// </summary>
     public class Estudiante
     {
         public int IdCedula { get; set; }
@@ -20,6 +24,11 @@ namespace Capa.Entidades
         public bool Activo { get; set; }
         public byte[] QR { get; set; }
         public Roll Roll { get; set; }
+        /// <summary>
+        /// Sobreescribimos el metodo ToString
+        /// Para que no muestre la Descripción
+        /// </summary>
+        /// <returns></returns>
 
         public override string ToString()
         {

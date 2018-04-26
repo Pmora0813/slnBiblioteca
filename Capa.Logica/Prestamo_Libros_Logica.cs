@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Capa.Logica
 {
+    /// <summary>
+    /// Clase encargada de hacer el 
+    /// CRUD en la BD de lso Objetos PRESTAMO y LIBRO
+    /// Relacionados
+    /// </summary>
     public class Prestamo_Libros_Logica
     {
 

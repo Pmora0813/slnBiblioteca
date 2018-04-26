@@ -10,6 +10,13 @@ namespace Capa.Datos
 {
     public class Prestamo_Libros_Datos
     {
+        /// <summary>
+        /// Metodo para selacionar un prestamo
+        /// con la cantidad de libros que desea
+        /// solicitar
+        /// </summary>
+        /// <param name="prestamo"></param>
+        /// <param name="libro"></param>
         public void Insertar(Prestamo prestamo, Libros libro)
         {
             //Paso 1: conexion BD
@@ -45,11 +52,14 @@ namespace Capa.Datos
                 conexion.Close();
             }
         }
-        /// <summary>
-        /// Eliminamos un Registro de la Tabla
-        /// en la BD por el id 
-        /// </summary>
-        /// <param name="id"></param>
+       /// <summary>
+       /// Metodo paar eliminar el prestamo
+       /// con los libros solicitados
+       /// No se eliminar para tener el registro de todas
+       /// los prestamos
+       /// </summary>
+       /// <param name="prestamo"></param>
+       /// <param name="libro"></param>
         public void Eliminar(Prestamo prestamo, Libros libro)
         {
 
@@ -85,8 +95,13 @@ namespace Capa.Datos
                 conexion.Close();
             }
         }
-
-
+        /// <summary>
+        /// Optiene todos los libros que se 
+        /// encuentrar registrados en un prestamo
+        /// determinado
+        /// </summary>
+        /// <param name="idPrestamo"></param>
+        /// <returns></returns>
         public List<Libros> SeleccionarLibroPorPrestamo(int idPrestamo)
         {
             Libros libro = null;

@@ -8,6 +8,10 @@ using System.Windows.Forms;
 
 namespace Capa.Entidades
 {
+    /// <summary>
+    /// Endidad Libros
+    /// Con todos sus atributos
+    /// </summary>
     public class Libros
     {
         public int Id { get; set; }
@@ -16,6 +20,12 @@ namespace Capa.Entidades
         public Editorial Editorial { get; set; }
         public List<Autor> Lista { get; set; }
         public Byte[] Codigo { get; set; }
+        /// <summary>
+        /// Sobreescribimos el metodo ToString
+        /// Para que no muestre la Descripción
+        /// </summary>
+        /// <returns></returns>
+
         public override string ToString()
         {
             return "Codigo: " + Id + "\r\n   Titulo: " + Titulo;

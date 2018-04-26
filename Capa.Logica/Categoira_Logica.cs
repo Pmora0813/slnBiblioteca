@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Capa.Logica
 {
+    /// <summary>
+    /// Clase encargada de hacer el 
+    /// CRUD en la BD del Objeto CATEGORIA
+    /// </summary>
     public class Categoira_Logica
     {
         public void guardar(Categoria cat)

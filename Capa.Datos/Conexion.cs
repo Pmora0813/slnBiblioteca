@@ -8,6 +8,10 @@ namespace Capa.Datos
 {
     public class Conexion
     {
+        /// <summary>
+        ///Clase con un metodi}o estatico
+        ///para crear la conexcion de la BD
+        /// </summary>
         public static string Cadena
         {
             get

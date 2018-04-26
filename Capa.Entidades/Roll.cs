@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Capa.Entidades
 {
+    /// <summary>
+    /// La endidad Roll es
+    /// para clasificar a los usuarios
+    /// de la Aplicacion
+    /// </summary>
     public class Roll
     {
         public int id { get; set; }

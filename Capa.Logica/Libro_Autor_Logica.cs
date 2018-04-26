@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Capa.Logica
 {
+    /// <summary>
+    /// Clase encargada de hacer el 
+    /// CRUD en la BD de lOS ObjetoS LIBRO y AUTOR
+    /// relacionados
+    /// </summary>
     public class Libro_Autor_Logica
     {
         public void guardar(Libros idLibro, Autor idAut)

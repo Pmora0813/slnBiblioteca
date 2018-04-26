@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 
 namespace Capa.Logica
 {
+    /// <summary>
+    /// Clase encargada de hacer el 
+    /// CRUD en la BD del Objeto LIBRO
+    /// Como tambien la busqueda de libros por un 
+    /// filtro de datos
+    /// </summary>
     public class Libro_Logica
     {
         public void Actualizar(Libros obj)

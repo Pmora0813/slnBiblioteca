@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Capa.Logica
 {
+    /// <summary>
+    /// Clase encargada de hacer el 
+    /// CRUD en la BD del Objeto AUTOR
+    /// </summary>
     public class Autor_Logica
     {
         public void guardar(Autor aut)
@@ -39,12 +43,7 @@ namespace Capa.Logica
             Datos.Autor_Datos datos = new Datos.Autor_Datos();
             datos.Eliminar(Id);
         }
-
-        /// <summary>
-        /// Metodos de la tabla de Libro Autores
-        /// </summary>
-        /// <param name="Id"></param>
-        /// <returns></returns>
+               
         public List<Autor> SeleccionarAutorPorLibro(int Id)
         {
             Datos.Libro_Autor_Datos datos = new Datos.Libro_Autor_Datos();

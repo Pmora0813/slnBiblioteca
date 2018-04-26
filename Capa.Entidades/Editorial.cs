@@ -18,7 +18,11 @@ namespace Capa.Entidades
         public int Id { get; set; }
         public string Nombre { get; set; }
 
-
+        /// <summary>
+        /// Sobreescribimos el metodo ToString
+        /// Para que no muestre la Descripción
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return Nombre;

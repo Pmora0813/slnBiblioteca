@@ -245,9 +245,17 @@ namespace Capa.Datos
 
 
         }
-
-
-
+        /// <summary>
+        /// Metodo que optiene una lista de libros
+        /// mediante una busqueda por medio de 
+        /// filtros implemendatos en la BD
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="titulo"></param>
+        /// <param name="idAutor"></param>
+        /// <param name="idEditorial"></param>
+        /// <param name="anno"></param>
+        /// <returns></returns>
         public List<Libros> SeleccionarTodosFiltro(int id, string titulo, int idAutor, int idEditorial, int anno)
         {
             List<Libros> lista = new List<Libros>();

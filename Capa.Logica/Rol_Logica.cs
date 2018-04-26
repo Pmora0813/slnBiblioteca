@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Capa.Logica
 {
+    /// <summary>
+    /// Clase encargada de hacer el 
+    /// CRUD en la BD del Objeto ROLL
+    /// </summary>
     public class Rol_Logica
     {
         public List<Roll> SeleccionarTodos()

@@ -99,6 +99,7 @@ namespace Capa.Datos
         /// en la BD por el id 
         /// </summary>
         /// <param name="id"></param>
+        /// 
         public void Eliminar(int Id)
         {
 

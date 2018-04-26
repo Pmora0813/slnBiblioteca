@@ -15,7 +15,10 @@ using System.Xml.Xsl;
 
 namespace Capa.Logica
 {
-
+    /// <summary>
+    /// Clase encargada de hacer el 
+    /// CRUD en la BD del Objeto PRESTAMO
+    /// </summary>
     public class Prestamo_Logica
     {
         public string Ruta
@@ -55,6 +58,12 @@ namespace Capa.Logica
             Datos.Prestamo_Datos datos = new Datos.Prestamo_Datos();
             datos.Eliminar(Id);
         }
+
+        /// <summary>
+        /// Metodo utilizado para optener la fecha
+        /// de una pagina Web
+        /// </summary>
+        /// <returns></returns>
         public DateTime ObtenerFecha()
         {
             DateTime t = new DateTime();
@@ -75,7 +84,12 @@ namespace Capa.Logica
 
             return t;
         }
-
+        /// <summary>
+        /// Metodo par aguardar un XML
+        /// en una ruta determinada
+        /// </summary>
+        /// <param name="prestamo"></param>
+        /// <param name="ruta"></param>
         public void GuardarXML(Prestamo prestamo, string ruta)
         {
             List<Libros> lista = new Prestamo_Libros_Logica().SeleccionarTodos(prestamo.id);
@@ -194,7 +208,10 @@ namespace Capa.Logica
             doc.Save(ruta);
 
         }
-
+        /// <summary>
+        /// Creamos una carpeta en el escritorio
+        /// para guardar archivos definidos
+        /// </summary>
         public void CrearCarpeta()
         {
             string folderName = @"C:\Users\Pablo\Desktop\Comprobantes";
@@ -207,7 +224,13 @@ namespace Capa.Logica
 
             }
         }
-
+        /// <summary>
+        /// transformar el xml en html 
+        /// para mostrarlo 
+        /// </summary>
+        /// <param name="rutaXML"></param>
+        /// <param name="html"></param>
+        /// <returns></returns>
         public string TransformXMLToHTML(string rutaXML, string html)
         {
             // Transformación del XMl utilizando XSLT
@@ -220,7 +243,12 @@ namespace Capa.Logica
 
             return "Prestamos_de_Libros.html";
         }
-
+        /// <summary>
+        /// Guardar en Prestamos en pdf
+        /// para tener en comprobante del
+        /// prestamo
+        /// </summary>
+        /// <param name="prestamo"></param>
         public void pdf(Prestamo prestamo)
         {
             List<Libros> lista = new Prestamo_Libros_Logica().SeleccionarTodos(prestamo.id);

@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Capa.Logica
 {
+
+    /// <summary>
+    /// Clase encargada de hacer el 
+    /// CRUD en la BD del Objeto EDITORIAL
+    /// </summary>
     public class Editorial_Logica
     {
         public void guardar(Editorial edit)

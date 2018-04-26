@@ -272,7 +272,15 @@ namespace Capa.Datos
 
 
         }
-
+        /// <summary>
+        /// Metodo que retorna una lista de estudiantes
+        /// mediante una busqueda determinada por 
+        /// filtros implementados en la BD
+        /// </summary>
+        /// <param name="idCedula"></param>
+        /// <param name="nombre"></param>
+        /// <param name="seccion"></param>
+        /// <returns></returns>
         public List<Estudiante> SeleccionarTodosFiltro(int idCedula, string nombre, string seccion)
         {
             List<Estudiante> lista = new List<Estudiante>();

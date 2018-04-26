@@ -10,6 +10,12 @@ namespace Capa.Datos
 {
   public  class Rol_Datos 
     {
+        /// <summary>
+        /// optenemos todas las 
+        /// clasificacionde para el 
+        /// acceso al sistema
+        /// </summary>
+        /// <returns></returns>
         public List<Roll> SeleccionarRoles()
         {
             List<Roll> lista = new List<Roll>();
@@ -58,6 +64,12 @@ namespace Capa.Datos
 
         }
 
+        /// <summary>
+        /// Optenemos un Roll
+        /// especificado
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public Roll SeleccionarPorID(int Id)
         {
             Roll rol = null;

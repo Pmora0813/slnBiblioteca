@@ -20,7 +20,7 @@ namespace Capa.Entidades
 
         /// <summary>
         /// Sobreescribimos en metodo
-        /// toString para que nos muestre el nombre
+        /// ToString para que nos muestre el nombre
         /// del objeto
         /// </summary>
         /// <returns></returns>

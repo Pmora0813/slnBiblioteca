@@ -266,6 +266,12 @@ namespace Capa.Datos
 
 
         }
+        /// <summary>
+        /// Metodo que optiene todos los prestamos
+        /// que se encuentran en la BD 
+        /// pendientes de Devolucion
+        /// </summary>
+        /// <returns></returns>
         public List<Prestamo> Solicitudes_Devolucion()
         {
             List<Prestamo> lista = new List<Prestamo>();
@@ -320,6 +326,11 @@ namespace Capa.Datos
 
 
         }
+        /// <summary>
+        /// Metodo que todos los prestamos de libros
+        /// que tiene una solitud de prestamo
+        /// </summary>
+        /// <returns></returns>
         public List<Prestamo> Solicitudes_Prestamo()
         {
             List<Prestamo> lista = new List<Prestamo>();
