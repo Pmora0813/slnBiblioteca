@@ -36,6 +36,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dtgCategorias = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Des = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.npdID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategorias)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(12, 103);
+            this.btnNuevo.Location = new System.Drawing.Point(259, 14);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(103, 29);
             this.btnNuevo.TabIndex = 4;
@@ -85,7 +86,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(151, 103);
+            this.btnEliminar.Location = new System.Drawing.Point(259, 50);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(103, 29);
             this.btnEliminar.TabIndex = 5;
@@ -98,14 +99,15 @@
             this.dtgCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo});
-            this.dtgCategorias.Location = new System.Drawing.Point(12, 151);
+            this.Codigo,
+            this.Des});
+            this.dtgCategorias.Location = new System.Drawing.Point(12, 128);
             this.dtgCategorias.MultiSelect = false;
             this.dtgCategorias.Name = "dtgCategorias";
             this.dtgCategorias.ReadOnly = true;
             this.dtgCategorias.RowTemplate.Height = 24;
             this.dtgCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCategorias.Size = new System.Drawing.Size(242, 117);
+            this.dtgCategorias.Size = new System.Drawing.Size(350, 140);
             this.dtgCategorias.TabIndex = 6;
             this.dtgCategorias.SelectionChanged += new System.EventHandler(this.dtgCategorias_SelectionChanged);
             // 
@@ -116,11 +118,18 @@
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
             // 
+            // Des
+            // 
+            this.Des.DataPropertyName = "Descripcion";
+            this.Des.HeaderText = "Tipo Soliicitud";
+            this.Des.Name = "Des";
+            this.Des.ReadOnly = true;
+            // 
             // frmMant_Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 275);
+            this.ClientSize = new System.Drawing.Size(405, 289);
             this.Controls.Add(this.dtgCategorias);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
@@ -153,5 +162,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dtgCategorias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Des;
     }
 }

@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QJZhATQnTU5ywaZc3Y//apxoaWq44pR1J5mRttDqM7Q=</dsig:DigestValue>
+        <dsig:DigestValue>IBumiDsOQAJbttDri7cfgjpKPXyopiIaOs/hi3VsBIY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,7 +110,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZSDXVNSt0SX3V8uFmEURs4w0Gc8CY5lEp19FjlLXwUg=</dsig:DigestValue>
+        <dsig:DigestValue>ru/I9tQoMaO4GoN1uJ89BFq7BKkZVp51tmAQ6LcR4rE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -447,13 +447,13 @@
       <dsig:DigestValue>LeLV0Imni1XG2jkuoLy8Wdsy5a3lj/kGM3BFLh5gfDE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Xslt\Prestamos.xslt" size="3778">
+  <file name="Xslt\Prestamos.xslt" size="3594">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0yju4BunVBh4viniCfPnBM/lHUnWz9tuLNo9rWZ9YPQ=</dsig:DigestValue>
+      <dsig:DigestValue>MdgFxB2AdX54O5EtW1DhYrg9WIrRf5tFsHDH5sxIFy0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

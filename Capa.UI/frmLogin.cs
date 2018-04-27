@@ -25,8 +25,8 @@ namespace Capa.UI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            mskUsuario.Text = "115100427";
-            mskContrasenna.Text = "Pablomora";
+            //mskUsuario.Text = "115100427";
+            //mskContrasenna.Text = "Pablomora";
             EnviarNotificacionesDevoluciones();
         }
 
@@ -162,7 +162,7 @@ namespace Capa.UI
                     break;
                 default:
                     Limpiar();
-                    //MessageBox.Show("Usuario Incorecto", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Credenciales Incorectas", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 

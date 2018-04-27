@@ -32,8 +32,6 @@ namespace Capa.UI.Menu_Estudiante
 
         private void frmPrestamo_Estudiente_Load(object sender, EventArgs e)
         {
-            mskCedula_estudiant.Text = "115100427";
-            mskCodigo_Libro.Text = "1";
             try
             {
                 txtCodigo_Prestamo.Text = DateTime.Now.Ticks.ToString().Substring(12, 6);

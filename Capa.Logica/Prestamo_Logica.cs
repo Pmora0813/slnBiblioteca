@@ -115,11 +115,6 @@ namespace Capa.Logica
             XmlElement NodoFecha_Devolucion = doc.CreateElement("Fecha_Devolucion");
             NodoFecha_Devolucion.InnerText = prestamo.Fecha_Dev.ToString();
             NodoPrestamo.AppendChild(NodoFecha_Devolucion);
-            //--
-            //--
-            XmlElement NodoDias_Prestamo = doc.CreateElement("Dias_Prestamo");
-            NodoDias_Prestamo.InnerText = prestamo.dias.ToString();
-            NodoPrestamo.AppendChild(NodoDias_Prestamo);
             //-- 
 
             //--INICIO NODO USUARIO AUTORIZADO

@@ -223,6 +223,7 @@
             this.librosMasPrestadosToolStripMenuItem.Name = "librosMasPrestadosToolStripMenuItem";
             this.librosMasPrestadosToolStripMenuItem.Size = new System.Drawing.Size(287, 24);
             this.librosMasPrestadosToolStripMenuItem.Text = "Libros más Prestados";
+            this.librosMasPrestadosToolStripMenuItem.Click += new System.EventHandler(this.librosMasPrestadosToolStripMenuItem_Click);
             // 
             // statusStrip
             // 

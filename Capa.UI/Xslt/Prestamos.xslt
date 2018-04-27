@@ -28,12 +28,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
               <xsl:value-of select="Prestamos/Prestamo/Fecha_Devolucion"/>
             </td>
           </tr>
-          <tr>
-            <td>Días de Prestamo:</td>
-            <td>
-              <xsl:value-of select="Prestamos/Prestamo/Dias_Prestamo"/>
-            </td>
-          </tr>
           <tr bgcolor="#1FC533">
             <th colspan="2">Usuario Autorizado</th>
             <tr>

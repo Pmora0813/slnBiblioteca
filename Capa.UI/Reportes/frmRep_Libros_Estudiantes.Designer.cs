@@ -30,8 +30,12 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnTodosIzquierda = new System.Windows.Forms.Button();
+            this.btnTodosDerecha = new System.Windows.Forms.Button();
             this.btnRalizarReporte = new System.Windows.Forms.Button();
             this.lstLibrosPrestamo = new System.Windows.Forms.ListBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.dtgLibros = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigod = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,17 +43,7 @@
             this.id_Editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnReporteEstudiantes = new System.Windows.Forms.Button();
-            this.lstEstudiantes = new System.Windows.Forms.ListBox();
             this.dtgEstudiantes = new System.Windows.Forms.DataGridView();
-            this.btnTodosIzquierda = new System.Windows.Forms.Button();
-            this.btnTodosDerecha = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnEliminarEstudiantes = new System.Windows.Forms.Button();
-            this.btnAgregarEstudiantes = new System.Windows.Forms.Button();
-            this.btnEliminarEstudiante = new System.Windows.Forms.Button();
-            this.btnAgregarEstudiante = new System.Windows.Forms.Button();
             this.QR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +56,12 @@
             this.F_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminarEstudiantes = new System.Windows.Forms.Button();
+            this.btnAgregarEstudiantes = new System.Windows.Forms.Button();
+            this.btnReporteEstudiantes = new System.Windows.Forms.Button();
+            this.lstEstudiantes = new System.Windows.Forms.ListBox();
+            this.btnEliminarEstudiante = new System.Windows.Forms.Button();
+            this.btnAgregarEstudiante = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLibros)).BeginInit();
@@ -97,6 +97,26 @@
             this.tabPage1.Text = "Reporte de Libros";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnTodosIzquierda
+            // 
+            this.btnTodosIzquierda.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_left1;
+            this.btnTodosIzquierda.Location = new System.Drawing.Point(332, 164);
+            this.btnTodosIzquierda.Name = "btnTodosIzquierda";
+            this.btnTodosIzquierda.Size = new System.Drawing.Size(68, 35);
+            this.btnTodosIzquierda.TabIndex = 21;
+            this.btnTodosIzquierda.UseVisualStyleBackColor = true;
+            this.btnTodosIzquierda.Click += new System.EventHandler(this.btnTodosIzquierda_Click);
+            // 
+            // btnTodosDerecha
+            // 
+            this.btnTodosDerecha.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_right1;
+            this.btnTodosDerecha.Location = new System.Drawing.Point(332, 70);
+            this.btnTodosDerecha.Name = "btnTodosDerecha";
+            this.btnTodosDerecha.Size = new System.Drawing.Size(68, 31);
+            this.btnTodosDerecha.TabIndex = 20;
+            this.btnTodosDerecha.UseVisualStyleBackColor = true;
+            this.btnTodosDerecha.Click += new System.EventHandler(this.btnTodosDerecha_Click);
+            // 
             // btnRalizarReporte
             // 
             this.btnRalizarReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -118,6 +138,28 @@
             this.lstLibrosPrestamo.Name = "lstLibrosPrestamo";
             this.lstLibrosPrestamo.Size = new System.Drawing.Size(238, 180);
             this.lstLibrosPrestamo.TabIndex = 18;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_left1;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEliminar.Location = new System.Drawing.Point(342, 117);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(47, 41);
+            this.btnEliminar.TabIndex = 17;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_right1;
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregar.Location = new System.Drawing.Point(342, 23);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(47, 41);
+            this.btnAgregar.TabIndex = 16;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dtgLibros
             // 
@@ -193,28 +235,6 @@
             this.tabPage2.Text = "Reporte de Estudiantes";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnReporteEstudiantes
-            // 
-            this.btnReporteEstudiantes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnReporteEstudiantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteEstudiantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteEstudiantes.Location = new System.Drawing.Point(240, 251);
-            this.btnReporteEstudiantes.Name = "btnReporteEstudiantes";
-            this.btnReporteEstudiantes.Size = new System.Drawing.Size(267, 49);
-            this.btnReporteEstudiantes.TabIndex = 26;
-            this.btnReporteEstudiantes.Text = "Reporte de Libros";
-            this.btnReporteEstudiantes.UseVisualStyleBackColor = true;
-            this.btnReporteEstudiantes.Click += new System.EventHandler(this.btnReporteEstudiantes_Click);
-            // 
-            // lstEstudiantes
-            // 
-            this.lstEstudiantes.FormattingEnabled = true;
-            this.lstEstudiantes.ItemHeight = 16;
-            this.lstEstudiantes.Location = new System.Drawing.Point(451, 42);
-            this.lstEstudiantes.Name = "lstEstudiantes";
-            this.lstEstudiantes.Size = new System.Drawing.Size(209, 180);
-            this.lstEstudiantes.TabIndex = 25;
-            // 
             // dtgEstudiantes
             // 
             this.dtgEstudiantes.AllowUserToDeleteRows = false;
@@ -242,90 +262,6 @@
             this.dtgEstudiantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgEstudiantes.Size = new System.Drawing.Size(363, 175);
             this.dtgEstudiantes.TabIndex = 29;
-            // 
-            // btnTodosIzquierda
-            // 
-            this.btnTodosIzquierda.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_left1;
-            this.btnTodosIzquierda.Location = new System.Drawing.Point(332, 164);
-            this.btnTodosIzquierda.Name = "btnTodosIzquierda";
-            this.btnTodosIzquierda.Size = new System.Drawing.Size(68, 35);
-            this.btnTodosIzquierda.TabIndex = 21;
-            this.btnTodosIzquierda.UseVisualStyleBackColor = true;
-            this.btnTodosIzquierda.Click += new System.EventHandler(this.btnTodosIzquierda_Click);
-            // 
-            // btnTodosDerecha
-            // 
-            this.btnTodosDerecha.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_right1;
-            this.btnTodosDerecha.Location = new System.Drawing.Point(332, 70);
-            this.btnTodosDerecha.Name = "btnTodosDerecha";
-            this.btnTodosDerecha.Size = new System.Drawing.Size(68, 31);
-            this.btnTodosDerecha.TabIndex = 20;
-            this.btnTodosDerecha.UseVisualStyleBackColor = true;
-            this.btnTodosDerecha.Click += new System.EventHandler(this.btnTodosDerecha_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_left1;
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEliminar.Location = new System.Drawing.Point(342, 117);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(47, 41);
-            this.btnEliminar.TabIndex = 17;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_right1;
-            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregar.Location = new System.Drawing.Point(342, 23);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(47, 41);
-            this.btnAgregar.TabIndex = 16;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnEliminarEstudiantes
-            // 
-            this.btnEliminarEstudiantes.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_left1;
-            this.btnEliminarEstudiantes.Location = new System.Drawing.Point(367, 183);
-            this.btnEliminarEstudiantes.Name = "btnEliminarEstudiantes";
-            this.btnEliminarEstudiantes.Size = new System.Drawing.Size(68, 35);
-            this.btnEliminarEstudiantes.TabIndex = 28;
-            this.btnEliminarEstudiantes.UseVisualStyleBackColor = true;
-            this.btnEliminarEstudiantes.Click += new System.EventHandler(this.btnEliminarEstudiantes_Click);
-            // 
-            // btnAgregarEstudiantes
-            // 
-            this.btnAgregarEstudiantes.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_right1;
-            this.btnAgregarEstudiantes.Location = new System.Drawing.Point(367, 89);
-            this.btnAgregarEstudiantes.Name = "btnAgregarEstudiantes";
-            this.btnAgregarEstudiantes.Size = new System.Drawing.Size(68, 31);
-            this.btnAgregarEstudiantes.TabIndex = 27;
-            this.btnAgregarEstudiantes.UseVisualStyleBackColor = true;
-            this.btnAgregarEstudiantes.Click += new System.EventHandler(this.btnAgregarEstudiantes_Click);
-            // 
-            // btnEliminarEstudiante
-            // 
-            this.btnEliminarEstudiante.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_left1;
-            this.btnEliminarEstudiante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEliminarEstudiante.Location = new System.Drawing.Point(377, 136);
-            this.btnEliminarEstudiante.Name = "btnEliminarEstudiante";
-            this.btnEliminarEstudiante.Size = new System.Drawing.Size(47, 41);
-            this.btnEliminarEstudiante.TabIndex = 24;
-            this.btnEliminarEstudiante.UseVisualStyleBackColor = true;
-            this.btnEliminarEstudiante.Click += new System.EventHandler(this.btnEliminarEstudiante_Click);
-            // 
-            // btnAgregarEstudiante
-            // 
-            this.btnAgregarEstudiante.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_right1;
-            this.btnAgregarEstudiante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregarEstudiante.Location = new System.Drawing.Point(377, 42);
-            this.btnAgregarEstudiante.Name = "btnAgregarEstudiante";
-            this.btnAgregarEstudiante.Size = new System.Drawing.Size(47, 41);
-            this.btnAgregarEstudiante.TabIndex = 23;
-            this.btnAgregarEstudiante.UseVisualStyleBackColor = true;
-            this.btnAgregarEstudiante.Click += new System.EventHandler(this.btnAgregarEstudiante_Click);
             // 
             // QR
             // 
@@ -424,6 +360,70 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
+            // 
+            // btnEliminarEstudiantes
+            // 
+            this.btnEliminarEstudiantes.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_left1;
+            this.btnEliminarEstudiantes.Location = new System.Drawing.Point(367, 183);
+            this.btnEliminarEstudiantes.Name = "btnEliminarEstudiantes";
+            this.btnEliminarEstudiantes.Size = new System.Drawing.Size(68, 35);
+            this.btnEliminarEstudiantes.TabIndex = 28;
+            this.btnEliminarEstudiantes.UseVisualStyleBackColor = true;
+            this.btnEliminarEstudiantes.Click += new System.EventHandler(this.btnEliminarEstudiantes_Click);
+            // 
+            // btnAgregarEstudiantes
+            // 
+            this.btnAgregarEstudiantes.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_right1;
+            this.btnAgregarEstudiantes.Location = new System.Drawing.Point(367, 89);
+            this.btnAgregarEstudiantes.Name = "btnAgregarEstudiantes";
+            this.btnAgregarEstudiantes.Size = new System.Drawing.Size(68, 31);
+            this.btnAgregarEstudiantes.TabIndex = 27;
+            this.btnAgregarEstudiantes.UseVisualStyleBackColor = true;
+            this.btnAgregarEstudiantes.Click += new System.EventHandler(this.btnAgregarEstudiantes_Click);
+            // 
+            // btnReporteEstudiantes
+            // 
+            this.btnReporteEstudiantes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnReporteEstudiantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteEstudiantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteEstudiantes.Location = new System.Drawing.Point(280, 245);
+            this.btnReporteEstudiantes.Name = "btnReporteEstudiantes";
+            this.btnReporteEstudiantes.Size = new System.Drawing.Size(267, 49);
+            this.btnReporteEstudiantes.TabIndex = 26;
+            this.btnReporteEstudiantes.Text = "Reporte de Libros";
+            this.btnReporteEstudiantes.UseVisualStyleBackColor = true;
+            this.btnReporteEstudiantes.Click += new System.EventHandler(this.btnReporteEstudiantes_Click);
+            // 
+            // lstEstudiantes
+            // 
+            this.lstEstudiantes.FormattingEnabled = true;
+            this.lstEstudiantes.ItemHeight = 16;
+            this.lstEstudiantes.Location = new System.Drawing.Point(451, 42);
+            this.lstEstudiantes.Name = "lstEstudiantes";
+            this.lstEstudiantes.Size = new System.Drawing.Size(209, 180);
+            this.lstEstudiantes.TabIndex = 25;
+            // 
+            // btnEliminarEstudiante
+            // 
+            this.btnEliminarEstudiante.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_left1;
+            this.btnEliminarEstudiante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEliminarEstudiante.Location = new System.Drawing.Point(377, 136);
+            this.btnEliminarEstudiante.Name = "btnEliminarEstudiante";
+            this.btnEliminarEstudiante.Size = new System.Drawing.Size(47, 41);
+            this.btnEliminarEstudiante.TabIndex = 24;
+            this.btnEliminarEstudiante.UseVisualStyleBackColor = true;
+            this.btnEliminarEstudiante.Click += new System.EventHandler(this.btnEliminarEstudiante_Click);
+            // 
+            // btnAgregarEstudiante
+            // 
+            this.btnAgregarEstudiante.BackgroundImage = global::Capa.UI.Properties.Resources.arrow_right1;
+            this.btnAgregarEstudiante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarEstudiante.Location = new System.Drawing.Point(377, 42);
+            this.btnAgregarEstudiante.Name = "btnAgregarEstudiante";
+            this.btnAgregarEstudiante.Size = new System.Drawing.Size(47, 41);
+            this.btnAgregarEstudiante.TabIndex = 23;
+            this.btnAgregarEstudiante.UseVisualStyleBackColor = true;
+            this.btnAgregarEstudiante.Click += new System.EventHandler(this.btnAgregarEstudiante_Click);
             // 
             // frmRep_Libros_Estudiantes
             // 

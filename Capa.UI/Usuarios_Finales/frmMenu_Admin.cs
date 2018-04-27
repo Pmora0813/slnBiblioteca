@@ -130,5 +130,12 @@ namespace Capa.UI.Usuarios_Finales
             ofrm.MdiParent = this;
             ofrm.Show();
         }
+
+        private void librosMasPrestadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frmRepLibros_Mas_Prestados ofrm = new Reportes.frmRepLibros_Mas_Prestados();
+            ofrm.MdiParent = this;
+            ofrm.Show();
+        }
     }
 }

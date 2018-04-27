@@ -62,8 +62,8 @@ namespace Capa.UI.Usuarios_Finales
 
         private void frmPrestamo_Load(object sender, EventArgs e)
         {
-            mskCedula_estudiant.Text = "115100427";
-            mskCodigo_Libro.Text = "1";
+            // mskCedula_estudiant.Text = "115100427";
+            //mskCodigo_Libro.Text = "1";
             try
             {
                 txtCodigo_Prestamo.Text = DateTime.Now.Ticks.ToString().Substring(12, 6);
@@ -151,16 +151,13 @@ namespace Capa.UI.Usuarios_Finales
                     id = Convert.ToInt32(txtCodigo_Prestamo.Text),
                     Fecha_Act = dtpFechaAct.Value,
                     Fecha_Dev = dtpFecha_Dev.Value,
-                    //dias = Convert.ToInt32(dtpFecha_Dev.Value.Day - dtpFechaAct.Value.Day),
-                    //horas = Convert.ToInt32(dtpFecha_Dev.Value.Hour - dtpFechaAct.Value.Hour),
-                    //minutos = Convert.ToInt32(dtpFecha_Dev.Value.Minute - dtpFechaAct.Value.Minute),
+                    dias = Convert.ToInt32(dtpFecha_Dev.Value.Day),
+                    horas = Convert.ToInt32(dtpFecha_Dev.Value.Hour),
+                    minutos = Convert.ToInt32(dtpFecha_Dev.Value.Minute),
                     estudiant = estudiante,
                     Usuario = Usuario,
                     Categoria = (Categoria)cmbTipoSolicitud.SelectedItem
                 };
-                Prestamo.dias = Convert.ToInt32(dtpFecha_Dev.Value.Day);
-                Prestamo.horas = Convert.ToInt32(dtpFecha_Dev.Value.Hour);
-                Prestamo.minutos = Convert.ToInt32(dtpFecha_Dev.Value.Minute);
 
                 Prest_Logica.guardar(Prestamo);
                 MessageBox.Show("Se registro un Prestamo con exito", "Escuela Platanares", MessageBoxButtons.OK, MessageBoxIcon.Information);
