@@ -104,11 +104,11 @@
             // 
             // btnRealizarDevolucion
             // 
-            this.btnRealizarDevolucion.Location = new System.Drawing.Point(458, 34);
+            this.btnRealizarDevolucion.Location = new System.Drawing.Point(420, 34);
             this.btnRealizarDevolucion.Name = "btnRealizarDevolucion";
-            this.btnRealizarDevolucion.Size = new System.Drawing.Size(127, 38);
+            this.btnRealizarDevolucion.Size = new System.Drawing.Size(165, 38);
             this.btnRealizarDevolucion.TabIndex = 4;
-            this.btnRealizarDevolucion.Text = "Buscar Prestamo";
+            this.btnRealizarDevolucion.Text = "Realizar Devolucion";
             this.btnRealizarDevolucion.UseVisualStyleBackColor = true;
             this.btnRealizarDevolucion.Click += new System.EventHandler(this.btnRealizarDevolucion_Click);
             // 

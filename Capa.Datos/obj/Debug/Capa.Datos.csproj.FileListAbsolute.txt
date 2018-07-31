@@ -12,3 +12,17 @@ D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\NLog.Extensions.Logg
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\NLog.xml
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\NLog.Extensions.Logging.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\Capa.Datos.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\Capa.Datos.pdb
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\Capa.Entidades.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\Gma.QrCodeNet.Encoding.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\NLog.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\NLog.Extensions.Logging.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\Capa.Entidades.pdb
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\NLog.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\bin\Debug\NLog.Extensions.Logging.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\obj\Debug\Capa.Datos.csprojResolveAssemblyReference.cache
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\obj\Debug\Capa.Datos.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Datos\obj\Debug\Capa.Datos.pdb

@@ -25,3 +25,30 @@ D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\NLog.Extensions.Log
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\NLog.xml
 D:\2018\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\NLog.Extensions.Logging.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\Capa.Logica.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\Capa.Logica.pdb
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\Capa.Datos.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\Capa.Entidades.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\HtmlRenderer.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\HtmlRenderer.PdfSharp.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\itextsharp.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\NLog.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\NLog.Extensions.Logging.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\PdfSharp.Charting.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\PdfSharp.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\Capa.Datos.pdb
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\Capa.Entidades.pdb
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\HtmlRenderer.pdb
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\HtmlRenderer.PdfSharp.pdb
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\itextsharp.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\NLog.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\NLog.Extensions.Logging.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\PdfSharp.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\PdfSharp.Charting.xml
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\de\PdfSharp.resources.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\obj\Debug\Capa.Logica.csprojResolveAssemblyReference.cache
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\obj\Debug\Capa.Logica.dll
+D:\2018\Primer Cuatri\Proyecto C# 2018\slnBiblioteca\Capa.Logica\obj\Debug\Capa.Logica.pdb

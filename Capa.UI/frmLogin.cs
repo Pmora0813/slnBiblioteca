@@ -25,27 +25,34 @@ namespace Capa.UI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            //mskUsuario.Text = "115100427";
-            //mskContrasenna.Text = "Pablomora";
-            EnviarNotificacionesDevoluciones();
+           // EnviarNotificacionesDevoluciones();
         }
 
         private void EnviarNotificacionesDevoluciones()
         {
-            DateTime Actual = new Capa.Logica.Prestamo_Logica().ObtenerFecha();
-            List<Prestamo> Lista = new Capa.Logica.Prestamo_Logica().SeleccionarTodos();
-            foreach (Prestamo item in Lista)
+            try
             {
-                if (item.dias <= Actual.Day)
+
+                DateTime Actual = new Capa.Logica.Prestamo_Logica().ObtenerFecha();
+                List<Prestamo> Lista = new Capa.Logica.Prestamo_Logica().SeleccionarTodos();
+                foreach (Prestamo item in Lista)
                 {
-                    if (item.horas <= Actual.Hour)
+                    if (item.dias <= Actual.Day)
                     {
-                        if (item.minutos < Actual.Minute)
+                        if (item.horas <= Actual.Hour)
                         {
-                            //enviar_correo(item);
+                            if (item.minutos < Actual.Minute)
+                            {
+                                enviar_correo(item);
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
         public void enviar_correo(Prestamo prestamo)

@@ -233,7 +233,7 @@ namespace Capa.Logica
             // Carga en memoria la lectura xslt
             myXslTrans.Load("Xslt\\Prestamos.xslt");
             // Transforma el archivo xml aun archivo HTML
-            myXslTrans.Transform(rutaXML, RutaHtml);
+            myXslTrans.Transform(rutaXML, html);
             //myXslTrans.Transform(rutaXML, html);
 
             return "Prestamos_de_Libros.html";
